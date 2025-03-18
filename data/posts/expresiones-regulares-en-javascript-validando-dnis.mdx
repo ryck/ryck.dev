@@ -1,0 +1,25 @@
+---
+title: 'Expresiones regulares en JavaScript: Validando DNI''s'
+publishedAt: '2004-09-04'
+categories:
+  - Javascript
+lang: es
+---
+
+Estaba yo acabando (a ver si es de esta) la web del hotel de mis padres y me hizo falta una función que validara el DNI de un formulario. Como ya tenía por aqui una función en JavaScript que me validaba un email a base de expresiones regulares, pues dije, vamos a ver si encuentro algo parecido para el DNI.... Pero no encontre nada, asi que me puse a mirarme esto de las expresiones regulares (regexp, que se les dice) y averigué porque no había encontrado nada: está tirado de hacer a poquito que te molestes en ver algo. Lo pongo aquí por si a alguien le sirve de algo.
+
+```javascript
+//Recibe una string y comprueba que esté en el formato (X|9)9999999-X
+function dni_correcto(dni) {
+  var er_dni = /(X|d{1})d{7}-	D{1}/;
+
+  if (!er_dni.test(dni)) {
+    return false;
+  }
+  return true;
+}
+```
+
+Supongo que se podrá hacer mejor, pero bueno, yo estoy orgulloso de mi cutre-función y de mi primer enfretamiento con las regexp 😉
+
+**Actualización:** Función mejorada, Gracias matti 😉

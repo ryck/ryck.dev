@@ -1,0 +1,26 @@
+---
+title: WordPress 2.0
+publishedAt: '2006-01-12'
+categories:
+  - Blogworks
+lang: es
+---
+
+Bueno, ya la tenemos aquí, y solo nos a costado perder los permisos de administrador y la lista de categorias.
+
+Si os sale el temido error _"You do not have sufficient permissions to access this page."_ bajaros el [admin-restore](http://redalt.com/downloads/wp2/restore-admin.zip), un apaño de [Red Alt](http://redalt.com/) que os solucionará la papeleta. Simplemente editar el archivo (en caso de que vuestro usuario no sea admin, que es el predeterminado) y ejecutarlo en el servidor. Despues, ir a vuestro _profile_ y poneros permisos de administrador. Y listo.
+
+¿Alguna sugerencia para lo de las categorias?
+
+**Actualización:** Tambien había un problemilla con el recuento de comentarios de cada entrada, pero vamos, supongo que ha sido culpa mía por no hacer la actualización como $deity manda...
+
+Para solucionarlo, simplemente cambiar el valor del campo db_version de la tabla wp_options a 3307, es decir, algo asi:
+
+```sql
+UPDATE `wp_options` SET `option_value` = '3307'
+WHERE `option_id` =81
+AND `blog_id` =0
+AND CONVERT( `option_name` USING utf8 ) = 'db_version' LIMIT 1 ;
+```
+
+Despues solo tenemos que volver a ejecutar el upgrade.php y listo. Con esto conseguimos 'engañar' al wordpress y hacer que ejecute solo las rutinas de actualización de la versión 1.5. Bueno, me ha quedado un rollo, pero funciona 😉 Si alguien tiene alguna duda, ya sabe donde estoy.
