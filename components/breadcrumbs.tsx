@@ -3,10 +3,9 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-export function generateBreadcrumbs() {
-  const pathname = usePathname()
+function generateBreadcrumbs(pathname: string) {
   if (!pathname) return []
-  if (pathname == '/') return []
+  if (pathname === '/') return []
 
   const segments = pathname
     .split('/')
@@ -24,18 +23,22 @@ export function generateBreadcrumbs() {
 }
 
 export function Breadcrumbs() {
-  const crumbs = generateBreadcrumbs()
+  const pathname = usePathname()
+  const crumbs = generateBreadcrumbs(pathname || '')
 
   return (
-    <nav className="flex text-sm text-zinc-500 pb-4">
+    <nav className="flex pb-4 text-sm text-zinc-500">
       {crumbs.map((crumb, index) => (
         <span key={crumb.href}>
           {index > 0 && <span className="mx-2">/</span>}
-          <Link href={crumb.href} className="hover:text-zinc-800 dark:hover:text-zinc-200">
+          <Link
+            href={crumb.href}
+            className="hover:text-zinc-800 dark:hover:text-zinc-200"
+          >
             {crumb.text}
           </Link>
         </span>
       ))}
     </nav>
   )
-} 
+}

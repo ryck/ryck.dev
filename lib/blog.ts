@@ -62,7 +62,7 @@ export async function getBlogPosts(): Promise<Post[]> {
   const mdxFiles = files.filter((file) => path.extname(file) === ".mdx");
 
   const posts = await Promise.all(mdxFiles.map(async (file) => {
-    let slug = path.basename(file, path.extname(file));
+    const slug = path.basename(file, path.extname(file));
     const raw = await fs.readFile(path.join(dir, file), "utf-8");
     const { data, content } = matter(raw);
 

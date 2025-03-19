@@ -1,16 +1,10 @@
 'use client'
-import { TextEffect } from '@/components/ui/text-effect'
-import { TextLoop } from '@/components/ui/text-loop'
 import Link from 'next/link'
-import { useState } from 'react';
-import { usePathname } from 'next/navigation'
-
 
 export function Header() {
-
   return (
     <header className="group mb-8 flex items-center justify-between">
-      <div className='flex items-center gap-3'>
+      <div className="flex items-center gap-3">
         <Link href="/" className="text-black dark:text-white">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +12,7 @@ export function Header() {
             viewBox="0 0 128 128"
             strokeWidth={3}
             stroke="currentColor"
-            className="w-10 h-10 text-slate-900 dark:text-neutral-100 rounded-sm group-hover:rotate-360 duration-400 transform-gpu transition-transform"
+            className="h-10 w-10 transform-gpu rounded-sm text-slate-900 transition-transform duration-400 group-hover:rotate-360 dark:text-neutral-100"
           >
             <path
               strokeLinecap="round"
@@ -47,6 +41,6 @@ export function Header() {
           </li>
         </ul>
       </nav>
-    </header >
+    </header>
   )
 }

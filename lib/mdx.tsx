@@ -1,11 +1,9 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { MDXRemote } from 'next-mdx-remote/rsc'
-import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote/rsc'
 import React, { ComponentPropsWithoutRef } from 'react'
 import remarkGfm from 'remark-gfm'
 import rehypeSlug from 'rehype-slug'
-import remarkHtml from 'remark-html'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
 import remarkA11yEmoji from '@fec/remark-a11y-emoji'
 import remarkToc from 'remark-toc'
@@ -19,14 +17,12 @@ type HeadingProps = ComponentPropsWithoutRef<'h1'>
 type ParagraphProps = ComponentPropsWithoutRef<'p'>
 type ListProps = ComponentPropsWithoutRef<'ul'>
 type ListItemProps = ComponentPropsWithoutRef<'li'>
-type AnchorProps = ComponentPropsWithoutRef<'a'>
-type BlockquoteProps = ComponentPropsWithoutRef<'blockquote'>
 
 function Table({ data }: { data: { headers: string[]; rows: string[][] } }) {
-  let headers = data.headers.map((header, index) => (
+  const headers = data.headers.map((header, index) => (
     <th key={index}>{header}</th>
   ))
-  let rows = data.rows.map((row, index) => (
+  const rows = data.rows.map((row, index) => (
     <tr key={index}>
       {row.map((cell, cellIndex) => (
         <td key={cellIndex}>{cell}</td>
@@ -45,7 +41,7 @@ function Table({ data }: { data: { headers: string[]; rows: string[][] } }) {
 }
 
 function CustomLink(props: { href: string; children: React.ReactNode }) {
-  let href = props.href
+  const href = props.href
 
   if (href.startsWith('/')) {
     return <Link href={href}>{props.children}</Link>
@@ -58,6 +54,7 @@ function CustomLink(props: { href: string; children: React.ReactNode }) {
   return <a target="_blank" rel="noopener noreferrer" {...props} />
 }
 
+/* eslint-disable jsx-a11y/alt-text */
 function RoundedImage(props: {
   alt: string
   className?: string
@@ -67,44 +64,7 @@ function RoundedImage(props: {
 }) {
   return <Image className="rounded-lg" {...props} />
 }
-
-// function Code({ children, ...props }) {
-//   let codeHTML = highlight(children);
-//   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
-// }
-
-function slugify(str: string | number | boolean) {
-  return str
-    .toString()
-    .toLowerCase()
-    .trim() // Remove whitespace from both ends of a string
-    .replace(/\s+/g, '-') // Replace spaces with -
-    .replace(/&/g, '-and-') // Replace & with 'and'
-    .replace(/[^\w\-]+/g, '') // Remove all non-word characters except for -
-    .replace(/\-\-+/g, '-') // Replace multiple - with single -
-}
-
-function createHeading(level: number) {
-  const Heading = ({ children }: { children: React.ReactNode }) => {
-    let slug = slugify(children?.toString() || '')
-    return React.createElement(
-      `h${level}`,
-      { id: slug },
-      [
-        React.createElement('a', {
-          href: `#${slug}`,
-          key: `link-${slug}`,
-          className: 'anchor',
-        }),
-      ],
-      children,
-    )
-  }
-
-  Heading.displayName = `Heading${level}`
-
-  return Heading
-}
+/* eslint-enable jsx-a11y/alt-text */
 
 // set any prop globally
 Code.lineNumbers = true
@@ -114,7 +74,7 @@ Code.theme = {
   // lightSelector: '[data-theme="light"]',
   lightSelector: 'html.light',
 }
-let components = {
+const components = {
   h1: (props: HeadingProps) => (
     <h1 className="fade-in mb-0 pt-12 font-medium" {...props} />
   ),
@@ -146,17 +106,12 @@ let components = {
   Table,
 }
 
-const options = {
-  mdxOptions: {
-    remarkPlugins: [],
-    rehypePlugins: [],
+export function CustomMDX(
+  props: Omit<MDXRemoteProps, 'components'> & {
+    components?: MDXRemoteProps['components']
+    source: string
   },
-}
-
-export function CustomMDX(props: {
-  components?: Record<string, React.ComponentType<any>>
-  source: string
-}) {
+) {
   return (
     <MDXRemote
       {...props}

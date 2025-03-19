@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter, Roboto } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './globals.css'
 import { Header } from './header'
 import { Footer } from './footer'
@@ -19,18 +19,17 @@ export const metadata: Metadata = {
     template: '%s | Ricardo Gonzalez',
     absolute: 'Ricardo Gonzalez',
   },
-  description:
-    `I'm a developer, geek, tinker, and father-of-two. I work at at 10x Banking as a Software Development Manager (SDM). You've found my personal slice of the internet.`,
+  description: `I'm a developer, geek, tinker, and father-of-two. I work at at 10x Banking as a Software Development Manager (SDM). You've found my personal slice of the internet.`,
   openGraph: {
-    title: "Ricardo Gonzalez",
+    title: 'Ricardo Gonzalez',
     url: `${WEBSITE_URL}`,
     siteName: "Ricardo Gonzalez's website",
-    locale: "en_US",
-    type: "website",
+    locale: 'en_US',
+    type: 'website',
     images: [
       {
         url: `${WEBSITE_URL}/og?title=${encodeURIComponent(
-          "Ricardo Gonzalez's site"
+          "Ricardo Gonzalez's site",
         )}`,
         width: 1200,
         height: 630,
@@ -47,9 +46,9 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Ricardo Gonzalez",
-    card: "summary_large_image",
-    creator: "@ryck",
+    title: 'Ricardo Gonzalez',
+    card: 'summary_large_image',
+    creator: '@ryck',
   },
   icons: {
     shortcut: `${WEBSITE_URL}/favicons/favicon.ico`,
@@ -57,7 +56,7 @@ export const metadata: Metadata = {
   },
   alternates: {
     types: {
-      "application/rss+xml": `${WEBSITE_URL}/rss`,
+      'application/rss+xml': `${WEBSITE_URL}/rss`,
     },
   },
 }

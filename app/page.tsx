@@ -20,7 +20,7 @@ export default async function Home() {
       <section>
         <div className="flex-1">
           <h1 className="text-3xl font-bold text-black dark:text-white">
-            Hola, I'm Rick!{' '}
+            Hola, I&apos;m Rick!
             <span className="animate-wiggle inline-block">👋🏻</span>
           </h1>
           <p className="text-zinc-600 dark:text-zinc-400">

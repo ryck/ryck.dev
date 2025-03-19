@@ -1,14 +1,13 @@
 import { getBlogPosts } from '@/lib/blog'
-import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
 import { WEBSITE_URL } from '@/lib/constants'
 import { BlogExcerpt } from '@/components/BlogExcerpt'
 
 interface PageProps {
-  params: {
+  params: Promise<{
     category: string
-  }
+  }>
 }
 
 export async function generateMetadata({
@@ -29,7 +28,7 @@ export async function generateMetadata({
 }
 
 export default async function CategoryPage({ params }: PageProps) {
-  const { category } = params
+  const { category } = await params
   const decodedCategory = decodeURIComponent(category)
 
   const posts = await getBlogPosts()
