@@ -58,6 +58,15 @@ export async function generateMetadata({
   }
 }
 
+export async function generateStaticParams() {
+  const posts = await getBlogPosts()
+  return posts.map((post) => ({
+    slug: post.slug,
+  }))
+}
+
+export const revalidate = 86400
+
 export default async function Post({ params }: PageProps) {
   const { slug } = await params
 

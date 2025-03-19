@@ -4,6 +4,14 @@ import { EMAIL } from './data'
 import { getBlogPosts } from '@/lib/blog'
 import { BlogExcerpt } from '@/components/BlogExcerpt'
 
+// Add revalidate option (1 hour in seconds)
+export const revalidate = 3600
+
+// Add generateStaticParams function
+export async function generateStaticParams() {
+  return [{}]
+}
+
 export default async function Home() {
   const allPosts = await getBlogPosts()
   const posts = allPosts

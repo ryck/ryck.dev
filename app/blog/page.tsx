@@ -2,6 +2,14 @@ import { AnimatedBackground } from '@/components/ui/animated-background'
 import { getBlogPosts, type Post } from '@/lib/blog'
 import { BlogExcerpt } from '@/components/BlogExcerpt'
 
+// Add revalidate option (24 hours in seconds)
+export const revalidate = 86400
+
+// Add generateStaticParams function
+export async function generateStaticParams() {
+  return [{}]
+}
+
 type PostsByYear = {
   [year: string]: Post[]
 }
@@ -18,17 +26,18 @@ function groupPostsByYear(posts: Post[]): PostsByYear {
 }
 
 export default async function Blog() {
-  const allPosts = await getBlogPosts();
-  const sortedPosts = allPosts.sort((a, b) =>
-    new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
-  );
+  const allPosts = await getBlogPosts()
+  const sortedPosts = allPosts.sort(
+    (a, b) =>
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+  )
 
   const postsByYear = groupPostsByYear(sortedPosts)
   const years = Object.keys(postsByYear).sort((a, b) => b.localeCompare(a))
 
   return (
     <main className="space-y-10">
-      {years.map(year => (
+      {years.map((year) => (
         <section key={year}>
           <div className="flex flex-col space-y-0">
             <AnimatedBackground

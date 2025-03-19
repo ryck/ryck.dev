@@ -7,23 +7,34 @@ export const metadata = {
   description: 'Browse blog posts by category',
 }
 
+// Add revalidate option (24 hours in seconds)
+export const revalidate = 86400
+
+// Add generateStaticParams function
+export async function generateStaticParams() {
+  return [{}]
+}
+
 export default async function CategoriesPage() {
   const posts = await getBlogPosts()
 
   const categories = Array.from(
-    new Set(
-      posts.flatMap(post => post.categories || [])
-    )
+    new Set(posts.flatMap((post) => post.categories || [])),
   )
 
-  const categoryCount = categories.reduce((acc, category) => {
-    acc[category] = posts.filter(post =>
-      post.categories?.includes(category)
-    ).length
-    return acc
-  }, {} as Record<string, number>)
+  const categoryCount = categories.reduce(
+    (acc, category) => {
+      acc[category] = posts.filter((post) =>
+        post.categories?.includes(category),
+      ).length
+      return acc
+    },
+    {} as Record<string, number>,
+  )
 
-  const sortedCategories = categories.sort((a, b) => categoryCount[b] - categoryCount[a])
+  const sortedCategories = categories.sort(
+    (a, b) => categoryCount[b] - categoryCount[a],
+  )
 
   return (
     <main>
@@ -40,14 +51,14 @@ export default async function CategoriesPage() {
             duration: 0.2,
           }}
         >
-          {sortedCategories.map(category => (
+          {sortedCategories.map((category) => (
             <Link
               key={category}
               href={`/blog/categories/${encodeURIComponent(category)}`}
-              className="group rounded-lg border border-zinc-200 dark:border-zinc-800 p-4 hover:border-zinc-300 dark:hover:border-zinc-700"
+              className="group rounded-lg border border-zinc-200 p-4 hover:border-zinc-300 dark:border-zinc-800 dark:hover:border-zinc-700"
               data-id={category}
             >
-              <h2 className="text-lg font-medium text-zinc-900 dark:text-zinc-100 group-hover:text-zinc-700 dark:group-hover:text-zinc-300">
+              <h2 className="text-lg font-medium text-zinc-900 group-hover:text-zinc-700 dark:text-zinc-100 dark:group-hover:text-zinc-300">
                 {category}
               </h2>
               <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">

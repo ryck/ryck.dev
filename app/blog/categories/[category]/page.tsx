@@ -10,6 +10,21 @@ interface PageProps {
   }>
 }
 
+// Add revalidate option (24 hours in seconds)
+export const revalidate = 86400
+
+// Add generateStaticParams function
+export async function generateStaticParams() {
+  const posts = await getBlogPosts()
+  const categories = Array.from(
+    new Set(posts.flatMap((post) => post.categories || [])),
+  )
+
+  return categories.map((category) => ({
+    category: category,
+  }))
+}
+
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
