@@ -5,7 +5,7 @@ import { Header } from './header'
 import { Footer } from './footer'
 import { ThemeProvider } from 'next-themes'
 import { Analytics } from '@vercel/analytics/next'
-
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Breadcrumbs } from '@/components/breadcrumbs'
 import { WEBSITE_URL } from '@/lib/constants'
 
@@ -90,6 +90,7 @@ export default function RootLayout({
               <Breadcrumbs />
               {children}
               <Analytics />
+              <SpeedInsights />
               <Footer />
             </div>
           </div>
