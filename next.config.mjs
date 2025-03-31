@@ -14,7 +14,7 @@ const nextConfig = {
   env: {
     NEXT_TELEMETRY_DISABLED: '1',
   },
-  // transpilePackages: ['next-mdx-remote'],
+  transpilePackages: ['next-mdx-remote'],
 };
 
 /** @type {import('rehype-pretty-code').Options} */

@@ -13,6 +13,8 @@ import remarkParse from 'remark-parse'
 import remarkRehype from 'remark-rehype'
 import rehypeStringify from 'rehype-stringify'
 
+import Rating from '../components/Rating'
+
 type HeadingProps = ComponentPropsWithoutRef<'h1'>
 type ParagraphProps = ComponentPropsWithoutRef<'p'>
 type ListProps = ComponentPropsWithoutRef<'ul'>
@@ -104,6 +106,7 @@ const components = {
   a: CustomLink,
   pre: Code,
   Table,
+  Rating,
 }
 
 export function CustomMDX(

@@ -23,16 +23,25 @@
 
 @theme {
   --animate-wiggle: wiggle 1s ease-in-out infinite;
+  --animate-flip: flip 1s normal 0s infinite ease-in-out;
 
-  @keyframes wiggle {
+    @keyframes wiggle {
+    
+        0%,
+        100% {
+          transform: rotate(-3deg);
+        }
+    
+        50% {
+          transform: rotate(3deg);
+        }
+      }
 
-    0%,
-    100% {
-      transform: rotate(-3deg);
+    @keyframes flip {
+      50% {
+        transform: rotate3d(0, 1, 0, -180deg)
+      }
     }
 
-    50% {
-      transform: rotate(3deg);
-    }
-  }
+
 }
