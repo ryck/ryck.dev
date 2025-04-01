@@ -1,4 +1,12 @@
-export default function Rating({ rating = 0, className = '' }) {
+interface RatingProps {
+  rating?: number
+  className?: string
+}
+
+export default function Rating({
+  rating = 0,
+  className = '',
+}: RatingProps): React.ReactElement {
   return (
     <div
       className={`flex space-x-1 text-amber-300 ${className}`}

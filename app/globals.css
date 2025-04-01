@@ -24,8 +24,9 @@
 @theme {
   --animate-wiggle: wiggle 1s ease-in-out infinite;
   --animate-flip: flip 1s normal 0s infinite ease-in-out;
-
-    @keyframes wiggle {
+  --animate-gradient: animatedgradient 6s ease infinite alternate;
+  
+  @keyframes wiggle {
     
         0%,
         100% {
@@ -43,5 +44,39 @@
       }
     }
 
+    @keyframes dash {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+
+    @keyframes animatedgradient {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+}
+
+
+/* .logo-path {
+  stroke-dashoffset: 0;
+} */
+
+@layer utilities {
+  .animate-dash {
+    animation: dash 1s ease-in-out forwards;
+  }
+/* 
+  .animate-dash-delayed {
+    animation: dash 2s   ease-in-out forwards;
+  } */
 
 }
