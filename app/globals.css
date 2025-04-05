@@ -74,9 +74,12 @@
   .animate-dash {
     animation: dash 1s ease-in-out forwards;
   }
-/* 
+
   .animate-dash-delayed {
     animation: dash 2s   ease-in-out forwards;
-  } */
+  }
+}
 
+#outline {
+  animation: 'dash 1.25s ease-in-out 1s forwards',
 }

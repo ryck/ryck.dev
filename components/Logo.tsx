@@ -1,4 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
+// 'use client'
+
+import { use, useEffect, useRef, useState } from 'react'
 
 export default function Logo() {
   const outlineRef = useRef<SVGPathElement>(null)
