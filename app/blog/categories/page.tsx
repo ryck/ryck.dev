@@ -32,9 +32,7 @@ export default async function CategoriesPage() {
     {} as Record<string, number>,
   )
 
-  const sortedCategories = categories.sort(
-    (a, b) => categoryCount[b] - categoryCount[a],
-  )
+  const sortedCategories = categories.sort()
 
   return (
     <main>
