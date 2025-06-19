@@ -1,0 +1,44 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "github.ryck.dev"
+        }
+      ],
+      "destination": "https://github.com/ryck"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "linkedin.ryck.dev"
+        }
+      ],
+      "destination": "https://www.linkedin.com/in/ryck"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "x.ryck.dev"
+        }
+      ],
+      "destination": "https://x.com/ryck"
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "bsky.ryck.dev"
+        }
+      ],
+      "destination": "https://bsky.app/profile/ryck.me"
+    }
+  ]
+}
