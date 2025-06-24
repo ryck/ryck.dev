@@ -26,6 +26,8 @@ export function Breadcrumbs() {
   const pathname = usePathname()
   const crumbs = generateBreadcrumbs(pathname || '')
 
+  if (crumbs.length < 2) return null
+
   return (
     <nav className="flex pb-4 text-sm text-zinc-500">
       {crumbs.map((crumb, index) => (

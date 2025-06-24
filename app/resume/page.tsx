@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Resume - Rick González',
+  title: 'Resume',
   description:
     'Software Engineer specializing in Front-End development with React and CSS',
 }
@@ -11,7 +11,7 @@ export default function ResumePage() {
     <main className="space-y-12 py-6">
       {/* About Section */}
       <section>
-        <h2 className="mb-4 text-2xl font-bold">About</h2>
+        <h2 className="mb-4 text-2xl font-bold text-yellow-600">About</h2>
         <p className="text-zinc-600 dark:text-zinc-400">
           I am a Software Engineer with a strong focus on Front-End development,
           specializing in React and CSS. I&apos;m passionate about crafting
@@ -31,7 +31,7 @@ export default function ResumePage() {
 
       {/* Skills Section */}
       <section>
-        <h2 className="mb-4 text-2xl font-bold">Skills</h2>
+        <h2 className="mb-4 text-2xl font-bold text-yellow-600">Skills</h2>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div>
             <h3 className="mb-2 text-lg font-medium">HTML</h3>
@@ -77,13 +77,13 @@ export default function ResumePage() {
 
       {/* Experience Section */}
       <section>
-        <h2 className="mb-4 text-2xl font-bold">Experience</h2>
+        <h2 className="mb-4 text-2xl font-bold text-yellow-600">Experience</h2>
         {/* Timeline replaces previous div wrapper */}
         <ol className="relative ml-2 border-l border-zinc-300 dark:border-zinc-700">
           {/* Engineering Manager at 10x Banking */}
           <li className="group mb-12 ml-6">
             <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-4 ring-slate-200 dark:bg-zinc-800 dark:ring-zinc-900">
-              <span className="block h-3 w-3 rounded-full bg-slate-900 group-hover:animate-pulse group-hover:bg-yellow-500 dark:bg-slate-200"></span>
+              <span className="block h-3 w-3 rounded-full bg-slate-900 group-hover:animate-pulse group-hover:bg-yellow-600 dark:bg-slate-200"></span>
             </span>
             <div className="mb-2 flex flex-col gap-x-2 gap-y-2 md:flex-row md:items-center md:justify-between">
               <h3 className="text-lg font-medium">
@@ -126,7 +126,7 @@ export default function ResumePage() {
           {/* Senior Software Engineer at 10x Banking */}
           <li className="group mb-12 ml-6">
             <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-4 ring-slate-200 dark:bg-zinc-800 dark:ring-zinc-900">
-              <span className="block h-3 w-3 rounded-full bg-slate-900 group-hover:animate-pulse group-hover:bg-yellow-500 dark:bg-slate-200"></span>
+              <span className="block h-3 w-3 rounded-full bg-slate-900 group-hover:animate-pulse group-hover:bg-yellow-600 dark:bg-slate-200"></span>
             </span>
             <div className="mb-2 flex flex-col gap-x-2 gap-y-2 md:flex-row md:items-center md:justify-between">
               <h3 className="text-lg font-medium">
@@ -165,7 +165,7 @@ export default function ResumePage() {
           {/* Senior Drupal Developer / Lead Developer at Bookatable By Michelin */}
           <li className="group mb-12 ml-6">
             <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-4 ring-slate-200 dark:bg-zinc-800 dark:ring-zinc-900">
-              <span className="block h-3 w-3 rounded-full bg-slate-900 group-hover:animate-pulse group-hover:bg-yellow-500 dark:bg-slate-200"></span>
+              <span className="block h-3 w-3 rounded-full bg-slate-900 group-hover:animate-pulse group-hover:bg-yellow-600 dark:bg-slate-200"></span>
             </span>
             <div className="mb-2 flex flex-col gap-x-2 gap-y-2 md:flex-row md:items-center md:justify-between">
               <h3 className="text-lg font-medium">
@@ -205,7 +205,7 @@ export default function ResumePage() {
           {/* Senior Drupal Themer at PwC */}
           <li className="group mb-12 ml-6">
             <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-4 ring-slate-200 dark:bg-zinc-800 dark:ring-zinc-900">
-              <span className="block h-3 w-3 rounded-full bg-slate-900 group-hover:animate-pulse group-hover:bg-yellow-500 dark:bg-slate-200"></span>
+              <span className="block h-3 w-3 rounded-full bg-slate-900 group-hover:animate-pulse group-hover:bg-yellow-600 dark:bg-slate-200"></span>
             </span>
             <div className="mb-2 flex flex-col gap-x-2 gap-y-2 md:flex-row md:items-center md:justify-between">
               <h3 className="text-lg font-medium">
@@ -242,7 +242,7 @@ export default function ResumePage() {
           {/* Senior Drupal Engineer at BBC Worldwide */}
           <li className="group mb-12 ml-6">
             <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-4 ring-slate-200 dark:bg-zinc-800 dark:ring-zinc-900">
-              <span className="block h-3 w-3 rounded-full bg-slate-900 group-hover:animate-pulse group-hover:bg-yellow-500 dark:bg-slate-200"></span>
+              <span className="block h-3 w-3 rounded-full bg-slate-900 group-hover:animate-pulse group-hover:bg-yellow-600 dark:bg-slate-200"></span>
             </span>
             <div className="mb-2 flex flex-col gap-x-2 gap-y-2 md:flex-row md:items-center md:justify-between">
               <h3 className="text-lg font-medium">
@@ -291,7 +291,7 @@ export default function ResumePage() {
           {/* Senior Web Developer at theOTHERmedia */}
           <li className="group mb-12 ml-6">
             <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-4 ring-slate-200 dark:bg-zinc-800 dark:ring-zinc-900">
-              <span className="block h-3 w-3 rounded-full bg-slate-900 group-hover:animate-pulse group-hover:bg-yellow-500 dark:bg-slate-200"></span>
+              <span className="block h-3 w-3 rounded-full bg-slate-900 group-hover:animate-pulse group-hover:bg-yellow-600 dark:bg-slate-200"></span>
             </span>
             <div className="mb-2 flex flex-col gap-x-2 gap-y-2 md:flex-row md:items-center md:justify-between">
               <h3 className="text-lg font-medium">
@@ -329,7 +329,7 @@ export default function ResumePage() {
           {/* Senior Web Developer at theOTHERmedia */}
           <li className="group mb-12 ml-6">
             <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-4 ring-slate-200 dark:bg-zinc-800 dark:ring-zinc-900">
-              <span className="block h-3 w-3 rounded-full bg-slate-900 group-hover:animate-pulse group-hover:bg-yellow-500 dark:bg-slate-200"></span>
+              <span className="block h-3 w-3 rounded-full bg-slate-900 group-hover:animate-pulse group-hover:bg-yellow-600 dark:bg-slate-200"></span>
             </span>
             <div className="mb-2 flex flex-col gap-x-2 gap-y-2 md:flex-row md:items-center md:justify-between">
               <h3 className="text-lg font-medium">

@@ -34,7 +34,7 @@ export function Header() {
               href="/projects"
               className={
                 pathname === '/projects'
-                  ? 'font-bold underline'
+                  ? 'font-bold overline decoration-yellow-600'
                   : 'text-black dark:text-white'
               }
             >
@@ -46,7 +46,7 @@ export function Header() {
               href="/blog"
               className={
                 pathname === '/blog' || pathname.startsWith('/blog/')
-                  ? 'font-bold underline'
+                  ? 'font-bold overline decoration-yellow-600'
                   : 'text-black dark:text-white'
               }
             >
@@ -58,7 +58,7 @@ export function Header() {
               href="/resume"
               className={
                 pathname === '/resume'
-                  ? 'font-bold underline'
+                  ? 'font-bold overline decoration-yellow-600'
                   : 'text-black dark:text-white'
               }
             >

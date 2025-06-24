@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { AnimatedBackground } from '@/components/ui/animated-background'
+
 import { EMAIL } from './data'
 import { getBlogPosts } from '@/lib/blog'
 import { BlogExcerpt } from '@/components/BlogExcerpt'
@@ -21,7 +22,6 @@ export default async function Home() {
         new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
     )
     .slice(0, 5)
-  // console.log(posts)
 
   return (
     <main className="space-y-10">
@@ -29,7 +29,7 @@ export default async function Home() {
         <div className="flex-1">
           <h1 className="text-3xl font-bold text-black dark:text-white mb-3">
             Hola, I&apos;m Rick!
-            <span className="animate-wiggle inline-block">👋🏻</span>
+            <span className="animate-wiggle inline-block ml-2">👋🏻</span>
           </h1>
           <p className="text-zinc-600 dark:text-zinc-400 mb-2">
             I am software engineer living in London, UK. I have a passion for building high-quality web applications and exploring new technologies. 
