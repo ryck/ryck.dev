@@ -27,13 +27,16 @@ export default async function Home() {
     <main className="space-y-10">
       <section>
         <div className="flex-1">
-          <h1 className="text-3xl font-bold text-black dark:text-white">
+          <h1 className="text-3xl font-bold text-black dark:text-white mb-3">
             Hola, I&apos;m Rick!
             <span className="animate-wiggle inline-block">👋🏻</span>
           </h1>
-          <p className="text-zinc-600 dark:text-zinc-400">
-            I am software engineer living in London 🇬🇧
+          <p className="text-zinc-600 dark:text-zinc-400 mb-2">
+            I am software engineer living in London, UK. I have a passion for building high-quality web applications and exploring new technologies. 
           </p>
+<p className="text-zinc-600 dark:text-zinc-400">
+            Welcome to my personal website! Here, you can find my latest blog posts, projects, and more about me. I hope you enjoy your visit!
+          </p>          
         </div>
       </section>
 
