@@ -106,6 +106,8 @@ export default async function Home() {
         </p>
         <div className="flex items-center justify-start space-x-4 text-white transition-colors duration-1000">
           <Link
+            target="_blank"
+            rel="noopener noreferrer"
             href="https://github.com/ryck"
             className="flex items-center space-x-2"
           >
@@ -121,6 +123,8 @@ export default async function Home() {
             </svg>
           </Link>
           <Link
+            target="_blank"
+            rel="noopener noreferrer"
             href="https://twitter.com/ryck"
             className="flex items-center space-x-2"
           >
@@ -136,6 +140,8 @@ export default async function Home() {
             </svg>
           </Link>
           <Link
+            target="_blank"
+            rel="noopener noreferrer"
             href="https://bsky.app/profile/ryck.me"
             className="flex items-center space-x-2"
           >
@@ -150,7 +156,11 @@ export default async function Home() {
               />
             </svg>
           </Link>
-          <Link href="https://www.instagram.com/ryck">
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.instagram.com/ryck"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 448 512"
@@ -162,11 +172,15 @@ export default async function Home() {
               />
             </svg>
           </Link>
-          <Link href="https://www.linkedin.com/in/ricardogonzalezcastro/">
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.linkedin.com/in/ryck/"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 448 512"
-              className="inline-block h-6 w-6 hover:animate-bounce hover:text-[#0a66c2]"
+              className="inline-block h-6 w-6 hover:animate-pulse hover:text-[#0a66c2]"
             >
               <path
                 fill="currentColor"
