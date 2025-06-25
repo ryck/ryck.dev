@@ -1,3 +1,4 @@
+import { ArrowBigDownDash } from 'lucide-react'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -9,6 +10,13 @@ export const metadata: Metadata = {
 export default function ResumePage() {
   return (
     <main className="space-y-12 py-6">
+      <a
+        href="https://docs.google.com/document/d/1ssO3Fj086DYUb9aeWsSLcszMXl52eAW9SRL3lvBdk0c/export?format=pdf&tab=t.0"
+        className="bg-grey-light hover:bg-grey text-grey-darkest group inline-flex items-center rounded font-bold transition"
+      >
+        <ArrowBigDownDash className="mr-2 h-4 w-4 text-amber-600 group-hover:animate-bounce dark:text-amber-400" />
+        <span>Download PDF</span>
+      </a>
       {/* About Section */}
       <section>
         <h2 className="mb-4 text-2xl font-bold text-yellow-600">About</h2>
@@ -79,7 +87,7 @@ export default function ResumePage() {
       <section>
         <h2 className="mb-4 text-2xl font-bold text-yellow-600">Experience</h2>
         {/* Timeline replaces previous div wrapper */}
-        <ol className="relative ml-2 border-l border-zinc-300 dark:border-zinc-700">
+        <ol className="relative ml-2 border-l border-zinc-300 transition dark:border-zinc-700">
           {/* Engineering Manager at 10x Banking */}
           <li className="group mb-12 ml-6">
             <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-4 ring-slate-200 dark:bg-zinc-800 dark:ring-zinc-900">
