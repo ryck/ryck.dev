@@ -30,42 +30,43 @@ export default function ProjectsPage() {
           {/* Example project card */}
           <div className="flex items-start gap-6 rounded-lg border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
             <img
-              src="https://placehold.co/200x150/png?text=Project+Image"
-              alt="Project preview"
-              className="h-28 w-40 flex-shrink-0 rounded-md object-cover"
+              src="https://github.com/ryck/scrobblex/blob/main/static/images/apple-touch-icon-152x152.png?raw=true"
+              alt="Scribblex"
+              className="h-28 w-40 flex-shrink-0 rounded-md object-contain"
             />
             <div className="flex-1">
-              <h2 className="mb-2 text-xl font-semibold">Project Name</h2>
+              <h2 className="mb-2 text-xl font-semibold">Scrobblex</h2>
               <p className="mb-2 text-zinc-600 dark:text-zinc-400">
-                Short project description goes here. You can add more details,
-                links, or images as needed.
+                Self-hosted app that enables Plex scrobbling (and rating)
+                integration with Trakt via webhooks
               </p>
               <a
-                href="#"
-                className="text-blue-600 underline dark:text-blue-400"
+                href="https://github.com/ryck/scrobblex"
+                className="text-yellow-500 underline dark:text-yellow-600"
               >
-                View project
+                GitHub
               </a>
             </div>
           </div>
           {/* Example project card */}
           <div className="flex items-start gap-6 rounded-lg border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
             <img
-              src="https://placehold.co/200x150/png?text=Project+Image"
-              alt="Project preview"
-              className="h-28 w-40 flex-shrink-0 rounded-md object-cover"
+              src="https://yaak.app/static/logo.svg"
+              alt="Yaak UUID Plugin"
+              className="h-28 w-40 flex-shrink-0 rounded-md object-contain"
             />
             <div className="flex-1">
-              <h2 className="mb-2 text-xl font-semibold">Project Name</h2>
+              <h2 className="mb-2 text-xl font-semibold">Yaak UUID Plugin</h2>
               <p className="mb-2 text-zinc-600 dark:text-zinc-400">
-                Short project description goes here. You can add more details,
-                links, or images as needed.
+                A <a href="http://yaak.app">Yaak</a> template tag plugin to
+                generate <a href="https://github.com/uuidjs/uuid">UUIDs</a>
+                using the UUID package.
               </p>
               <a
-                href="#"
-                className="text-blue-600 underline dark:text-blue-400"
+                href="https://github.com/ryck/yaak-plugin-uuid"
+                className="text-yellow-500 underline dark:text-yellow-600"
               >
-                View project
+                GitHub
               </a>
             </div>
           </div>
