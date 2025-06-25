@@ -35,33 +35,38 @@ function ThemeSwitch() {
   }
 
   return (
-    <AnimatedBackground
-      className="pointer-events-none rounded-lg bg-zinc-100 dark:bg-zinc-800"
-      defaultValue={theme}
-      transition={{
-        type: 'spring',
-        bounce: 0,
-        duration: 0.2,
-      }}
-      enableHover={false}
-      onValueChange={(id) => {
-        setTheme(id as string)
-      }}
-    >
-      {THEMES_OPTIONS.map((theme) => {
+    <div className="flex gap-1">
+      {THEMES_OPTIONS.map((themeOption) => {
+        const isActive =
+          theme === themeOption.id ||
+          (theme === undefined && themeOption.id === 'system')
         return (
-          <button
-            key={theme.id}
-            className="inline-flex h-7 w-7 items-center justify-center text-zinc-500 transition-colors duration-100 focus-visible:outline-2 data-[checked=true]:text-zinc-950 dark:text-zinc-400 dark:data-[checked=true]:text-zinc-50"
-            type="button"
-            aria-label={`Switch to ${theme.label} theme`}
-            data-id={theme.id}
-          >
-            {theme.icon}
-          </button>
+          <div key={themeOption.id} className="group relative inline-flex">
+            <button
+              className="inline-flex h-7 w-7 items-center justify-center text-zinc-500 transition-colors duration-100 hover:text-zinc-900 focus-visible:outline-2 dark:text-zinc-400 dark:hover:text-zinc-100"
+              type="button"
+              aria-label={`Switch to ${themeOption.label} theme`}
+              data-id={themeOption.id}
+              data-checked={isActive}
+              aria-pressed={isActive}
+              onClick={() => setTheme(themeOption.id)}
+            >
+              {/** clone the icon and apply color if active */}
+              {isActive ? (
+                <span className="text-yellow-600 dark:text-yellow-600">
+                  {themeOption.icon}
+                </span>
+              ) : (
+                themeOption.icon
+              )}
+            </button>
+            <span className="pointer-events-none absolute top-full left-1/2 z-10 mt-2 -translate-x-1/2 rounded bg-zinc-900 px-2 py-1 text-xs whitespace-nowrap text-white opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+              {themeOption.label}
+            </span>
+          </div>
         )
       })}
-    </AnimatedBackground>
+    </div>
   )
 }
 
