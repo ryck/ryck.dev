@@ -46,6 +46,11 @@ export default async function Blog() {
       >
         Blog
       </TextShimmer>
+      <p className="mb-8 text-zinc-600 dark:text-zinc-400">
+        I been blogging, mostly in Spanish, about pretty much everything since
+        2004. This is an archive of my digital presence, feel free to explore!
+      </p>
+
       {years.map((year) => (
         <section key={year}>
           <div className="flex flex-col space-y-0">

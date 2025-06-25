@@ -55,7 +55,9 @@ export default async function Home() {
       </section>
 
       <section>
-        <h3 className="mb-3 text-lg font-medium">Blog</h3>
+        <h3 className="mb-3 text-lg font-bold text-yellow-600">
+          Latest articles
+        </h3>
         <div className="flex flex-col space-y-0">
           <AnimatedBackground
             enableHover
