@@ -349,16 +349,21 @@ export default function ResumePage() {
             </div>
             <div className="space-y-4">
               <p className="text-zinc-600 dark:text-zinc-400">
-                Developed and maintained the public-facing Defaqto website, ensuring performance, responsiveness, and accessibility.
+                Developed and maintained the public-facing Defaqto website,
+                ensuring performance, responsiveness, and accessibility.
               </p>
               <p className="text-zinc-600 dark:text-zinc-400">
-                Created and customized Drupal modules to implement new functionality tailored to business needs.
+                Created and customized Drupal modules to implement new
+                functionality tailored to business needs.
               </p>
               <p className="text-zinc-600 dark:text-zinc-400">
-                Designed and prototyped new layouts and UI components, collaborating with stakeholders to align with brand and user experience goals.
+                Designed and prototyped new layouts and UI components,
+                collaborating with stakeholders to align with brand and user
+                experience goals.
               </p>
               <p className="text-zinc-600 dark:text-zinc-400">
-                Supported the entire deployment lifecycle, including development, testing, and production rollout.
+                Supported the entire deployment lifecycle, including
+                development, testing, and production rollout.
               </p>
             </div>
           </li>

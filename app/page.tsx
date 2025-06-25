@@ -24,19 +24,22 @@ export default async function Home() {
     .slice(0, 5)
 
   return (
-    <main className="space-y-10">
+    <main className="space-y-12 py-6">
       <section>
         <div className="flex-1">
-          <h1 className="text-3xl font-bold text-black dark:text-white mb-3">
+          <h1 className="mb-3 text-3xl font-bold text-black dark:text-white">
             Hola, I&apos;m Rick!
-            <span className="animate-wiggle inline-block ml-2">👋🏻</span>
+            <span className="animate-wiggle ml-2 inline-block">👋🏻</span>
           </h1>
-          <p className="text-zinc-600 dark:text-zinc-400 mb-2">
-            I am software engineer living in London, UK. I have a passion for building high-quality web applications and exploring new technologies. 
+          <p className="mb-2 text-zinc-600 dark:text-zinc-400">
+            I am software engineer living in London, UK. I have a passion for
+            building high-quality web applications and exploring new
+            technologies.
           </p>
-<p className="text-zinc-600 dark:text-zinc-400">
-            Welcome to my personal website! Here, you can find my latest blog posts, projects, and more about me. I hope you enjoy your visit!
-          </p>          
+          <p className="text-zinc-600 dark:text-zinc-400">
+            Welcome to my personal website! Here, you can find my latest blog
+            posts, projects, and more about me. I hope you enjoy your visit!
+          </p>
         </div>
       </section>
 

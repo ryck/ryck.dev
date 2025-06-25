@@ -1,6 +1,7 @@
 import { AnimatedBackground } from '@/components/ui/animated-background'
 import { getBlogPosts, type Post } from '@/lib/blog'
 import { BlogExcerpt } from '@/components/BlogExcerpt'
+import { TextShimmer } from '@/components/ui/text-shimmer'
 
 // Add revalidate option (24 hours in seconds)
 export const revalidate = 86400
@@ -36,7 +37,15 @@ export default async function Blog() {
   const years = Object.keys(postsByYear).sort((a, b) => b.localeCompare(a))
 
   return (
-    <main className="space-y-10">
+    <main className="space-y-12 py-6">
+      <TextShimmer
+        duration={4}
+        spread={4}
+        as={'h1'}
+        className="mb-4 text-3xl font-bold [--base-color:var(--color-yellow-600)] [--base-gradient-color:var(--color-yellow-400)] dark:[--base-color:var(--color-yellow-600)] dark:[--base-gradient-color:var(--color-yellow-400)]"
+      >
+        Blog
+      </TextShimmer>
       {years.map((year) => (
         <section key={year}>
           <div className="flex flex-col space-y-0">
