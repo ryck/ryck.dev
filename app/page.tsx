@@ -22,7 +22,7 @@ export default async function Home() {
       (a, b) =>
         new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
     )
-    .slice(0, 5)
+    .slice(0, 3) // Get the latest 3 posts
 
   return (
     <main className="space-y-12 py-6">
