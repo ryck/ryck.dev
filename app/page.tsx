@@ -4,6 +4,7 @@ import { AnimatedBackground } from '@/components/ui/animated-background'
 import { EMAIL } from './data'
 import { getBlogPosts } from '@/lib/blog'
 import { BlogExcerpt } from '@/components/BlogExcerpt'
+import { TextScramble } from '@/components/ui/text-scramble'
 
 // Add revalidate option (1 hour in seconds)
 export const revalidate = 3600
@@ -26,6 +27,16 @@ export default async function Home() {
   return (
     <main className="space-y-12 py-6">
       <section>
+        <div className="mb-6 flex items-center gap-2">
+          <span className="relative inline-flex h-3 w-3 animate-pulse rounded-full bg-green-500 ring-1 ring-green-300"></span>
+          <TextScramble
+            className="font-mono text-xs text-green-700 uppercase dark:text-green-400"
+            as={'span'}
+            duration={2}
+          >
+            Available to hire
+          </TextScramble>
+        </div>
         <div className="flex-1">
           <h1 className="mb-3 text-3xl font-bold text-black dark:text-white">
             Hola, I&apos;m Rick!
