@@ -42,7 +42,7 @@ function ThemeSwitch() {
         return (
           <div key={themeOption.id} className="group relative inline-flex">
             <button
-              className="inline-flex h-7 w-7 items-center justify-center text-zinc-500 transition-colors duration-100 hover:text-zinc-900 focus-visible:outline-2 dark:text-zinc-400 dark:hover:text-zinc-100"
+              className="inline-flex h-7 w-7 cursor-pointer items-center justify-center text-zinc-500 transition-colors duration-100 hover:text-zinc-900 focus-visible:outline-2 dark:text-zinc-400 dark:hover:text-zinc-100"
               type="button"
               aria-label={`Switch to ${themeOption.label} theme`}
               data-id={themeOption.id}
