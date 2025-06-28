@@ -73,7 +73,7 @@ function ThemeSwitch() {
 export function Footer() {
   return (
     <>
-      <footer className="mt-24 border-t border-zinc-100 px-0 py-4 dark:border-zinc-800">
+      <footer className="mt-24 mb-10 border-t border-zinc-100 px-0 py-4 dark:border-zinc-800">
         <div className="mx-auto max-w-screen-xl">
           <div className="md:flex md:justify-end">
             <div className="mb-6 text-right md:mb-0">

@@ -5,10 +5,10 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Resume',
   description:
-    'Software Engineer specializing in Front-End development with React and CSS',
+    'Software Engineer / Manager specializing in Front-End development with React and CSS',
 }
 
-export default function ResumePage() {
+export default async function ResumePage() {
   return (
     <main className="space-y-12 py-6">
       {/* About Section */}
