@@ -32,13 +32,30 @@ export default function ProjectsPage() {
             <img
               src="https://github.com/ryck/scrobblex/blob/main/static/images/apple-touch-icon-152x152.png?raw=true"
               alt="Scribblex"
-              className="h-28 w-40 flex-shrink-0 rounded-md object-contain"
+              className="hidden h-28 w-40 flex-shrink-0 rounded-md object-contain sm:block"
             />
             <div className="flex-1">
               <h2 className="mb-2 text-xl font-semibold">Scrobblex</h2>
               <p className="mb-2 text-zinc-600 dark:text-zinc-400">
-                Self-hosted app that enables Plex scrobbling (and rating)
-                integration with Trakt via webhooks
+                Self-hosted app that enables{' '}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-yellow-500 hover:underline"
+                  href="https://plex.tv"
+                >
+                  Plex
+                </a>{' '}
+                scrobbling (and rating) integration with{' '}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-yellow-500 hover:underline"
+                  href="https://trakt.tv"
+                >
+                  Trakt
+                </a>{' '}
+                via webhooks
               </p>
               <a
                 href="https://github.com/ryck/scrobblex"
@@ -53,14 +70,30 @@ export default function ProjectsPage() {
             <img
               src="https://yaak.app/static/logo.svg"
               alt="Yaak UUID Plugin"
-              className="h-28 w-40 flex-shrink-0 rounded-md object-contain"
+              className="hidden h-28 w-40 flex-shrink-0 rounded-md object-contain sm:block"
             />
             <div className="flex-1">
               <h2 className="mb-2 text-xl font-semibold">Yaak UUID Plugin</h2>
               <p className="mb-2 text-zinc-600 dark:text-zinc-400">
-                A <a href="http://yaak.app">Yaak</a> template tag plugin to
-                generate <a href="https://github.com/uuidjs/uuid">UUIDs</a>
-                using the UUID package.
+                A{' '}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-yellow-500 hover:underline"
+                  href="http://yaak.app"
+                >
+                  Yaak
+                </a>{' '}
+                template tag plugin to generate UUIDs using the{' '}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-yellow-500 hover:underline"
+                  href="https://github.com/uuidjs/uuid"
+                >
+                  UUID package
+                </a>
+                .
               </p>
               <a
                 href="https://github.com/ryck/yaak-plugin-uuid"
@@ -85,10 +118,9 @@ export default function ProjectsPage() {
                 >
                   MagicMirror²
                 </a>{' '}
-                modules to enhance its functionality. <br />
-                Here are some of the notable ones:
+                modules to enhance its functionality:
               </p>
-              <ul className="list-disc space-y-2 pl-6 text-zinc-600 dark:text-zinc-400">
+              <ul className="list-none space-y-2 pl-0 text-zinc-600 dark:text-zinc-400">
                 <dl className="grid grid-cols-1 gap-y-4 text-zinc-600 md:grid-cols-2 md:gap-x-8 dark:text-zinc-400">
                   <div className="flex flex-col gap-1">
                     <dt className="font-semibold text-zinc-800 dark:text-zinc-200">
