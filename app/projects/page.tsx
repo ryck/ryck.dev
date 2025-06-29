@@ -70,6 +70,154 @@ export default function ProjectsPage() {
               </a>
             </div>
           </div>
+
+          {/* Example project card */}
+          <div className="flex items-start gap-6 rounded-lg border border-zinc-200 bg-white p-6 shadow-sm lg:col-span-2 dark:border-zinc-800 dark:bg-zinc-900">
+            <div className="flex-1">
+              <h2 className="mb-2 text-xl font-semibold">MagicMirror²</h2>
+              <p className="mb-2 text-zinc-600 dark:text-zinc-400">
+                In the last few years, I have been working on various{' '}
+                <a
+                  href="https://github.com/ryck/MagicMirror"
+                  className="text-yellow-500 underline dark:text-yellow-600"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  MagicMirror²
+                </a>{' '}
+                modules to enhance its functionality. <br />
+                Here are some of the notable ones:
+              </p>
+              <ul className="list-disc space-y-2 pl-6 text-zinc-600 dark:text-zinc-400">
+                <dl className="grid grid-cols-1 gap-y-4 text-zinc-600 md:grid-cols-2 md:gap-x-8 dark:text-zinc-400">
+                  <div className="flex flex-col gap-1">
+                    <dt className="font-semibold text-zinc-800 dark:text-zinc-200">
+                      <a
+                        href="https://github.com/ryck/MMM-AQI"
+                        className="text-yellow-500 underline dark:text-yellow-600"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        MMM-AQI
+                      </a>
+                    </dt>
+                    <dd className="ml-0">
+                      MagicMirror² module to get the Air Quality Index (AQI)
+                    </dd>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <dt className="font-semibold text-zinc-800 dark:text-zinc-200">
+                      <a
+                        href="https://github.com/ryck/MMM-DHT-Sensor"
+                        className="text-yellow-500 underline dark:text-yellow-600"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        MMM-DHT-Sensor
+                      </a>
+                    </dt>
+                    <dd className="ml-0">
+                      MagicMirror² module to get data from DHT11, DHT22 and
+                      AM2302 sensors
+                    </dd>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <dt className="font-semibold text-zinc-800 dark:text-zinc-200">
+                      <a
+                        href="https://github.com/ryck/MMM-HumanAPI"
+                        className="text-yellow-500 underline dark:text-yellow-600"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        MMM-HumanAPI
+                      </a>
+                    </dt>
+                    <dd className="ml-0">
+                      MagicMirror² module to get data from HumanAPI
+                    </dd>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <dt className="font-semibold text-zinc-800 dark:text-zinc-200">
+                      <a
+                        href="https://github.com/ryck/MMM-Humanize-Duration"
+                        className="text-yellow-500 underline dark:text-yellow-600"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        MMM-Humanize-Duration
+                      </a>
+                    </dt>
+                    <dd className="ml-0">
+                      MagicMirror² module to convert an interval into human
+                      readable units
+                    </dd>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <dt className="font-semibold text-zinc-800 dark:text-zinc-200">
+                      <a
+                        href="https://github.com/ryck/MMM-TFL-Arrivals"
+                        className="text-yellow-500 underline dark:text-yellow-600"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        MMM-TFL-Arrivals
+                      </a>
+                    </dt>
+                    <dd className="ml-0">
+                      MagicMirror² module for Transport for London arrivals
+                      (TFL)
+                    </dd>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <dt className="font-semibold text-zinc-800 dark:text-zinc-200">
+                      <a
+                        href="https://github.com/ryck/MMM-UK-Realtime-Trains"
+                        className="text-yellow-500 underline dark:text-yellow-600"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        MMM-UK-Realtime-Trains
+                      </a>
+                    </dt>
+                    <dd className="ml-0">
+                      MagicMirror² module for UK Realtime Trains
+                    </dd>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <dt className="font-semibold text-zinc-800 dark:text-zinc-200">
+                      <a
+                        href="https://github.com/ryck/MMM-Year-Progress"
+                        className="text-yellow-500 underline dark:text-yellow-600"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        MMM-Year-Progress
+                      </a>
+                    </dt>
+                    <dd className="ml-0">
+                      MagicMirror² module to track the progress of the current
+                      year / month
+                    </dd>
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <dt className="font-semibold text-zinc-800 dark:text-zinc-200">
+                      <a
+                        href="https://github.com/ryck/MMM-AdGuard-Home"
+                        className="text-yellow-500 underline dark:text-yellow-600"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        MMM-AdGuard-Home
+                      </a>
+                    </dt>
+                    <dd className="ml-0">
+                      MagicMirror² module to get AdGuard Home stats
+                    </dd>
+                  </div>
+                </dl>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
     </main>
