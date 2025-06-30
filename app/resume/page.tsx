@@ -18,8 +18,8 @@ export default async function ResumePage() {
           I am a Software Engineer with a strong focus on Front-End development,
           specializing in React and CSS. I&apos;m passionate about crafting
           responsive, user-friendly interfaces with smooth animations and clean
-          design. Beyond the front end, I bring a solid foundation in PHP,
-          NodeJs and full-stack development.
+          design. Beyond the front end, I bring a solid foundation in React
+          Native,PHP, NodeJs and full-stack development.
         </p>
         <p className="mt-4 text-zinc-600 dark:text-zinc-400">
           Over the years, I&apos;ve worked on high-traffic websites and complex
@@ -46,40 +46,42 @@ export default async function ResumePage() {
           <div>
             <h3 className="mb-2 text-lg font-medium">HTML</h3>
             <p className="text-zinc-600 dark:text-zinc-400">
-              HTML5, Semantic, Accessibility, ARIA, Responsive Web Design
+              HTML5, Semantic, Accessibility (ARIA), RWD, PWD{' '}
             </p>
           </div>
           <div>
             <h3 className="mb-2 text-lg font-medium">CSS</h3>
             <p className="text-zinc-600 dark:text-zinc-400">
               CSS3, Sass, Less, BEM, OOCSS, SMACSS, Flexbox, CSS Grid, PostCSS,
-              TailwindCSS
+              TailwindCSS, CSS Animations
             </p>
           </div>
           <div>
             <h3 className="mb-2 text-lg font-medium">JavaScript</h3>
             <p className="text-zinc-600 dark:text-zinc-400">
-              ES6, TypeScript, GraphQL, Unit Testing, Jest, E2E Testing, Cypress
+              TypeScript, Unit Testing, Jest, E2E Testing, Cypress{' '}
             </p>
           </div>
           <div>
-            <h3 className="mb-2 text-lg font-medium">React</h3>
+            <h3 className="mb-2 text-lg font-medium">React Ecosystem</h3>
             <p className="text-zinc-600 dark:text-zinc-400">
-              Redux, Redux Toolkit, NextJS, React Router, Reach Router, Emotion,
-              Styled Components, React Testing Library, Framer Motion, Storybook
+              React Native, Redux, Redux Toolkit, NextJS, React Router, Reach
+              Router, Emotion, Styled Components, React Testing Library, Framer
+              Motion, Storybook
             </p>
           </div>
           <div>
-            <h3 className="mb-2 text-lg font-medium">Backend</h3>
+            <h3 className="mb-2 text-lg font-medium">Back-End</h3>
             <p className="text-zinc-600 dark:text-zinc-400">
-              PHP, NodeJS, Express, Docker, Jenkins, Linux, GitHub Actions
+              PHP, NodeJS, Express, Docker, MySQL, GraphQL, Jenkins, Linux,
+              GitHub Actions, REST APIs
             </p>
           </div>
           <div>
             <h3 className="mb-2 text-lg font-medium">Tools</h3>
             <p className="text-zinc-600 dark:text-zinc-400">
-              GIT, gitflow, Jenkins, Heroku, AWS, Netlify, Vercel, Webpack,
-              ESLint, Prettier, Sketch, Figma, Adobe Photoshop, Google Analytics
+              Git, GitFlow, Jenkins, Heroku, AWS, Netlify, Vercel, Webpack,
+              ESLint, Prettier, Sketch, Figma
             </p>
           </div>
         </div>
