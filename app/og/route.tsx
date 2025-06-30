@@ -46,11 +46,16 @@ export function GET(request: Request) {
             )}
             {hasPublishedTime && (
               <div tw="mt-5 flex items-center text-xl text-gray-300">
-                {new Date(publishedTime!).toLocaleDateString('en-GB', {
-                  year: 'numeric',
-                  month: 'short',
-                  day: 'numeric',
-                })}
+                {(() => {
+                  const d = new Date(publishedTime!)
+                  return isNaN(d.getTime())
+                    ? publishedTime
+                    : d.toLocaleDateString('en-GB', {
+                        year: 'numeric',
+                        month: 'short',
+                        day: 'numeric',
+                      })
+                })()}
               </div>
             )}
             {hasCategories && (

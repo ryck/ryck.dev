@@ -1,5 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 interface SpotifyTrack {
   is_playing: boolean
@@ -29,12 +30,13 @@ export default function SpotifyNowPlaying() {
       className="group flex items-center gap-3 rounded bg-green-50 px-3 py-2 text-xs font-medium text-green-900 shadow hover:bg-green-100 dark:bg-green-900 dark:text-green-100 dark:hover:bg-green-800"
       title={`Listening now: ${name} by ${artists.map((a) => a.name).join(', ')}`}
     >
-      <img
+      <Image
         src={album.images[2]?.url || album.images[0]?.url}
         alt={album.name}
-        className="h-8 w-8 rounded shadow"
         width={32}
         height={32}
+        className="h-8 w-8 rounded shadow"
+        unoptimized
       />
       <span className="truncate">
         <span className="font-semibold">{name}</span> by{' '}

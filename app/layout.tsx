@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: `${url}/og?title=${encodeURIComponent('ryck.dev')}&description=${encodeURIComponent('Software Engineer / Manager')}`,
+        url: `${url}/og?title=${encodeURIComponent('Ricardo Gonzalez')}&description=${encodeURIComponent('Software Engineer / Manager')}&publishedTime=${encodeURIComponent('http://ryck.dev')}`,
         width: 1200,
         height: 630,
         alt: "Ricardo Gonzalez's website",

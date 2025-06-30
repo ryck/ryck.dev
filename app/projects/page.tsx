@@ -1,5 +1,6 @@
 import { TextShimmer } from '@/components/ui/text-shimmer'
 import { Metadata } from 'next'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'Projects - Rick González',
@@ -29,10 +30,13 @@ export default function ProjectsPage() {
         <div className="grid gap-8 lg:grid-cols-2">
           {/* Example project card */}
           <div className="flex items-start gap-6 rounded-lg border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-            <img
+            <Image
               src="https://github.com/ryck/scrobblex/blob/main/static/images/apple-touch-icon-152x152.png?raw=true"
               alt="Scribblex"
+              width={160}
+              height={112}
               className="hidden h-28 w-40 flex-shrink-0 rounded-md object-contain sm:block"
+              unoptimized
             />
             <div className="flex-1">
               <h2 className="mb-2 text-xl font-semibold">Scrobblex</h2>
@@ -67,10 +71,13 @@ export default function ProjectsPage() {
           </div>
           {/* Example project card */}
           <div className="flex items-start gap-6 rounded-lg border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-            <img
+            <Image
               src="https://yaak.app/static/logo.svg"
               alt="Yaak UUID Plugin"
+              width={160}
+              height={112}
               className="hidden h-28 w-40 flex-shrink-0 rounded-md object-contain sm:block"
+              unoptimized
             />
             <div className="flex-1">
               <h2 className="mb-2 text-xl font-semibold">Yaak UUID Plugin</h2>
