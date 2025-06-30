@@ -5,7 +5,8 @@ import { getBlogPosts, type Post } from '@/lib/blog'
 import { headers } from 'next/headers'
 import Link from 'next/link'
 import { Metadata } from 'next'
-import { WEBSITE_URL } from '@/lib/constants'
+
+const url = process.env.WEBSITE_URL ?? 'https://ryck.dev'
 
 interface PageProps {
   params: Promise<{
@@ -32,7 +33,7 @@ export async function generateMetadata({
     categories,
   } = post
 
-  const ogImage = `${WEBSITE_URL}/og?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}&publishedTime=${encodeURIComponent(publishedTime)}&categories=${encodeURIComponent(categories?.join(','))}`
+  const ogImage = `${url}/og?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}&publishedTime=${encodeURIComponent(publishedTime)}&categories=${encodeURIComponent(categories?.join(','))}`
 
   return {
     title,
@@ -42,7 +43,7 @@ export async function generateMetadata({
       description,
       type: 'article',
       publishedTime,
-      url: `${WEBSITE_URL}/blog/${post.slug}`,
+      url: `${url}/blog/${post.slug}`,
       images: [
         {
           url: ogImage,

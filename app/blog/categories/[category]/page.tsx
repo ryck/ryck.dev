@@ -1,8 +1,9 @@
 import { getBlogPosts } from '@/lib/blog'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-import { WEBSITE_URL } from '@/lib/constants'
 import { BlogExcerpt } from '@/components/BlogExcerpt'
+
+const url = process.env.WEBSITE_URL ?? 'https://ryck.dev'
 
 interface PageProps {
   params: Promise<{
@@ -37,7 +38,7 @@ export async function generateMetadata({
     openGraph: {
       title: `${decodedCategory} Posts`,
       description: `Blog posts categorized under ${decodedCategory}`,
-      url: `${WEBSITE_URL}/blog/categories/${category}`,
+      url: `${url}/blog/categories/${category}`,
     },
   }
 }

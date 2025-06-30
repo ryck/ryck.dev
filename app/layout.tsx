@@ -7,7 +7,6 @@ import { ThemeProvider } from 'next-themes'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { Breadcrumbs } from '@/components/breadcrumbs'
-import { WEBSITE_URL } from '@/lib/constants'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -15,8 +14,10 @@ export const viewport: Viewport = {
   themeColor: '#ffffff',
 }
 
+const url = process.env.WEBSITE_URL ?? 'https://ryck.dev'
+
 export const metadata: Metadata = {
-  metadataBase: new URL(WEBSITE_URL),
+  metadataBase: new URL(url),
   title: {
     template: '%s | Ricardo Gonzalez',
     absolute: 'Ricardo Gonzalez',
@@ -24,18 +25,16 @@ export const metadata: Metadata = {
   description: `I am software engineer living in London, UK. I have a passion for building high-quality web applications and exploring new technologies.`,
   openGraph: {
     title: 'Ricardo Gonzalez',
-    url: `${WEBSITE_URL}`,
+    url: `${url}`,
     siteName: "Ricardo Gonzalez's website",
     locale: 'en_US',
     type: 'website',
     images: [
       {
-        url: `${WEBSITE_URL}/og?title=${encodeURIComponent(
-          "Ricardo Gonzalez's site",
-        )}`,
+        url: `${url}/og?title=${encodeURIComponent('ryck.dev')}`,
         width: 1200,
         height: 630,
-        alt: "Ricardo Gonzalez's site",
+        alt: "Ricardo Gonzalez's website",
       },
     ],
   },
@@ -53,12 +52,12 @@ export const metadata: Metadata = {
     creator: '@ryck',
   },
   icons: {
-    shortcut: `${WEBSITE_URL}/favicons/favicon.ico`,
-    icon: `${WEBSITE_URL}/favicons/favicon.ico`,
+    shortcut: `${url}/favicons/favicon.ico`,
+    icon: `${url}/favicons/favicon.ico`,
   },
   alternates: {
     types: {
-      'application/rss+xml': `${WEBSITE_URL}/rss`,
+      'application/rss+xml': `${url}/rss`,
     },
   },
 }

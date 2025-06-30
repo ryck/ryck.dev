@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
-import { WEBSITE_URL } from '@/lib/constants'
+
+const url = process.env.WEBSITE_URL ?? 'https://ryck.dev'
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -8,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: `${WEBSITE_URL}/sitemap.xml`,
+    sitemap: `${url}/sitemap.xml`,
   }
 }
