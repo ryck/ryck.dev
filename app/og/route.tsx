@@ -1,6 +1,3 @@
-import Logo from '@/components/Logo'
-import { color } from 'motion/react'
-
 import { ImageResponse } from 'next/og'
 
 export function GET(request: Request) {
