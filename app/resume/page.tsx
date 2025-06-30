@@ -338,7 +338,7 @@ export default async function ResumePage() {
             </div>
           </li>
 
-          {/* Senior Web Developer at theOTHERmedia */}
+          {/* Senior Web Developer at defaqto */}
           <li className="group mb-12 ml-6">
             <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-4 ring-slate-200 dark:bg-zinc-800 dark:ring-zinc-900">
               <span className="block h-3 w-3 rounded-full bg-slate-900 group-hover:animate-pulse group-hover:bg-yellow-600 dark:bg-slate-200"></span>
@@ -347,12 +347,12 @@ export default async function ResumePage() {
               <h3 className="text-lg font-medium">
                 Front End Developer at{' '}
                 <a
-                  href="http://www.othermedia.com/"
+                  href="http://www.defaqto.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-blue-600 dark:hover:text-blue-400"
                 >
-                  theOTHERmedia
+                  defaqto
                 </a>
               </h3>
               <span className="text-sm text-zinc-500 dark:text-zinc-400">
