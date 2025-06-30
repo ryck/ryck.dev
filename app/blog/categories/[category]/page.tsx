@@ -39,6 +39,14 @@ export async function generateMetadata({
       title: `${decodedCategory} Posts`,
       description: `Blog posts categorized under ${decodedCategory}`,
       url: `${url}/blog/categories/${category}`,
+      images: [
+        {
+          url: `${url}/og?title=${encodeURIComponent('ryck.dev/blog')}&description=${encodeURIComponent('Category: ' + decodedCategory)}`,
+          width: 1200,
+          height: 630,
+          alt: "Ricardo Gonzalez's website",
+        },
+      ],
     },
   }
 }
