@@ -45,7 +45,7 @@ export function GET(request: Request) {
               <div tw="mt-5 flex text-3xl text-gray-300">{description}</div>
             )}
             {hasPublishedTime && (
-              <div tw="mt-5 flex items-center text-xl text-gray-300">
+              <div tw="mt-5 flex items-center text-xl text-yellow-600">
                 {(() => {
                   const d = new Date(publishedTime!)
                   return isNaN(d.getTime())

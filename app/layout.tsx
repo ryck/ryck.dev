@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: '%s | Ricardo Gonzalez',
     absolute: 'Ricardo Gonzalez',
   },
-  description: `I am Software Engineer / Managerliving in London, UK. I have a passion for building high-quality web applications and exploring new technologies.`,
+  description: `I am Software Engineer / Manager living in London, UK. I have a passion for building high-quality web applications and exploring new technologies.`,
   openGraph: {
     title: 'Ricardo Gonzalez',
     url: `${url}`,
