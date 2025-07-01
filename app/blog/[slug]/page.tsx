@@ -72,8 +72,8 @@ export default async function Post({ params }: PageProps) {
   const { slug } = await params
 
   const headersList = await headers()
-  const acceptLanguage = headersList.get('accept-language') || 'en-US'
-  const locale = acceptLanguage.split(',')[0]
+  const acceptLanguage = headersList.get('accept-language') || 'en-GB'
+  const locale = acceptLanguage.split(',')[0] || 'en-GB'
 
   const allPosts = await getBlogPosts()
   const posts = allPosts.sort(
