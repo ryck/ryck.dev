@@ -2,7 +2,6 @@ import { notFound } from 'next/navigation'
 import { ScrollProgress } from '@/components/ui/scroll-progress'
 import { CustomMDX } from '@/lib/mdx'
 import { getBlogPosts, type Post } from '@/lib/blog'
-import { headers } from 'next/headers'
 import Link from 'next/link'
 import { Metadata } from 'next'
 
