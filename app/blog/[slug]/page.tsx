@@ -71,10 +71,6 @@ export const revalidate = 86400
 export default async function Post({ params }: PageProps) {
   const { slug } = await params
 
-  const headersList = await headers()
-  const acceptLanguage = headersList.get('accept-language') || 'en-GB'
-  const locale = acceptLanguage.split(',')[0] || 'en-GB'
-
   const allPosts = await getBlogPosts()
   const posts = allPosts.sort(
     (a, b) =>
@@ -106,7 +102,7 @@ export default async function Post({ params }: PageProps) {
         </h1>
         <div className="flex items-center space-x-2 text-sm font-normal dark:text-zinc-100">
           <time dateTime={post.publishedAt}>
-            {new Date(post.publishedAt).toLocaleDateString(locale, {
+            {new Date(post.publishedAt).toLocaleDateString('en-GB', {
               year: 'numeric',
               month: 'short',
               day: 'numeric',

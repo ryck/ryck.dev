@@ -37,7 +37,7 @@ export function GET(request: Request) {
               'linear-gradient(133deg, rgb(30, 31, 31) 0%, rgb(26, 26, 27) 45%, rgb(25, 25, 26) 100%)',
           }}
         >
-          <div tw="rounded p-10 bg-zinc-900 h-full w-full flex flex-col pattern-diagonal-lines pattern-yellow-500 pattern-bg-zinc-900 pattern-size-32 pattern-opacity-40 relative z-10">
+          <div tw="rounded p-10 bg-zinc-900 h-full w-full flex flex-col pattern-diagonal-lines pattern-yellow-500 pattern-bg-zinc-900 pattern-size-32 relative z-10">
             <div tw="mt-16 flex text-6xl leading-normal text-gray-200">
               {title}
             </div>
