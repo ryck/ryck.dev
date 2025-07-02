@@ -28,11 +28,17 @@ function groupPostsByYear(posts: Post[]): PostsByYear {
   }, {} as PostsByYear)
 }
 
-export default async function Blog({ searchParams }: any) {
+interface BlogPageProps {
+  searchParams?: { search?: string }
+}
+
+export default async function Blog({ searchParams }: BlogPageProps) {
   const allPosts = await getBlogPosts()
   // Await searchParams if it's a promise (Next.js dynamic route)
   const resolvedParams =
-    typeof searchParams?.then === 'function' ? await searchParams : searchParams
+    typeof (searchParams as any)?.then === 'function'
+      ? await searchParams
+      : searchParams
   const search = resolvedParams?.search?.trim() || ''
   const filteredPosts = search
     ? allPosts.filter(
