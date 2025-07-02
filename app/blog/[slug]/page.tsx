@@ -32,7 +32,16 @@ export async function generateMetadata({
     categories,
   } = post
 
-  const ogImage = `${url}/og?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}&publishedTime=${encodeURIComponent(publishedTime)}&categories=${encodeURIComponent(categories?.join(','))}`
+  // Build ogImage URL only with present params
+  const ogParams = []
+  if (title) ogParams.push(`title=${encodeURIComponent(title)}`)
+  if (description)
+    ogParams.push(`description=${encodeURIComponent(description)}`)
+  if (publishedTime)
+    ogParams.push(`publishedTime=${encodeURIComponent(publishedTime)}`)
+  if (categories && categories.length > 0)
+    ogParams.push(`categories=${encodeURIComponent(categories.join(','))}`)
+  const ogImage = `${url}/og${ogParams.length ? '?' + ogParams.join('&') : ''}`
 
   return {
     title,
