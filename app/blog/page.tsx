@@ -28,18 +28,19 @@ function groupPostsByYear(posts: Post[]): PostsByYear {
   }, {} as PostsByYear)
 }
 
-interface BlogPageProps {
-  searchParams?: { search?: string }
-}
-
-export default async function Blog({ searchParams }: BlogPageProps) {
-  const allPosts = await getBlogPosts()
+// @ts-expect-error Next.js does not type searchParams for app directory route handlers
+export default async function Blog({ searchParams }) {
   // Await searchParams if it's a promise (Next.js dynamic route)
   const resolvedParams =
-    typeof (searchParams as any)?.then === 'function'
-      ? await searchParams
-      : searchParams
-  const search = resolvedParams?.search?.trim() || ''
+    typeof searchParams?.then === 'function' ? await searchParams : searchParams
+  const allPosts = await getBlogPosts()
+  const searchValue = resolvedParams?.search
+  const search =
+    typeof searchValue === 'string'
+      ? searchValue.trim()
+      : Array.isArray(searchValue) && searchValue.length > 0
+        ? searchValue[0].trim()
+        : ''
   const filteredPosts = search
     ? allPosts.filter(
         (post) =>
