@@ -2,6 +2,7 @@ import { AnimatedBackground } from '@/components/ui/animated-background'
 import { getBlogPosts, type Post } from '@/lib/blog'
 import { BlogExcerpt } from '@/components/BlogExcerpt'
 import { TextShimmer } from '@/components/ui/text-shimmer'
+import { Search } from 'lucide-react'
 
 // Add revalidate option (24 hours in seconds)
 export const revalidate = 86400
@@ -26,13 +27,27 @@ function groupPostsByYear(posts: Post[]): PostsByYear {
   }, {} as PostsByYear)
 }
 
-export default async function Blog() {
+export default async function Blog({
+  searchParams,
+}: {
+  searchParams?: { search?: string }
+}) {
   const allPosts = await getBlogPosts()
-  const sortedPosts = allPosts.sort(
+  const search = searchParams?.search?.trim() || ''
+  const filteredPosts = search
+    ? allPosts.filter(
+        (post) =>
+          post.title.toLowerCase().includes(search.toLowerCase()) ||
+          (post.summary &&
+            post.summary.toLowerCase().includes(search.toLowerCase())) ||
+          (post.content &&
+            post.content.toLowerCase().includes(search.toLowerCase())),
+      )
+    : allPosts
+  const sortedPosts = filteredPosts.sort(
     (a, b) =>
       new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
   )
-
   const postsByYear = groupPostsByYear(sortedPosts)
   const years = Object.keys(postsByYear).sort((a, b) => b.localeCompare(a))
 
@@ -50,7 +65,26 @@ export default async function Blog() {
         I been blogging, mostly in Spanish, about pretty much everything since
         2004. This is an archive of my digital presence, feel free to explore!
       </p>
-
+      <form method="get" className="mb-8">
+        <div className="relative">
+          <span className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-zinc-400 dark:text-zinc-500">
+            <Search className="h-5 w-5" aria-hidden="true" />
+          </span>
+          <input
+            type="text"
+            name="search"
+            defaultValue={search}
+            placeholder="Search posts..."
+            className="w-full rounded border border-zinc-300 bg-white px-4 py-2 pl-10 text-zinc-800 shadow-sm focus:border-yellow-500 focus:outline-none dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
+            aria-label="Search posts"
+          />
+        </div>
+      </form>
+      {years.length === 0 && (
+        <p className="text-center text-zinc-500 dark:text-zinc-400">
+          No posts found.
+        </p>
+      )}
       {years.map((year) => (
         <section key={year}>
           <div className="flex flex-col space-y-0">
