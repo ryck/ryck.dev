@@ -1,8 +1,9 @@
 'use client'
 
-import Logo from '@/components/Logo'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+
+import Logo from '@/components/Logo'
 
 export function Header() {
   const pathname = usePathname()

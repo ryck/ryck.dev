@@ -1,6 +1,7 @@
-import { TextShimmer } from '@/components/ui/text-shimmer'
 import { Metadata } from 'next'
 import Image from 'next/image'
+
+import { TextShimmer } from '@/components/ui/text-shimmer'
 
 export const metadata: Metadata = {
   title: 'Projects - Rick González',

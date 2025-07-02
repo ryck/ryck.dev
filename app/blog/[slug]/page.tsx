@@ -1,9 +1,10 @@
-import { notFound } from 'next/navigation'
-import { ScrollProgress } from '@/components/ui/scroll-progress'
-import { CustomMDX } from '@/lib/mdx'
-import { getBlogPosts, type Post } from '@/lib/blog'
-import Link from 'next/link'
 import { Metadata } from 'next'
+import Link from 'next/link'
+import { notFound } from 'next/navigation'
+
+import { ScrollProgress } from '@/components/ui/scroll-progress'
+import { type Post, getBlogPosts } from '@/lib/blog'
+import { CustomMDX } from '@/lib/mdx'
 
 const url = process.env.WEBSITE_URL ?? 'https://ryck.dev'
 

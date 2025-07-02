@@ -1,8 +1,9 @@
-import { AnimatedBackground } from '@/components/ui/animated-background'
-import { getBlogPosts, type Post } from '@/lib/blog'
-import { BlogExcerpt } from '@/components/BlogExcerpt'
-import { TextShimmer } from '@/components/ui/text-shimmer'
 import { Search } from 'lucide-react'
+
+import { BlogExcerpt } from '@/components/BlogExcerpt'
+import { AnimatedBackground } from '@/components/ui/animated-background'
+import { TextShimmer } from '@/components/ui/text-shimmer'
+import { type Post, getBlogPosts } from '@/lib/blog'
 
 // Add revalidate option (24 hours in seconds)
 export const revalidate = 86400
@@ -27,21 +28,18 @@ function groupPostsByYear(posts: Post[]): PostsByYear {
   }, {} as PostsByYear)
 }
 
-export default async function Blog({
-  searchParams,
-}: {
-  searchParams?: { search?: string }
-}) {
+export default async function Blog({ searchParams }: any) {
   const allPosts = await getBlogPosts()
-  const search = searchParams?.search?.trim() || ''
+  // Await searchParams if it's a promise (Next.js dynamic route)
+  const resolvedParams =
+    typeof searchParams?.then === 'function' ? await searchParams : searchParams
+  const search = resolvedParams?.search?.trim() || ''
   const filteredPosts = search
     ? allPosts.filter(
         (post) =>
           post.title.toLowerCase().includes(search.toLowerCase()) ||
-          (post.summary &&
-            post.summary.toLowerCase().includes(search.toLowerCase())) ||
-          (post.content &&
-            post.content.toLowerCase().includes(search.toLowerCase())),
+          post.summary?.toLowerCase().includes(search.toLowerCase()) ||
+          post.content?.toLowerCase().includes(search.toLowerCase()),
       )
     : allPosts
   const sortedPosts = filteredPosts.sort(

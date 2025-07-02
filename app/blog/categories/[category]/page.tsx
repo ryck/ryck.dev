@@ -1,7 +1,8 @@
-import { getBlogPosts } from '@/lib/blog'
-import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+
 import { BlogExcerpt } from '@/components/BlogExcerpt'
+import { getBlogPosts } from '@/lib/blog'
 
 const url = process.env.WEBSITE_URL ?? 'https://ryck.dev'
 

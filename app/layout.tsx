@@ -1,12 +1,14 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
-import { Header } from './header'
-import { Footer } from './footer'
 import { ThemeProvider } from 'next-themes'
+import { Inter } from 'next/font/google'
+
+import { Breadcrumbs } from '@/components/breadcrumbs'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { Breadcrumbs } from '@/components/breadcrumbs'
+
+import { Footer } from './footer'
+import './globals.css'
+import { Header } from './header'
 
 export const viewport: Viewport = {
   width: 'device-width',

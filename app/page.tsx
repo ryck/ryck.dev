@@ -1,10 +1,10 @@
 import Link from 'next/link'
-import { AnimatedBackground } from '@/components/ui/animated-background'
 
-import { getBlogPosts } from '@/lib/blog'
 import { BlogExcerpt } from '@/components/BlogExcerpt'
-import { TextScramble } from '@/components/ui/text-scramble'
 import SpotifyNowPlaying from '@/components/SpotifyNowPlaying'
+import { AnimatedBackground } from '@/components/ui/animated-background'
+import { TextScramble } from '@/components/ui/text-scramble'
+import { getBlogPosts } from '@/lib/blog'
 
 // Add revalidate option (1 hour in seconds)
 export const revalidate = 3600
