@@ -300,6 +300,42 @@ export default async function ResumePage() {
             </div>
           </li>
 
+          {/* Drupal Themer at NBC Universal */}
+          <li className="group mb-12 ml-6">
+            <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-4 ring-slate-200 dark:bg-zinc-800 dark:ring-zinc-900">
+              <span className="block h-3 w-3 rounded-full bg-slate-900 group-hover:animate-pulse group-hover:bg-yellow-600 dark:bg-slate-200"></span>
+            </span>
+            <div className="mb-2 flex flex-col gap-x-2 gap-y-2 md:flex-row md:items-center md:justify-between">
+              <h3 className="text-lg font-medium">
+                Drupal Themer at{' '}
+                <a
+                  href="http://www.nbcuniversal.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-blue-600 dark:hover:text-blue-400"
+                >
+                  NBC Universal
+                </a>
+              </h3>
+              <span className="text-sm text-zinc-500 dark:text-zinc-400">
+                February 2012 — November 2012
+              </span>
+            </div>
+            <div className="space-y-4">
+              <p className="text-zinc-600 dark:text-zinc-400">
+                Oversaw theming strategy for a large-scale, multilingual
+                platform spanning 18+ websites in 10+ languages.
+              </p>
+              <p className="text-zinc-600 dark:text-zinc-400">
+                Led feature development, collaborated with design agencies
+                (ClearLeft, DesignBuzz), and participated in UX reviews.
+              </p>
+              <p className="text-zinc-600 dark:text-zinc-400">
+                Ensured consistency, scalability, and accessibility as part of a
+                major platform overhaul.
+              </p>
+            </div>
+          </li>
           {/* Senior Web Developer at theOTHERmedia */}
           <li className="group mb-12 ml-6">
             <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-4 ring-slate-200 dark:bg-zinc-800 dark:ring-zinc-900">
