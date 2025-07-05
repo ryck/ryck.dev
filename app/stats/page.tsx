@@ -94,21 +94,23 @@ async function getGitHubStats(): Promise<GitHubStats> {
   if (!reposRes.ok) throw new Error('Failed to fetch GitHub repos')
   const repos = await reposRes.json()
   const totalStars = repos.reduce(
-    (sum: number, r: any) => sum + (r.stargazers_count || 0),
+    (sum: number, r: { stargazers_count?: number }) =>
+      sum + (r.stargazers_count || 0),
     0,
   )
   const totalForks = repos.reduce(
-    (sum: number, r: any) => sum + (r.forks_count || 0),
+    (sum: number, r: { forks_count?: number }) => sum + (r.forks_count || 0),
     0,
   )
   const topRepo = repos.sort(
-    (a: any, b: any) => b.stargazers_count - a.stargazers_count,
+    (a: { stargazers_count?: number }, b: { stargazers_count?: number }) =>
+      (b.stargazers_count || 0) - (a.stargazers_count || 0),
   )[0]
   // Fetch total commits (sum of all public repo default branch commits)
   let totalCommits = null
   try {
     let commitCount = 0
-    for (const repo of repos) {
+    for (const repo of repos as Array<{ name: string }>) {
       // Include forked repos as well
       const commitsRes = await fetch(
         `https://api.github.com/repos/ryck/${repo.name}/commits?per_page=1`,
