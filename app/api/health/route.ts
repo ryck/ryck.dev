@@ -63,9 +63,22 @@ export async function POST(req: NextRequest) {
     const metricName = metric.name
     for (const entry of metric.data) {
       if (!entry.date) continue
-      // Extract date part only (YYYY-MM-DD)
-      const dateStr = String(entry.date).slice(0, 10).replace(/-/g, '')
-      const score = parseInt(dateStr, 10) // e.g., 20250703
+      // Extract date and hour (YYYY-MM-DD HH)
+      const dateObj = new Date(String(entry.date))
+      const y = dateObj.getFullYear()
+      const m = String(dateObj.getMonth() + 1).padStart(2, '0')
+      const d = String(dateObj.getDate()).padStart(2, '0')
+      const dateHourStr = `${y}${m}${d}` // e.g., 20250705
+      const score = parseInt(dateHourStr, 10)
+      // Remove all existing entries with this score (date) before adding the new one
+      const existing = await redisClient.zRangeByScore(
+        `${metricName}`,
+        score,
+        score,
+      )
+      if (Array.isArray(existing) && existing.length > 0) {
+        await redisClient.zRem(`${metricName}`, existing)
+      }
       await redisClient.zAdd(`${metricName}`, [
         { score, value: JSON.stringify(entry) },
       ])
