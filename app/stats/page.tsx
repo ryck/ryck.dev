@@ -15,7 +15,6 @@ import {
   GitCommitVertical,
   Heart,
   HeartPulse,
-  Moon,
   Orbit,
   RulerDimensionLine,
   Star,
@@ -38,13 +37,9 @@ async function getRedis() {
   return redis
 }
 
-type MetricEntry = {
-  [key: string]: string | number | undefined
-}
+type MetricEntry = Record<string, string | number | undefined>
 
-type MetricsMap = {
-  [key: string]: MetricEntry[]
-}
+type MetricsMap = Record<string, MetricEntry[]>
 
 async function getHealthMetrics(): Promise<MetricsMap> {
   const redis = await getRedis()
@@ -58,7 +53,7 @@ async function getHealthMetrics(): Promise<MetricsMap> {
       try {
         return JSON.parse(v) as MetricEntry
       } catch {
-        return v as unknown as MetricEntry
+        return { value: v } as MetricEntry
       }
     })
   }
