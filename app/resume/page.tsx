@@ -2,10 +2,32 @@ import { ArrowBigDownDash } from 'lucide-react'
 import { Metadata } from 'next'
 import Link from 'next/link'
 
+const url = process.env.WEBSITE_URL ?? 'https://ryck.dev'
+const ogTitle = 'Ricardo Gonzalez'
+const ogDescription = 'Software Engineer / Manager'
+const ogPublishedTime = 'Resume'
+
 export const metadata: Metadata = {
   title: 'Resume',
-  description:
-    'Software Engineer / Manager specializing in Front-End development with React and CSS',
+  description: 'Ricardo Gonzalez - Software Engineer / Manager - CV',
+  openGraph: {
+    title: 'Resume',
+    url: 'https://ryck.dev/resume',
+    images: [
+      {
+        url: `${url}/og?title=${encodeURIComponent(ogTitle)}&description=${encodeURIComponent(ogDescription)}&publishedTime=${encodeURIComponent(ogPublishedTime)}`,
+      },
+    ],
+  },
+  twitter: {
+    title: 'Resume',
+    images: [
+      {
+        url: `${url}/og?title=${encodeURIComponent(ogTitle)}&description=${encodeURIComponent(ogDescription)}&publishedTime=${encodeURIComponent(ogPublishedTime)}`,
+        alt: 'Resume',
+      },
+    ],
+  },
 }
 
 export default async function ResumePage() {

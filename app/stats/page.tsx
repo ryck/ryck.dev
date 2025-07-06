@@ -26,9 +26,32 @@ import { notFound } from 'next/navigation'
 import React from 'react'
 import { createClient } from 'redis'
 
+const url = process.env.WEBSITE_URL ?? 'https://ryck.dev'
+const ogTitle = 'Ricardo Gonzalez'
+const ogDescription = 'Software Engineer / Manager'
+const ogPublishedTime = 'Stats'
+
 export const metadata = {
   title: 'Life Stats',
   description: 'Latest life metrics and stats overview.',
+  openGraph: {
+    title: 'Stats',
+    url: 'https://ryck.dev/stats',
+    images: [
+      {
+        url: `${url}/og?title=${encodeURIComponent(ogTitle)}&description=${encodeURIComponent(ogDescription)}&publishedTime=${encodeURIComponent(ogPublishedTime)}`,
+      },
+    ],
+  },
+  twitter: {
+    title: 'Stats',
+    images: [
+      {
+        url: `${url}/og?title=${encodeURIComponent(ogTitle)}&description=${encodeURIComponent(ogDescription)}&publishedTime=${encodeURIComponent(ogPublishedTime)}`,
+        alt: 'Stats',
+      },
+    ],
+  },
 }
 
 async function getRedis() {

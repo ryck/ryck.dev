@@ -1,5 +1,6 @@
-import { Post } from '@/lib/blog'
 import Link from 'next/link'
+
+import { Post } from '@/lib/blog'
 
 export function BlogExcerpt({ post }: { post: Post }) {
   return (
