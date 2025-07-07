@@ -174,23 +174,14 @@ async function getGitHubStats(): Promise<GitHubStats> {
   }
 }
 
-export default async function StatsPage() {
-  let healthMetrics: MetricsMap = {}
-  let githubStats: GitHubStats = {
-    public_repos: 0,
-    followers: 0,
-    totalStars: 0,
-    totalForks: 0,
-    totalCommits: null,
-    topRepo: null,
-  }
-  try {
-    healthMetrics = await getHealthMetrics()
-    githubStats = await getGitHubStats()
-  } catch {
-    return notFound()
-  }
-
+// Move the UI to a client component and pass data as props
+function StatsPageClient({
+  healthMetrics,
+  githubStats,
+}: {
+  healthMetrics: MetricsMap
+  githubStats: GitHubStats
+}) {
   const bday = new Date(1979, 10, 15)
   const now = new Date()
 
@@ -443,5 +434,29 @@ export default async function StatsPage() {
         )}
       </div>
     </main>
+  )
+}
+
+// Server component for data fetching
+export default async function StatsPage() {
+  let healthMetrics: MetricsMap = {}
+  let githubStats: GitHubStats = {
+    public_repos: 0,
+    followers: 0,
+    totalStars: 0,
+    totalForks: 0,
+    totalCommits: null,
+    topRepo: null,
+  }
+  try {
+    healthMetrics = await getHealthMetrics()
+    githubStats = await getGitHubStats()
+  } catch {
+    return notFound()
+  }
+
+  // Pass data to client component
+  return (
+    <StatsPageClient healthMetrics={healthMetrics} githubStats={githubStats} />
   )
 }
