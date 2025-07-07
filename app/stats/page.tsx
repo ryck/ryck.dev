@@ -221,43 +221,7 @@ function StatsPageClient({
 
         {/* Add more metrics here as needed */}
       </div>
-      <h2 className="text-2xl font-bold mb-6 mt-9">Space </h2>
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
-          <Orbit className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
-          <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
-            Moon Orbits
-          </h2>
-          <p className="text-6xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
-            {Math.round(differenceInDays(now, bday) / 27.3)}
-          </p>
-        </div>
 
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
-          <RulerDimensionLine className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
-          <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
-            Moon Distance
-          </h2>
-          <p className="text-6xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
-            {Math.round(differenceInYears(now, bday) * 3.8)}
-          </p>
-          <p className="text-xs text-gray-500 mt-2 text-right z-10">
-            cm further away since 15/10/1979
-          </p>
-        </div>
-
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
-          <Eclipse className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
-          <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
-            Solar Eclipses
-          </h2>
-          <p className="text-6xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
-            68
-          </p>
-        </div>
-
-        {/* Add more metrics here as needed */}
-      </div>
       <h2 className="text-2xl font-bold mb-6 mt-9">Health </h2>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
@@ -432,6 +396,43 @@ function StatsPageClient({
             </p>
           </div>
         )}
+      </div>
+      <h2 className="text-2xl font-bold mb-6 mt-9">Space </h2>
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+          <Orbit className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
+          <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
+            Moon Orbits
+          </h2>
+          <p className="text-6xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
+            {Math.round(differenceInDays(now, bday) / 27.3)}
+          </p>
+        </div>
+
+        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+          <RulerDimensionLine className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
+          <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
+            Moon Distance
+          </h2>
+          <p className="text-6xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
+            {Math.round(differenceInYears(now, bday) * 3.8)}
+          </p>
+          <p className="text-xs text-gray-500 mt-2 text-right z-10">
+            cm further away since 15/10/1979
+          </p>
+        </div>
+
+        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+          <Eclipse className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
+          <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
+            Solar Eclipses
+          </h2>
+          <p className="text-6xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
+            68
+          </p>
+        </div>
+
+        {/* Add more metrics here as needed */}
       </div>
     </main>
   )
