@@ -418,7 +418,7 @@ function StatsPageClient({
             {Math.round(differenceInYears(now, bday) * 3.8)}
           </p>
           <p className="text-xs text-gray-500 mt-2 text-right z-10">
-            cm further away since 15/10/1979
+            cm further away since I was born
           </p>
         </div>
 
