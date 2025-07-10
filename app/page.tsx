@@ -138,7 +138,7 @@ export default async function Home() {
           <div className="rounded-lg border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
             <h4 className="mb-1 text-base font-semibold text-zinc-900 dark:text-zinc-100">
               <a
-                href="https://github.com/ryck/yaak-uuid"
+                href="https://github.com/ryck/yaak-plugin-uuid"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline"
