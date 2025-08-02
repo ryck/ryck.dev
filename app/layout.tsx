@@ -1,13 +1,14 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
-import { Header } from './header'
-import { Footer } from './footer'
 import { ThemeProvider } from 'next-themes'
+import { Inter } from 'next/font/google'
+
+import { Breadcrumbs } from '@/components/breadcrumbs'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { Breadcrumbs } from '@/components/breadcrumbs'
-import { WEBSITE_URL } from '@/lib/constants'
+
+import { Footer } from './footer'
+import './globals.css'
+import { Header } from './header'
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -15,27 +16,27 @@ export const viewport: Viewport = {
   themeColor: '#ffffff',
 }
 
+const url = process.env.WEBSITE_URL ?? 'https://ryck.dev'
+
 export const metadata: Metadata = {
-  metadataBase: new URL(WEBSITE_URL),
+  metadataBase: new URL(url),
   title: {
     template: '%s | Ricardo Gonzalez',
     absolute: 'Ricardo Gonzalez',
   },
-  description: `I'm a developer, geek, tinker, and father-of-two. I work at at 10x Banking as a Software Development Manager (SDM). You've found my personal slice of the internet.`,
+  description: `Software Engineer / Manager living in London, UK. I have a passion for building high-quality web applications and exploring new technologies.`,
   openGraph: {
     title: 'Ricardo Gonzalez',
-    url: `${WEBSITE_URL}`,
+    url: `${url}`,
     siteName: "Ricardo Gonzalez's website",
-    locale: 'en_US',
+    locale: 'en_GB',
     type: 'website',
     images: [
       {
-        url: `${WEBSITE_URL}/og?title=${encodeURIComponent(
-          "Ricardo Gonzalez's site",
-        )}`,
+        url: `${url}/og?title=${encodeURIComponent('Ricardo Gonzalez')}&description=${encodeURIComponent('Software Engineer / Manager')}&publishedTime=${encodeURIComponent('https://ryck.dev')}`,
         width: 1200,
         height: 630,
-        alt: "Ricardo Gonzalez's site",
+        alt: "Ricardo Gonzalez's website",
       },
     ],
   },
@@ -53,12 +54,12 @@ export const metadata: Metadata = {
     creator: '@ryck',
   },
   icons: {
-    shortcut: `${WEBSITE_URL}/favicons/favicon.ico`,
-    icon: `${WEBSITE_URL}/favicons/favicon.ico`,
+    shortcut: `${url}/favicons/favicon.ico`,
+    icon: `${url}/favicons/favicon.ico`,
   },
   alternates: {
     types: {
-      'application/rss+xml': `${WEBSITE_URL}/rss`,
+      'application/rss+xml': `${url}/rss`,
     },
   },
 }

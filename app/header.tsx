@@ -1,8 +1,12 @@
 'use client'
-import Logo from '@/components/Logo'
+
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+
+import Logo from '@/components/Logo'
 
 export function Header() {
+  const pathname = usePathname()
   return (
     <header className="group mb-8 flex items-center justify-between">
       <div className="flex items-center gap-3">
@@ -27,18 +31,39 @@ export function Header() {
       <nav>
         <ul className="flex gap-4">
           <li>
-            <Link href="/projects" className="text-black dark:text-white">
-              Projects
+            <Link
+              href="/projects"
+              className={
+                pathname === '/projects'
+                  ? 'font-bold overline decoration-yellow-600'
+                  : 'text-black dark:text-white'
+              }
+            >
+              projects
             </Link>
           </li>
           <li>
-            <Link href="/blog" className="text-black dark:text-white">
-              Blog
+            <Link
+              href="/blog"
+              className={
+                pathname === '/blog' || pathname.startsWith('/blog/')
+                  ? 'font-bold overline decoration-yellow-600'
+                  : 'text-black dark:text-white'
+              }
+            >
+              blog
             </Link>
           </li>
           <li>
-            <Link href="/resume" className="text-black dark:text-white">
-              Resume
+            <Link
+              href="/resume"
+              className={
+                pathname === '/resume'
+                  ? 'font-bold overline decoration-yellow-600'
+                  : 'text-black dark:text-white'
+              }
+            >
+              resume
             </Link>
           </li>
         </ul>

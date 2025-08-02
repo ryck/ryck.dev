@@ -1,6 +1,7 @@
+import Link from 'next/link'
+
 import { AnimatedBackground } from '@/components/ui/animated-background'
 import { getBlogPosts } from '@/lib/blog'
-import Link from 'next/link'
 
 export const metadata = {
   title: 'Categories',

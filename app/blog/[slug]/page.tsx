@@ -1,11 +1,12 @@
-import { notFound } from 'next/navigation'
-import { ScrollProgress } from '@/components/ui/scroll-progress'
-import { CustomMDX } from '@/lib/mdx'
-import { getBlogPosts, type Post } from '@/lib/blog'
-import { headers } from 'next/headers'
-import Link from 'next/link'
 import { Metadata } from 'next'
-import { WEBSITE_URL } from '@/lib/constants'
+import Link from 'next/link'
+import { notFound } from 'next/navigation'
+
+import { ScrollProgress } from '@/components/ui/scroll-progress'
+import { type Post, getBlogPosts } from '@/lib/blog'
+import { CustomMDX } from '@/lib/mdx'
+
+const url = process.env.WEBSITE_URL ?? 'https://ryck.dev'
 
 interface PageProps {
   params: Promise<{
@@ -32,7 +33,16 @@ export async function generateMetadata({
     categories,
   } = post
 
-  const ogImage = `${WEBSITE_URL}/og?title=${encodeURIComponent(title)}&description=${encodeURIComponent(description)}&publishedTime=${encodeURIComponent(publishedTime)}&categories=${encodeURIComponent(categories?.join(','))}`
+  // Build ogImage URL only with present params
+  const ogParams = []
+  if (title) ogParams.push(`title=${encodeURIComponent(title)}`)
+  if (description)
+    ogParams.push(`description=${encodeURIComponent(description)}`)
+  if (publishedTime)
+    ogParams.push(`publishedTime=${encodeURIComponent(publishedTime)}`)
+  if (categories && categories.length > 0)
+    ogParams.push(`categories=${encodeURIComponent(categories.join(','))}`)
+  const ogImage = `${url}/og${ogParams.length ? '?' + ogParams.join('&') : ''}`
 
   return {
     title,
@@ -42,7 +52,7 @@ export async function generateMetadata({
       description,
       type: 'article',
       publishedTime,
-      url: `${WEBSITE_URL}/blog/${post.slug}`,
+      url: `${url}/blog/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -69,10 +79,6 @@ export const revalidate = 86400
 
 export default async function Post({ params }: PageProps) {
   const { slug } = await params
-
-  const headersList = await headers()
-  const acceptLanguage = headersList.get('accept-language') || 'en-US'
-  const locale = acceptLanguage.split(',')[0]
 
   const allPosts = await getBlogPosts()
   const posts = allPosts.sort(
@@ -105,7 +111,7 @@ export default async function Post({ params }: PageProps) {
         </h1>
         <div className="flex items-center space-x-2 text-sm font-normal dark:text-zinc-100">
           <time dateTime={post.publishedAt}>
-            {new Date(post.publishedAt).toLocaleDateString(locale, {
+            {new Date(post.publishedAt).toLocaleDateString('en-GB', {
               year: 'numeric',
               month: 'short',
               day: 'numeric',
