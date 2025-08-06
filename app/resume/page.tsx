@@ -32,11 +32,17 @@ export const metadata: Metadata = {
 
 export default async function ResumePage() {
   return (
-    <main className="space-y-12 py-6">
-      {/* About Section */}
-      <section>
+    <main className="space-y-12 py-6 h-resume">
+      {/* About Section with h-card */}
+      <section className="h-card">
         <h2 className="mb-4 text-2xl font-bold text-yellow-600">About</h2>
-        <p className="text-zinc-600 dark:text-zinc-400">
+        <div className="hidden">
+          <span className="p-name">Ricardo Gonzalez</span>
+          <span className="p-job-title">Software Engineer / Manager</span>
+          <a className="u-url" href="https://ryck.dev">https://ryck.dev</a>
+          <a className="u-email" href="mailto:contact@ryck.dev">contact@ryck.dev</a>
+        </div>
+        <p className="text-zinc-600 dark:text-zinc-400 p-summary">
           I am a Software Engineer with a strong focus on Front-End development,
           specializing in React and CSS. I&apos;m passionate about crafting
           responsive, user-friendly interfaces with smooth animations and clean
@@ -62,46 +68,46 @@ export default async function ResumePage() {
       </Link>
 
       {/* Skills Section */}
-      <section>
+      <section className="p-skill">
         <h2 className="mb-4 text-2xl font-bold text-yellow-600">Skills</h2>
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          <div>
-            <h3 className="mb-2 text-lg font-medium">HTML</h3>
-            <p className="text-zinc-600 dark:text-zinc-400">
+          <div className="h-skill">
+            <h3 className="mb-2 text-lg font-medium p-skill-name">HTML</h3>
+            <p className="text-zinc-600 dark:text-zinc-400 p-skill-description">
               HTML5, Semantic, Accessibility (ARIA), RWD, PWD{' '}
             </p>
           </div>
-          <div>
-            <h3 className="mb-2 text-lg font-medium">CSS</h3>
-            <p className="text-zinc-600 dark:text-zinc-400">
+          <div className="h-skill">
+            <h3 className="mb-2 text-lg font-medium p-skill-name">CSS</h3>
+            <p className="text-zinc-600 dark:text-zinc-400 p-skill-description">
               CSS3, Sass, Less, BEM, OOCSS, SMACSS, Flexbox, CSS Grid, PostCSS,
               TailwindCSS, CSS Animations
             </p>
           </div>
-          <div>
-            <h3 className="mb-2 text-lg font-medium">JavaScript</h3>
-            <p className="text-zinc-600 dark:text-zinc-400">
+          <div className="h-skill">
+            <h3 className="mb-2 text-lg font-medium p-skill-name">JavaScript</h3>
+            <p className="text-zinc-600 dark:text-zinc-400 p-skill-description">
               TypeScript, Unit Testing, Jest, E2E Testing, Cypress{' '}
             </p>
           </div>
-          <div>
-            <h3 className="mb-2 text-lg font-medium">React Ecosystem</h3>
-            <p className="text-zinc-600 dark:text-zinc-400">
+          <div className="h-skill">
+            <h3 className="mb-2 text-lg font-medium p-skill-name">React Ecosystem</h3>
+            <p className="text-zinc-600 dark:text-zinc-400 p-skill-description">
               React Native, Redux, Redux Toolkit, NextJS, React Router, Reach
               Router, Emotion, Styled Components, React Testing Library, Framer
               Motion, Storybook
             </p>
           </div>
-          <div>
-            <h3 className="mb-2 text-lg font-medium">Back-End</h3>
-            <p className="text-zinc-600 dark:text-zinc-400">
+          <div className="h-skill">
+            <h3 className="mb-2 text-lg font-medium p-skill-name">Back-End</h3>
+            <p className="text-zinc-600 dark:text-zinc-400 p-skill-description">
               PHP, NodeJS, Express, Docker, MySQL, GraphQL, Jenkins, Linux,
               GitHub Actions, REST APIs
             </p>
           </div>
-          <div>
-            <h3 className="mb-2 text-lg font-medium">Tools</h3>
-            <p className="text-zinc-600 dark:text-zinc-400">
+          <div className="h-skill">
+            <h3 className="mb-2 text-lg font-medium p-skill-name">Tools</h3>
+            <p className="text-zinc-600 dark:text-zinc-400 p-skill-description">
               Git, GitFlow, Jenkins, Heroku, AWS, Netlify, Vercel, Webpack,
               ESLint, Prettier, Sketch, Figma
             </p>
@@ -110,32 +116,33 @@ export default async function ResumePage() {
       </section>
 
       {/* Experience Section */}
-      <section>
+      <section className="p-experience">
         <h2 className="mb-4 text-2xl font-bold text-yellow-600">Experience</h2>
         {/* Timeline replaces previous div wrapper */}
         <ol className="relative ml-2 border-l border-zinc-300 transition dark:border-zinc-700">
           {/* Engineering Manager at 10x Banking */}
-          <li className="group mb-12 ml-6">
+          <li className="group mb-12 ml-6 h-event">
             <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-4 ring-slate-200 dark:bg-zinc-800 dark:ring-zinc-900">
               <span className="block h-3 w-3 rounded-full bg-slate-900 group-hover:animate-pulse group-hover:bg-yellow-600 dark:bg-slate-200"></span>
             </span>
             <div className="mb-2 flex flex-col gap-x-2 gap-y-2 md:flex-row md:items-center md:justify-between">
               <h3 className="text-lg font-medium">
-                Engineering Manager at{' '}
+                <span className="p-job-title">Engineering Manager</span> at{' '}
                 <a
                   href="https://10xbanking.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline hover:text-blue-600 dark:hover:text-blue-400"
+                  className="underline hover:text-blue-600 dark:hover:text-blue-400 h-card"
                 >
-                  10x Banking
+                  <span className="p-name">10x Banking</span>
+                  <span className="u-url hidden">https://10xbanking.com</span>
                 </a>
               </h3>
               <span className="text-sm text-zinc-500 dark:text-zinc-400">
-                July 2019 — July 2025
+                <time className="dt-start" dateTime="2019-07">July 2019</time> — <time className="dt-end" dateTime="2025-07">July 2025</time>
               </span>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-4 p-description">
               <p className="text-zinc-600 dark:text-zinc-400">
                 As Engineering Manager, I was responsible for initiating the
                 Bank Manager / Console UI project from the ground up—both
@@ -158,27 +165,28 @@ export default async function ResumePage() {
           </li>
 
           {/* Senior Software Engineer at 10x Banking */}
-          <li className="group mb-12 ml-6">
+          <li className="group mb-12 ml-6 h-event">
             <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-4 ring-slate-200 dark:bg-zinc-800 dark:ring-zinc-900">
               <span className="block h-3 w-3 rounded-full bg-slate-900 group-hover:animate-pulse group-hover:bg-yellow-600 dark:bg-slate-200"></span>
             </span>
             <div className="mb-2 flex flex-col gap-x-2 gap-y-2 md:flex-row md:items-center md:justify-between">
               <h3 className="text-lg font-medium">
-                Senior Software Engineer at{' '}
+                <span className="p-job-title">Senior Software Engineer</span> at{' '}
                 <a
                   href="https://10xbanking.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline hover:text-blue-600 dark:hover:text-blue-400"
+                  className="underline hover:text-blue-600 dark:hover:text-blue-400 h-card"
                 >
-                  10x Banking
+                  <span className="p-name">10x Banking</span>
+                  <span className="u-url hidden">https://10xbanking.com</span>
                 </a>
               </h3>
               <span className="text-sm text-zinc-500 dark:text-zinc-400">
-                July 2018 — June 2019
+                <time className="dt-start" dateTime="2018-07">July 2018</time> — <time className="dt-end" dateTime="2019-06">June 2019</time>
               </span>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-4 p-description">
               <p className="text-zinc-600 dark:text-zinc-400">
                 Worked as part of an Agile team developing the mobile
                 application using React Native, along with TypeScript, React
@@ -197,27 +205,28 @@ export default async function ResumePage() {
           </li>
 
           {/* Senior Drupal Developer / Lead Developer at Bookatable By Michelin */}
-          <li className="group mb-12 ml-6">
+          <li className="group mb-12 ml-6 h-event">
             <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-4 ring-slate-200 dark:bg-zinc-800 dark:ring-zinc-900">
               <span className="block h-3 w-3 rounded-full bg-slate-900 group-hover:animate-pulse group-hover:bg-yellow-600 dark:bg-slate-200"></span>
             </span>
             <div className="mb-2 flex flex-col gap-x-2 gap-y-2 md:flex-row md:items-center md:justify-between">
               <h3 className="text-lg font-medium">
-                Senior Drupal Developer / Lead Developer at{' '}
+                <span className="p-job-title">Senior Drupal Developer / Lead Developer</span> at{' '}
                 <a
                   href="https://www.michelin.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline hover:text-blue-600 dark:hover:text-blue-400"
+                  className="underline hover:text-blue-600 dark:hover:text-blue-400 h-card"
                 >
-                  Bookatable By Michelin
+                  <span className="p-name">Bookatable By Michelin</span>
+                  <span className="u-url hidden">https://www.michelin.com/</span>
                 </a>
               </h3>
               <span className="text-sm text-zinc-500 dark:text-zinc-400">
-                November 2016 — May 2019
+                <time className="dt-start" dateTime="2016-11">November 2016</time> — <time className="dt-end" dateTime="2019-05">May 2019</time>
               </span>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-4 p-description">
               <p className="text-zinc-600 dark:text-zinc-400">
                 I initially joined as a Drupal Developer, supporting several
                 Michelin restaurant websites built on Drupal 7, including
@@ -237,27 +246,28 @@ export default async function ResumePage() {
           </li>
 
           {/* Senior Drupal Themer at PwC */}
-          <li className="group mb-12 ml-6">
+          <li className="group mb-12 ml-6 h-event">
             <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-4 ring-slate-200 dark:bg-zinc-800 dark:ring-zinc-900">
               <span className="block h-3 w-3 rounded-full bg-slate-900 group-hover:animate-pulse group-hover:bg-yellow-600 dark:bg-slate-200"></span>
             </span>
             <div className="mb-2 flex flex-col gap-x-2 gap-y-2 md:flex-row md:items-center md:justify-between">
               <h3 className="text-lg font-medium">
-                Senior Drupal Themer at{' '}
+                <span className="p-job-title">Senior Drupal Themer</span> at{' '}
                 <a
                   href="https://www.pwc.co.uk/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline hover:text-blue-600 dark:hover:text-blue-400"
+                  className="underline hover:text-blue-600 dark:hover:text-blue-400 h-card"
                 >
-                  PwC
+                  <span className="p-name">PwC</span>
+                  <span className="u-url hidden">https://www.pwc.co.uk/</span>
                 </a>
               </h3>
               <span className="text-sm text-zinc-500 dark:text-zinc-400">
-                August 2016 — October 2016
+                <time className="dt-start" dateTime="2016-08">August 2016</time> — <time className="dt-end" dateTime="2016-10">October 2016</time>
               </span>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-4 p-description">
               <p className="text-zinc-600 dark:text-zinc-400">
                 As a Themer, I was responsible for implementing responsive,
                 accessible front-end designs for a council management portal for
@@ -274,27 +284,28 @@ export default async function ResumePage() {
           </li>
 
           {/* Senior Drupal Engineer at BBC Worldwide */}
-          <li className="group mb-12 ml-6">
+          <li className="group mb-12 ml-6 h-event">
             <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-4 ring-slate-200 dark:bg-zinc-800 dark:ring-zinc-900">
               <span className="block h-3 w-3 rounded-full bg-slate-900 group-hover:animate-pulse group-hover:bg-yellow-600 dark:bg-slate-200"></span>
             </span>
             <div className="mb-2 flex flex-col gap-x-2 gap-y-2 md:flex-row md:items-center md:justify-between">
               <h3 className="text-lg font-medium">
-                Senior Drupal Engineer at{' '}
+                <span className="p-job-title">Senior Drupal Engineer</span> at{' '}
                 <a
                   href="http://www.bbcworldwide.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline hover:text-blue-600 dark:hover:text-blue-400"
+                  className="underline hover:text-blue-600 dark:hover:text-blue-400 h-card"
                 >
-                  BBC Worldwide
+                  <span className="p-name">BBC Worldwide</span>
+                  <span className="u-url hidden">http://www.bbcworldwide.com/</span>
                 </a>
               </h3>
               <span className="text-sm text-zinc-500 dark:text-zinc-400">
-                November 2012 — July 2016
+                <time className="dt-start" dateTime="2012-11">November 2012</time> — <time className="dt-end" dateTime="2016-07">July 2016</time>
               </span>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-4 p-description">
               <p className="text-zinc-600 dark:text-zinc-400">
                 During my time at BBC Worldwide, I worked on two key projects:
                 BBC Good Food and BBC Store.
@@ -323,27 +334,28 @@ export default async function ResumePage() {
           </li>
 
           {/* Drupal Themer at NBC Universal */}
-          <li className="group mb-12 ml-6">
+          <li className="group mb-12 ml-6 h-event">
             <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-white ring-4 ring-slate-200 dark:bg-zinc-800 dark:ring-zinc-900">
               <span className="block h-3 w-3 rounded-full bg-slate-900 group-hover:animate-pulse group-hover:bg-yellow-600 dark:bg-slate-200"></span>
             </span>
             <div className="mb-2 flex flex-col gap-x-2 gap-y-2 md:flex-row md:items-center md:justify-between">
               <h3 className="text-lg font-medium">
-                Drupal Themer at{' '}
+                <span className="p-job-title">Drupal Themer</span> at{' '}
                 <a
                   href="http://www.nbcuniversal.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="underline hover:text-blue-600 dark:hover:text-blue-400"
+                  className="underline hover:text-blue-600 dark:hover:text-blue-400 h-card"
                 >
-                  NBC Universal
+                  <span className="p-name">NBC Universal</span>
+                  <span className="u-url hidden">http://www.nbcuniversal.com/</span>
                 </a>
               </h3>
               <span className="text-sm text-zinc-500 dark:text-zinc-400">
-                February 2012 — November 2012
+                <time className="dt-start" dateTime="2012-02">February 2012</time> — <time className="dt-end" dateTime="2012-11">November 2012</time>
               </span>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-4 p-description">
               <p className="text-zinc-600 dark:text-zinc-400">
                 Oversaw theming strategy for a large-scale, multilingual
                 platform spanning 18+ websites in 10+ languages.
