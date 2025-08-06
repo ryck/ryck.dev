@@ -1,4 +1,4 @@
-import { Search } from 'lucide-react'
+import { Search, BookOpen, Calendar, TrendingUp, Clock } from 'lucide-react'
 
 import { BlogExcerpt } from '@/components/BlogExcerpt'
 import { AnimatedBackground } from '@/components/ui/animated-background'
@@ -56,6 +56,16 @@ export default async function Blog({ searchParams }) {
   const postsByYear = groupPostsByYear(sortedPosts)
   const years = Object.keys(postsByYear).sort((a, b) => b.localeCompare(a))
 
+  // Calculate stats (always based on all posts, not filtered)
+  const allPostsByYear = groupPostsByYear(allPosts)
+  const allYears = Object.keys(allPostsByYear).sort((a, b) => b.localeCompare(a))
+  const totalPosts = allPosts.length
+  const filteredPostsCount = filteredPosts.length
+  const yearsOfBlogging = allYears.length
+  const averagePostsPerYear = yearsOfBlogging > 0 ? Math.round(totalPosts / yearsOfBlogging) : 0
+  const oldestYear = allYears.length > 0 ? Math.min(...allYears.map(Number)) : new Date().getFullYear()
+  const newestYear = allYears.length > 0 ? Math.max(...allYears.map(Number)) : new Date().getFullYear()
+
   return (
     <main className="space-y-12 py-6">
       <TextShimmer
@@ -70,6 +80,46 @@ export default async function Blog({ searchParams }) {
         I been blogging, mostly in Spanish, about pretty much everything since
         2004. This is an archive of my digital presence, feel free to explore!
       </p>
+      
+      {/* Stats Section */}
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 mb-8">
+        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+          <BookOpen className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-10 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
+          <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
+            {search ? 'Found' : 'Total'} Posts
+          </h2>
+          <p className="text-4xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
+            {search ? filteredPostsCount : totalPosts}
+          </p>
+        </div>
+        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+          <Calendar className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-10 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
+          <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
+            Years Blogging
+          </h2>
+          <p className="text-4xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
+            {yearsOfBlogging}
+          </p>
+        </div>
+        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+          <TrendingUp className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-10 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
+          <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
+            Avg Posts/Year
+          </h2>
+          <p className="text-4xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
+            {averagePostsPerYear}
+          </p>
+        </div>
+        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+          <Clock className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-10 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
+          <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
+            Active Period
+          </h2>
+          <p className="text-4xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
+            {oldestYear}-{newestYear}
+          </p>
+        </div>
+      </div>
       <form method="get" className="mb-8">
         <div className="relative">
           <span className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3 text-zinc-400 dark:text-zinc-500">
