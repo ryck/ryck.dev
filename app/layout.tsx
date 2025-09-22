@@ -3,6 +3,7 @@ import { ThemeProvider } from 'next-themes'
 import { Inter } from 'next/font/google'
 
 import { Breadcrumbs } from '@/components/breadcrumbs'
+import { Providers } from '@/components/providers'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
@@ -85,16 +86,18 @@ export default function RootLayout({
           storageKey="theme"
           defaultTheme="system"
         >
-          <div className="flex min-h-screen w-screen flex-col font-[family-name:var(--font-inter)]">
-            <div className="relative mx-auto w-full max-w-screen-lg flex-1 px-4 pt-20">
-              <Header />
-              <Breadcrumbs />
-              {children}
-              <Analytics />
-              <SpeedInsights />
-              <Footer />
+          <Providers>
+            <div className="flex min-h-screen w-screen flex-col font-[family-name:var(--font-inter)]">
+              <div className="relative mx-auto w-full max-w-screen-lg flex-1 px-4 pt-20">
+                <Header />
+                <Breadcrumbs />
+                {children}
+                <Analytics />
+                <SpeedInsights />
+                <Footer />
+              </div>
             </div>
-          </div>
+          </Providers>
         </ThemeProvider>
       </body>
     </html>

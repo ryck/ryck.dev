@@ -25,6 +25,7 @@
     "@next/mdx": "^15.3.4",
     "@tailwindcss/postcss": "^4.1.11",
     "@tailwindcss/typography": "^0.5.16",
+    "@tanstack/react-query": "^5.90.1",
     "@types/mdx": "^2.0.13",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
@@ -59,6 +60,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
     "@next/eslint-plugin-next": "^15.3.5",
+    "@tanstack/react-query-devtools": "^5.90.1",
     "@trivago/prettier-plugin-sort-imports": "5.2.2",
     "@types/node": "^24.0.10",
     "@types/react": "^19.1.8",

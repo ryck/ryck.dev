@@ -22,7 +22,6 @@ import {
   TrendingUp,
   Users,
 } from 'lucide-react'
-import { notFound } from 'next/navigation'
 import React from 'react'
 import { createClient } from 'redis'
 
@@ -449,11 +448,19 @@ export default async function StatsPage() {
     totalCommits: null,
     topRepo: null,
   }
+
   try {
     healthMetrics = await getHealthMetrics()
+  } catch (error) {
+    console.error('Failed to fetch health metrics:', error)
+    // Continue with empty health metrics instead of failing
+  }
+
+  try {
     githubStats = await getGitHubStats()
-  } catch {
-    return notFound()
+  } catch (error) {
+    console.error('Failed to fetch GitHub stats:', error)
+    // Continue with default GitHub stats instead of failing
   }
 
   // Pass data to client component

@@ -1,6 +1,8 @@
 'use client'
-import { useEffect, useState } from 'react'
+
 import Image from 'next/image'
+
+import { useQuery } from '@tanstack/react-query'
 
 interface SpotifyTrack {
   is_playing: boolean
@@ -12,13 +14,18 @@ interface SpotifyTrack {
   } | null
 }
 
+const fetchNowPlaying = async (): Promise<SpotifyTrack | null> => {
+  const res = await fetch('/api/spotify/now-playing')
+  return res.ok ? res.json() : null
+}
+
 export default function SpotifyNowPlaying() {
-  const [track, setTrack] = useState<SpotifyTrack | null>(null)
-  useEffect(() => {
-    fetch('/api/spotify/now-playing')
-      .then((res) => (res.ok ? res.json() : null))
-      .then((data) => setTrack(data))
-  }, [])
+  const { data: track } = useQuery({
+    queryKey: ['spotify', 'now-playing'],
+    queryFn: fetchNowPlaying,
+    refetchInterval: 30000, // Refetch every 30 seconds
+    staleTime: 25000, // Consider data stale after 25 seconds
+  })
 
   if (!track || !track.is_playing || !track.item) return null
   const { name, artists, album, external_urls } = track.item
