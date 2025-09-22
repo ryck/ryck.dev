@@ -39,8 +39,12 @@ export default async function ResumePage() {
         <div className="hidden">
           <span className="p-name">Ricardo Gonzalez</span>
           <span className="p-job-title">Software Engineer / Manager</span>
-          <a className="u-url" href="https://ryck.dev">https://ryck.dev</a>
-          <a className="u-email" href="mailto:contact@ryck.dev">contact@ryck.dev</a>
+          <a className="u-url" href="https://ryck.dev">
+            https://ryck.dev
+          </a>
+          <a className="u-email" href="mailto:contact@ryck.dev">
+            contact@ryck.dev
+          </a>
         </div>
         <p className="text-zinc-600 dark:text-zinc-400 p-summary">
           I am a Software Engineer with a strong focus on Front-End development,
@@ -63,7 +67,7 @@ export default async function ResumePage() {
         href="https://docs.google.com/document/d/1ssO3Fj086DYUb9aeWsSLcszMXl52eAW9SRL3lvBdk0c/export?format=pdf&tab=t.0"
         className="bg-grey-light hover:bg-grey text-grey-darkest group inline-flex items-center rounded font-bold transition"
       >
-        <ArrowBigDownDash className="mr-2 h-6 w-6 text-yellow-600 group-hover:animate-bounce dark:text-yellow-600" />
+        <ArrowBigDownDash className="mr-2 h-6 w-6 text-yellow-600 transition-all duration-300 ease-in-out group-hover:animate-bounce group-hover:scale-110 group-hover:translate-y-1 dark:text-yellow-600" />
         <span>Download PDF</span>
       </Link>
 
@@ -85,13 +89,17 @@ export default async function ResumePage() {
             </p>
           </div>
           <div className="h-skill">
-            <h3 className="mb-2 text-lg font-medium p-skill-name">JavaScript</h3>
+            <h3 className="mb-2 text-lg font-medium p-skill-name">
+              JavaScript
+            </h3>
             <p className="text-zinc-600 dark:text-zinc-400 p-skill-description">
               TypeScript, Unit Testing, Jest, E2E Testing, Cypress{' '}
             </p>
           </div>
           <div className="h-skill">
-            <h3 className="mb-2 text-lg font-medium p-skill-name">React Ecosystem</h3>
+            <h3 className="mb-2 text-lg font-medium p-skill-name">
+              React Ecosystem
+            </h3>
             <p className="text-zinc-600 dark:text-zinc-400 p-skill-description">
               React Native, Redux, Redux Toolkit, NextJS, React Router, Reach
               Router, Emotion, Styled Components, React Testing Library, Framer
@@ -139,7 +147,13 @@ export default async function ResumePage() {
                 </a>
               </h3>
               <span className="text-sm text-zinc-500 dark:text-zinc-400">
-                <time className="dt-start" dateTime="2019-07">July 2019</time> — <time className="dt-end" dateTime="2025-07">July 2025</time>
+                <time className="dt-start" dateTime="2019-07">
+                  July 2019
+                </time>{' '}
+                —{' '}
+                <time className="dt-end" dateTime="2025-07">
+                  July 2025
+                </time>
               </span>
             </div>
             <div className="space-y-4 p-description">
@@ -183,7 +197,13 @@ export default async function ResumePage() {
                 </a>
               </h3>
               <span className="text-sm text-zinc-500 dark:text-zinc-400">
-                <time className="dt-start" dateTime="2018-07">July 2018</time> — <time className="dt-end" dateTime="2019-06">June 2019</time>
+                <time className="dt-start" dateTime="2018-07">
+                  July 2018
+                </time>{' '}
+                —{' '}
+                <time className="dt-end" dateTime="2019-06">
+                  June 2019
+                </time>
               </span>
             </div>
             <div className="space-y-4 p-description">
@@ -211,7 +231,10 @@ export default async function ResumePage() {
             </span>
             <div className="mb-2 flex flex-col gap-x-2 gap-y-2 md:flex-row md:items-center md:justify-between">
               <h3 className="text-lg font-medium">
-                <span className="p-job-title">Senior Drupal Developer / Lead Developer</span> at{' '}
+                <span className="p-job-title">
+                  Senior Drupal Developer / Lead Developer
+                </span>{' '}
+                at{' '}
                 <a
                   href="https://www.michelin.com/"
                   target="_blank"
@@ -219,11 +242,19 @@ export default async function ResumePage() {
                   className="underline hover:text-blue-600 dark:hover:text-blue-400 h-card"
                 >
                   <span className="p-name">Bookatable By Michelin</span>
-                  <span className="u-url hidden">https://www.michelin.com/</span>
+                  <span className="u-url hidden">
+                    https://www.michelin.com/
+                  </span>
                 </a>
               </h3>
               <span className="text-sm text-zinc-500 dark:text-zinc-400">
-                <time className="dt-start" dateTime="2016-11">November 2016</time> — <time className="dt-end" dateTime="2019-05">May 2019</time>
+                <time className="dt-start" dateTime="2016-11">
+                  November 2016
+                </time>{' '}
+                —{' '}
+                <time className="dt-end" dateTime="2019-05">
+                  May 2019
+                </time>
               </span>
             </div>
             <div className="space-y-4 p-description">
@@ -264,7 +295,13 @@ export default async function ResumePage() {
                 </a>
               </h3>
               <span className="text-sm text-zinc-500 dark:text-zinc-400">
-                <time className="dt-start" dateTime="2016-08">August 2016</time> — <time className="dt-end" dateTime="2016-10">October 2016</time>
+                <time className="dt-start" dateTime="2016-08">
+                  August 2016
+                </time>{' '}
+                —{' '}
+                <time className="dt-end" dateTime="2016-10">
+                  October 2016
+                </time>
               </span>
             </div>
             <div className="space-y-4 p-description">
@@ -298,11 +335,19 @@ export default async function ResumePage() {
                   className="underline hover:text-blue-600 dark:hover:text-blue-400 h-card"
                 >
                   <span className="p-name">BBC Worldwide</span>
-                  <span className="u-url hidden">http://www.bbcworldwide.com/</span>
+                  <span className="u-url hidden">
+                    http://www.bbcworldwide.com/
+                  </span>
                 </a>
               </h3>
               <span className="text-sm text-zinc-500 dark:text-zinc-400">
-                <time className="dt-start" dateTime="2012-11">November 2012</time> — <time className="dt-end" dateTime="2016-07">July 2016</time>
+                <time className="dt-start" dateTime="2012-11">
+                  November 2012
+                </time>{' '}
+                —{' '}
+                <time className="dt-end" dateTime="2016-07">
+                  July 2016
+                </time>
               </span>
             </div>
             <div className="space-y-4 p-description">
@@ -348,11 +393,19 @@ export default async function ResumePage() {
                   className="underline hover:text-blue-600 dark:hover:text-blue-400 h-card"
                 >
                   <span className="p-name">NBC Universal</span>
-                  <span className="u-url hidden">http://www.nbcuniversal.com/</span>
+                  <span className="u-url hidden">
+                    http://www.nbcuniversal.com/
+                  </span>
                 </a>
               </h3>
               <span className="text-sm text-zinc-500 dark:text-zinc-400">
-                <time className="dt-start" dateTime="2012-02">February 2012</time> — <time className="dt-end" dateTime="2012-11">November 2012</time>
+                <time className="dt-start" dateTime="2012-02">
+                  February 2012
+                </time>{' '}
+                —{' '}
+                <time className="dt-end" dateTime="2012-11">
+                  November 2012
+                </time>
               </span>
             </div>
             <div className="space-y-4 p-description">
