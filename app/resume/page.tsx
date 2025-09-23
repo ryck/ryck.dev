@@ -253,7 +253,7 @@ export default async function ResumePage() {
                 </time>{' '}
                 —{' '}
                 <time className="dt-end" dateTime="2019-05">
-                  May 2019
+                  May 2018
                 </time>
               </span>
             </div>
