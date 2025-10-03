@@ -34,21 +34,20 @@ export function BlogExcerpt({ post }: { post: Post }) {
             </Link>
           </h4>
           <p className="text-zinc-500 dark:text-zinc-400">{post.summary}</p>
-          <p className="flex space-x-1">
+          <p className="flex flex-wrap gap-2">
             {post.categories &&
               post.categories.map((category: string) => (
                 <Link
                   key={category}
                   href={`/blog/categories/${encodeURIComponent(category.toLowerCase())}`}
-                  className="hover:text-zinc-900 dark:hover:text-zinc-300"
                 >
-                  <span className="me-2 rounded-sm bg-neutral-600 px-2.5 py-0.5 text-xs font-medium text-neutral-50 dark:bg-gray-800 dark:text-gray-300">
+                  <span className="inline-flex items-center rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-700 ring-1 ring-inset ring-zinc-600/20 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:ring-zinc-400/20 dark:hover:bg-zinc-700">
                     {category.toLowerCase()}
                   </span>
                 </Link>
               ))}
             {post.lang && (
-              <span>
+              <span className="inline-flex items-center rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-700 ring-1 ring-inset ring-zinc-600/20 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:ring-zinc-400/20 dark:hover:bg-zinc-700">
                 {post.lang === 'es'
                   ? '🇪🇸'
                   : post.lang === 'en'

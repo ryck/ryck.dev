@@ -2,6 +2,9 @@ import { ArrowBigDownDash } from 'lucide-react'
 import { Metadata } from 'next'
 import Link from 'next/link'
 
+import { BadgeList } from '@/components/BadgeList'
+import { Badges } from '@/components/Badges'
+
 const url = process.env.WEBSITE_URL ?? 'https://ryck.dev'
 const ogTitle = 'Ricardo Gonzalez'
 const ogDescription = 'Software Engineer / Manager'
@@ -77,48 +80,45 @@ export default async function ResumePage() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div className="h-skill">
             <h3 className="mb-2 text-lg font-medium p-skill-name">HTML</h3>
-            <p className="text-zinc-600 dark:text-zinc-400 p-skill-description">
-              HTML5, Semantic, Accessibility (ARIA), RWD, PWD{' '}
-            </p>
+            <aside className="text-zinc-600 dark:text-zinc-400 p-skill-description flex flex-wrap gap-2">
+              <Badges badges="HTML5, Semantic, Accessibility (ARIA / WACG), RWD, PWD" />
+            </aside>
           </div>
           <div className="h-skill">
             <h3 className="mb-2 text-lg font-medium p-skill-name">CSS</h3>
-            <p className="text-zinc-600 dark:text-zinc-400 p-skill-description">
-              CSS3, Sass, Less, BEM, OOCSS, SMACSS, Flexbox, CSS Grid, PostCSS,
-              TailwindCSS, CSS Animations
-            </p>
+            <aside className="text-zinc-600 dark:text-zinc-400 p-skill-description flex flex-wrap gap-2">
+              <Badges badges="CSS3, SASS, LESS, SCSS, BEM, OOCSS, SMACSS, Flexbox, CSS Grid, PostCSS, TailwindCSS, CSS Animations" />
+            </aside>
           </div>
           <div className="h-skill">
             <h3 className="mb-2 text-lg font-medium p-skill-name">
               JavaScript
             </h3>
-            <p className="text-zinc-600 dark:text-zinc-400 p-skill-description">
-              TypeScript, Unit Testing, Jest, E2E Testing, Cypress{' '}
-            </p>
+            <aside className="text-zinc-600 dark:text-zinc-400 p-skill-description flex flex-wrap gap-2">
+              <Badges badges="ES6+/7, TypeScript, Unit Testing, Jest, E2E Testing, Cypress" />
+            </aside>
           </div>
           <div className="h-skill">
             <h3 className="mb-2 text-lg font-medium p-skill-name">
               React Ecosystem
             </h3>
-            <p className="text-zinc-600 dark:text-zinc-400 p-skill-description">
-              React Native, Redux, Redux Toolkit, NextJS, React Router, Reach
-              Router, Emotion, Styled Components, React Testing Library, Framer
-              Motion, Storybook
-            </p>
+            <aside className="text-zinc-600 dark:text-zinc-400 p-skill-description flex flex-wrap gap-2">
+              <Badges badges="React Native, Redux, Redux Toolkit, NextJS, React Router, Reach Router, Emotion, Styled Components, React Testing Library, Framer Motion, Storybook, Zustand, Tanstack Query" />
+            </aside>
           </div>
           <div className="h-skill">
             <h3 className="mb-2 text-lg font-medium p-skill-name">Back-End</h3>
-            <p className="text-zinc-600 dark:text-zinc-400 p-skill-description">
-              PHP, NodeJS, Express, Docker, MySQL, GraphQL, Jenkins, Linux,
-              GitHub Actions, REST APIs
-            </p>
+            <aside className="text-zinc-600 dark:text-zinc-400 p-skill-description flex flex-wrap gap-2">
+              <Badges badges="PHP, NodeJS, Express, Docker, MySQL, GraphQL, Jenkins, Linux, GitHub Actions, REST APIs, OAuth2 / OIDC" />
+            </aside>
           </div>
           <div className="h-skill">
-            <h3 className="mb-2 text-lg font-medium p-skill-name">Tools</h3>
-            <p className="text-zinc-600 dark:text-zinc-400 p-skill-description">
-              Git, GitFlow, Jenkins, Heroku, AWS, Netlify, Vercel, Webpack,
-              ESLint, Prettier, Sketch, Figma
-            </p>
+            <h3 className="mb-2 text-lg font-medium p-skill-name">
+              DevOps and Tools
+            </h3>
+            <aside className="text-zinc-600 dark:text-zinc-400 p-skill-description flex flex-wrap gap-2">
+              <Badges badges="Git, GitFlow, Jenkins, Heroku, AWS, Netlify, Vercel, Webpack, ESLint, Biome, Husky, Prettier, Sketch, Figma, NPM, YARN, PNPM, Bun, Gulp" />
+            </aside>
           </div>
         </div>
       </section>
@@ -135,7 +135,11 @@ export default async function ResumePage() {
             </span>
             <div className="mb-2 flex flex-col gap-x-2 gap-y-2 md:flex-row md:items-center md:justify-between">
               <h3 className="text-lg font-medium">
-                <span className="p-job-title">Engineering Manager</span> at{' '}
+                <span className="p-job-title">
+                  Senior Software Developer → Lead Developer → Engineering
+                  Manager
+                </span>{' '}
+                at{' '}
                 <a
                   href="https://10xbanking.com"
                   target="_blank"
@@ -157,24 +161,63 @@ export default async function ResumePage() {
               </span>
             </div>
             <div className="space-y-4 p-description">
-              <p className="text-zinc-600 dark:text-zinc-400">
-                As Engineering Manager, I was responsible for initiating the
-                Bank Manager / Console UI project from the ground up—both
-                technically and organizationally. This included defining the
-                architecture, writing the initial codebase, and assembling the
-                development team through hiring, planning, and day-to-day
-                management, as well as being responsible for the delivery of the
-                project.
-              </p>
-              <p className="text-zinc-600 dark:text-zinc-400">
-                Bank Manager / Console UI is a single-page application (SPA)
-                built using React, Redux, React Hook Form, and Material UI,
-                among other technologies. It provides a powerful and intuitive
-                interface to manage the full capabilities of the 10x platform.
-                Users can create and manage financial products, configure
-                governance settings, and handle key reference data such as index
-                rates and VAT rates—all from a streamlined UI.
-              </p>
+              <ul className="space-y-4 text-zinc-600 dark:text-zinc-400">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Started and grew the Bank Manager / Console UI from a
+                    greenfield project into a mission-critical SPA powering the
+                    10x platform.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Progressed from Senior Developer → Lead Developer →
+                    Engineering Manager, ultimately leading architecture,
+                    delivery, and multi-squad team growth.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Modernized the frontend stack through several large-scale
+                    migrations (build tools, state management, UI libraries,
+                    forms) to ensure scalability and maintainability.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Defined and maintained REST and GraphQL API contracts,
+                    enabling reliable integrations across banking services.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Implemented CI/CD with Jenkins, served as Release Manager,
+                    and introduced enterprise-grade features such as SSO, i18n,
+                    and WCAG 2.1 accessibility compliance.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Delivered high-performance data handling for very large
+                    datasets (Insights, Transactions), ensuring speed and
+                    responsiveness at scale.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Fostered a quality-driven culture, achieving full unit test
+                    coverage and modernizing end-to-end testing with Cypress.
+                  </span>
+                </li>
+              </ul>
+              <BadgeList badges="React, Redux/RTK, React Hook Form, Material UI, Vite, Cypress, Vitest, Jenkins, REST, GraphQL, SSO" />
             </div>
           </li>
 
@@ -207,20 +250,24 @@ export default async function ResumePage() {
               </span>
             </div>
             <div className="space-y-4 p-description">
-              <p className="text-zinc-600 dark:text-zinc-400">
-                Worked as part of an Agile team developing the mobile
-                application using React Native, along with TypeScript, React
-                Navigation, Redux, Axios among others. The app served as a
-                comprehensive showcase of the 10x Platform&apos;s capabilities,
-                including onboarding, KYX, cryptocurrency features, OTPs, and
-                more.
-              </p>
-              <p className="text-zinc-600 dark:text-zinc-400">
-                One of my key responsibilities was leading the implementation of
-                the onboarding flow, which included integrating KYX verification
-                using Onfido, managing complex user states, and ensuring a
-                seamless and secure experience across iOS and Android devices.
-              </p>
+              <ul className="space-y-4 text-zinc-600 dark:text-zinc-400">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Developed a high-performance banking mobile app in React
+                    Native using TypeScript, Redux, and React Navigation.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Implemented core 10x platform features: onboarding, KYX,
+                    crypto transactions, and OTP authentication, reducing
+                    onboarding friction.
+                  </span>
+                </li>
+              </ul>
+              <BadgeList badges="React Native, TypeScript, Redux, React Navigation, Axios, Onfido, KYX, iOS, Android" />
             </div>
           </li>
 
@@ -232,7 +279,7 @@ export default async function ResumePage() {
             <div className="mb-2 flex flex-col gap-x-2 gap-y-2 md:flex-row md:items-center md:justify-between">
               <h3 className="text-lg font-medium">
                 <span className="p-job-title">
-                  Senior Drupal Developer / Lead Developer
+                  Senior Drupal Developer → Lead Developer
                 </span>{' '}
                 at{' '}
                 <a
@@ -258,21 +305,32 @@ export default async function ResumePage() {
               </span>
             </div>
             <div className="space-y-4 p-description">
-              <p className="text-zinc-600 dark:text-zinc-400">
-                I initially joined as a Drupal Developer, supporting several
-                Michelin restaurant websites built on Drupal 7, including
-                restaurants.michelin.fr, bookatable.com/de, guia.michelin.es,
-                and guida.michelin.it. My responsibilities included maintaining
-                and enhancing these sites, as well as supporting the release of
-                new paper guides through data ingestion and migration processes.
-              </p>
-              <p className="text-zinc-600 dark:text-zinc-400">
-                Later, I was promoted to Lead Developer, where I established a
-                new team and led the development of all Bookatable consumer
-                websites. These were rebuilt using Drupal 8 and integrated with
-                a Node.js service layer via AWS SNS for efficient communication
-                and event handling.
-              </p>
+              <ul className="space-y-4 text-zinc-600 dark:text-zinc-400">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Maintained and enhanced Michelin&apos;s restaurant sites
+                    built in Drupal 7, including restaurants.michelin.fr,
+                    bookatable.com/de, guia.michelin.es, guida.michelin.it.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Handled data ingestion and migration in support of printed
+                    guide releases.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Promoted to Lead Developer, forming a new team to build
+                    consumer-facing websites in Drupal 8, backed by a Node.js
+                    service layer communicating via AWS SNS.
+                  </span>
+                </li>
+              </ul>
+              <BadgeList badges="Drupal 7, Drupal 8, PHP, Node.js, AWS SNS, MySQL, Data Migration" />
             </div>
           </li>
 
@@ -305,18 +363,25 @@ export default async function ResumePage() {
               </span>
             </div>
             <div className="space-y-4 p-description">
-              <p className="text-zinc-600 dark:text-zinc-400">
-                As a Themer, I was responsible for implementing responsive,
-                accessible front-end designs for a council management portal for
-                the UK Government. This involved working with SCSS, JavaScript,
-                Drupal Behaviors, and Gulp to bring designs to life across
-                devices.
-              </p>
-              <p className="text-zinc-600 dark:text-zinc-400">
-                In addition to theming, I also contributed to the development of
-                custom Drupal modules and provided backend support, ensuring
-                smooth integration and performance across the platform.
-              </p>
+              <ul className="space-y-4 text-zinc-600 dark:text-zinc-400">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Implemented responsive, accessible front-end designs for a
+                    council management portal for the UK Government using SCSS,
+                    JavaScript, Drupal Behaviors, and Gulp.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Contributed to custom Drupal module development and provided
+                    backend support, ensuring smooth integration and performance
+                    across the platform.
+                  </span>
+                </li>
+              </ul>
+              <BadgeList badges="Drupal 7, PHP, SCSS, JavaScript, Gulp, Responsive Design, Accessibility" />
             </div>
           </li>
 
@@ -351,30 +416,41 @@ export default async function ResumePage() {
               </span>
             </div>
             <div className="space-y-4 p-description">
-              <p className="text-zinc-600 dark:text-zinc-400">
-                During my time at BBC Worldwide, I worked on two key projects:
-                BBC Good Food and BBC Store.
-              </p>
-              <p className="text-zinc-600 dark:text-zinc-400">
-                At BBC Good Food, I was the Lead Themer, collaborating closely
-                with the design team to translate their concepts into
-                responsive, accessible front-end code. I used standard
-                technologies (CSS, JavaScript, templating) along with Drupal
-                development—covering areas such as custom modules, user roles,
-                content workflows, and newsletter integration. Given the
-                site&apos;s high traffic, I also worked with Akamai and Varnish
-                to optimize performance and caching.
-              </p>
-              <p className="text-zinc-600 dark:text-zinc-400">
-                For BBC Store, I contributed as a Themer, handling similar
-                front-end and Drupal responsibilities. In addition, I served as
-                the primary liaison between the design agency and the Drupal
-                development team, ensuring consistent communication, technical
-                alignment, and accurate implementation of design specifications.
-                This role also involved extensive third-party integrations,
-                including APIGEE (API gateway) and Vindicia (payment and
-                subscription services).
-              </p>
+              <ul className="space-y-4 text-zinc-600 dark:text-zinc-400">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Led theming for BBC Good Food, collaborating with design
+                    teams to create responsive, accessible front-end code and
+                    implementing custom modules, user roles, content workflows,
+                    and newsletter integration.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Optimized performance for high-traffic sites using Akamai
+                    and Varnish caching solutions to handle scale effectively.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Served as primary liaison between design agencies and
+                    development teams for BBC Store, ensuring accurate
+                    implementation of design specifications.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Integrated third-party services including APIGEE (API
+                    gateway) and Vindicia (payment and subscription services)
+                    for BBC Store.
+                  </span>
+                </li>
+              </ul>
+              <BadgeList badges="Drupal 7, PHP, CSS, JavaScript, Akamai, Varnish, APIGEE, Vindicia, Newsletter Integration" />
             </div>
           </li>
 
@@ -409,18 +485,30 @@ export default async function ResumePage() {
               </span>
             </div>
             <div className="space-y-4 p-description">
-              <p className="text-zinc-600 dark:text-zinc-400">
-                Oversaw theming strategy for a large-scale, multilingual
-                platform spanning 18+ websites in 10+ languages.
-              </p>
-              <p className="text-zinc-600 dark:text-zinc-400">
-                Led feature development, collaborated with design agencies
-                (ClearLeft, DesignBuzz), and participated in UX reviews.
-              </p>
-              <p className="text-zinc-600 dark:text-zinc-400">
-                Ensured consistency, scalability, and accessibility as part of a
-                major platform overhaul.
-              </p>
+              <ul className="space-y-4 text-zinc-600 dark:text-zinc-400">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Oversaw theming strategy for a large-scale, multilingual
+                    platform spanning 18+ websites in 10+ languages.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Led feature development, collaborated with design agencies
+                    (ClearLeft, DesignBuzz), and participated in UX reviews.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Ensured consistency, scalability, and accessibility as part
+                    of a major platform overhaul.
+                  </span>
+                </li>
+              </ul>
+              <BadgeList badges="Drupal 6, PHP, CSS, JavaScript, Multilingual, i18n, UX Design, Scalability" />
             </div>
           </li>
           {/* Senior Web Developer at theOTHERmedia */}
@@ -445,19 +533,32 @@ export default async function ResumePage() {
               </span>
             </div>
             <div className="space-y-4">
-              <p className="text-zinc-600 dark:text-zinc-400">
-                Maintained and extended both new and legacy front-end codebases,
-                ensuring design consistency and performance across browsers and
-                devices.
-              </p>
-              <p className="text-zinc-600 dark:text-zinc-400">
-                Developed interactive prototypes and implemented new features
-                based on evolving UI/UX requirements.
-              </p>
-              <p className="text-zinc-600 dark:text-zinc-400">
-                Created mockups and layout designs, collaborating with designers
-                and stakeholders to translate ideas into production-ready code.
-              </p>
+              <ul className="space-y-4 text-zinc-600 dark:text-zinc-400">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Maintained and extended both new and legacy front-end
+                    codebases, ensuring design consistency and performance
+                    across browsers and devices.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Developed interactive prototypes and implemented new
+                    features based on evolving UI/UX requirements.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Created mockups and layout designs, collaborating with
+                    designers and stakeholders to translate ideas into
+                    production-ready code.
+                  </span>
+                </li>
+              </ul>
+              <BadgeList badges="HTML, CSS, JavaScript, Cross-browser Compatibility, UI/UX Design, Prototyping" />
             </div>
           </li>
 
@@ -483,23 +584,38 @@ export default async function ResumePage() {
               </span>
             </div>
             <div className="space-y-4">
-              <p className="text-zinc-600 dark:text-zinc-400">
-                Developed and maintained the public-facing Defaqto website,
-                ensuring performance, responsiveness, and accessibility.
-              </p>
-              <p className="text-zinc-600 dark:text-zinc-400">
-                Created and customized Drupal modules to implement new
-                functionality tailored to business needs.
-              </p>
-              <p className="text-zinc-600 dark:text-zinc-400">
-                Designed and prototyped new layouts and UI components,
-                collaborating with stakeholders to align with brand and user
-                experience goals.
-              </p>
-              <p className="text-zinc-600 dark:text-zinc-400">
-                Supported the entire deployment lifecycle, including
-                development, testing, and production rollout.
-              </p>
+              <ul className="space-y-4 text-zinc-600 dark:text-zinc-400">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Developed and maintained the public-facing Defaqto website,
+                    ensuring performance, responsiveness, and accessibility.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Created and customized Drupal modules to implement new
+                    functionality tailored to business needs.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Designed and prototyped new layouts and UI components,
+                    collaborating with stakeholders to align with brand and user
+                    experience goals.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
+                  <span className="leading-relaxed">
+                    Supported the entire deployment lifecycle, including
+                    development, testing, and production rollout.
+                  </span>
+                </li>
+              </ul>
+              <BadgeList badges="Drupal 5, PHP, HTML, CSS, JavaScript, Responsive Design, Performance Optimization" />
             </div>
           </li>
         </ol>
