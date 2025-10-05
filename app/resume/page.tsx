@@ -162,59 +162,129 @@ export default async function ResumePage() {
             </div>
             <div className="space-y-4 p-description">
               <ul className="space-y-4 text-zinc-600 dark:text-zinc-400">
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Started and grew the Bank Manager / Console UI from a
-                    greenfield project into a mission-critical SPA powering the
-                    10x platform.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Started and grew a new project from a greenfield project into
+                  a mission-critical product part of the basic 10x platform
+                  proposal.
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Progressed from Senior Developer → Lead Developer →
-                    Engineering Manager, ultimately leading architecture,
-                    delivery, and multi-squad team growth.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Progressed from Senior Developer → Lead Developer →
+                  Engineering Manager, ultimately leading architecture,
+                  delivery, and multi-squad team growth.
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Modernized the frontend stack through several large-scale
-                    migrations (build tools, state management, UI libraries,
-                    forms) to ensure scalability and maintainability.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Modernized the frontend stack through several large-scale
+                  migrations (build tools, state management, UI libraries,
+                  forms) to ensure scalability and maintainability.
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Defined and maintained REST and GraphQL API contracts,
-                    enabling reliable integrations across banking services.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Defined and maintained REST and GraphQL API contracts,
+                  enabling reliable integrations across banking services.
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Implemented CI/CD with Jenkins, served as Release Manager,
-                    and introduced enterprise-grade features such as SSO, i18n,
-                    and WCAG 2.1 accessibility compliance.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Implemented CI/CD with Jenkins, served as Release Manager, and
+                  introduced enterprise-grade features such as SSO, i18n, and
+                  WCAG 2.1 accessibility compliance.
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Delivered high-performance data handling for very large
-                    datasets (Insights, Transactions), ensuring speed and
-                    responsiveness at scale.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Delivered high-performance data handling for very large
+                  datasets (like insights or transactions), ensuring speed and
+                  responsiveness at scale.
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Fostered a quality-driven culture, achieving full unit test
-                    coverage and modernizing end-to-end testing with Cypress.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Fostered a quality-driven culture, achieving full unit test
+                  coverage and modernizing end-to-end testing with Cypress.
                 </li>
               </ul>
               <BadgeList badges="React, Redux/RTK, React Hook Form, Material UI, Vite, Cypress, Vitest, Jenkins, REST, GraphQL, SSO" />
@@ -251,20 +321,40 @@ export default async function ResumePage() {
             </div>
             <div className="space-y-4 p-description">
               <ul className="space-y-4 text-zinc-600 dark:text-zinc-400">
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Developed a high-performance banking mobile app in React
-                    Native using TypeScript, Redux, and React Navigation.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Developed a high-performance banking mobile app in React
+                  Native using TypeScript, Redux, and React Navigation.
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Implemented core 10x platform features: onboarding, KYX,
-                    crypto transactions, and OTP authentication, reducing
-                    onboarding friction.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Implemented core 10x platform features: onboarding, KYX,
+                  crypto transactions, and OTP authentication, reducing
+                  onboarding friction.
                 </li>
               </ul>
               <BadgeList badges="React Native, TypeScript, Redux, React Navigation, Axios, Onfido, KYX, iOS, Android" />
@@ -306,28 +396,58 @@ export default async function ResumePage() {
             </div>
             <div className="space-y-4 p-description">
               <ul className="space-y-4 text-zinc-600 dark:text-zinc-400">
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Maintained and enhanced Michelin&apos;s restaurant sites
-                    built in Drupal 7, including restaurants.michelin.fr,
-                    bookatable.com/de, guia.michelin.es, guida.michelin.it.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Maintained and enhanced Michelin&apos;s restaurant sites built
+                  in Drupal 7, including restaurants.michelin.fr,
+                  bookatable.com/de, guia.michelin.es, guida.michelin.it.
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Handled data ingestion and migration in support of printed
-                    guide releases.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Handled data ingestion and migration in support of printed
+                  guide releases.
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Promoted to Lead Developer, forming a new team to build
-                    consumer-facing websites in Drupal 8, backed by a Node.js
-                    service layer communicating via AWS SNS.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Promoted to Lead Developer, forming a new team to build
+                  consumer-facing websites in Drupal 8, backed by a Node.js
+                  service layer communicating via AWS SNS.
                 </li>
               </ul>
               <BadgeList badges="Drupal 7, Drupal 8, PHP, Node.js, AWS SNS, MySQL, Data Migration" />
@@ -364,21 +484,41 @@ export default async function ResumePage() {
             </div>
             <div className="space-y-4 p-description">
               <ul className="space-y-4 text-zinc-600 dark:text-zinc-400">
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Implemented responsive, accessible front-end designs for a
-                    council management portal for the UK Government using SCSS,
-                    JavaScript, Drupal Behaviors, and Gulp.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Implemented responsive, accessible front-end designs for a
+                  council management portal for the UK Government using SCSS,
+                  JavaScript, Drupal Behaviors, and Gulp.
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Contributed to custom Drupal module development and provided
-                    backend support, ensuring smooth integration and performance
-                    across the platform.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Contributed to custom Drupal module development and provided
+                  backend support, ensuring smooth integration and performance
+                  across the platform.
                 </li>
               </ul>
               <BadgeList badges="Drupal 7, PHP, SCSS, JavaScript, Gulp, Responsive Design, Accessibility" />
@@ -417,37 +557,77 @@ export default async function ResumePage() {
             </div>
             <div className="space-y-4 p-description">
               <ul className="space-y-4 text-zinc-600 dark:text-zinc-400">
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Led theming for BBC Good Food, collaborating with design
-                    teams to create responsive, accessible front-end code and
-                    implementing custom modules, user roles, content workflows,
-                    and newsletter integration.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Led theming for BBC Good Food, collaborating with design teams
+                  to create responsive, accessible front-end code and
+                  implementing custom modules, user roles, content workflows,
+                  and newsletter integration.
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Optimized performance for high-traffic sites using Akamai
-                    and Varnish caching solutions to handle scale effectively.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Optimized performance for high-traffic sites using Akamai and
+                  Varnish caching solutions to handle scale effectively.
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Served as primary liaison between design agencies and
-                    development teams for BBC Store, ensuring accurate
-                    implementation of design specifications.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Served as primary liaison between design agencies and
+                  development teams for BBC Store, ensuring accurate
+                  implementation of design specifications.
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Integrated third-party services including APIGEE (API
-                    gateway) and Vindicia (payment and subscription services)
-                    for BBC Store.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Integrated third-party services including APIGEE (API gateway)
+                  and Vindicia (payment and subscription services) for BBC
+                  Store.
                 </li>
               </ul>
               <BadgeList badges="Drupal 7, PHP, CSS, JavaScript, Akamai, Varnish, APIGEE, Vindicia, Newsletter Integration" />
@@ -486,26 +666,56 @@ export default async function ResumePage() {
             </div>
             <div className="space-y-4 p-description">
               <ul className="space-y-4 text-zinc-600 dark:text-zinc-400">
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Oversaw theming strategy for a large-scale, multilingual
-                    platform spanning 18+ websites in 10+ languages.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Oversaw theming strategy for a large-scale, multilingual
+                  platform spanning 18+ websites in 10+ languages.
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Led feature development, collaborated with design agencies
-                    (ClearLeft, DesignBuzz), and participated in UX reviews.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Led feature development, collaborated with design agencies
+                  (ClearLeft, DesignBuzz), and participated in UX reviews.
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Ensured consistency, scalability, and accessibility as part
-                    of a major platform overhaul.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Ensured consistency, scalability, and accessibility as part of
+                  a major platform overhaul.
                 </li>
               </ul>
               <BadgeList badges="Drupal 6, PHP, CSS, JavaScript, Multilingual, i18n, UX Design, Scalability" />
@@ -534,28 +744,58 @@ export default async function ResumePage() {
             </div>
             <div className="space-y-4">
               <ul className="space-y-4 text-zinc-600 dark:text-zinc-400">
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Maintained and extended both new and legacy front-end
-                    codebases, ensuring design consistency and performance
-                    across browsers and devices.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Maintained and extended both new and legacy front-end
+                  codebases, ensuring design consistency and performance across
+                  browsers and devices.
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Developed interactive prototypes and implemented new
-                    features based on evolving UI/UX requirements.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Developed interactive prototypes and implemented new features
+                  based on evolving UI/UX requirements.
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Created mockups and layout designs, collaborating with
-                    designers and stakeholders to translate ideas into
-                    production-ready code.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Created mockups and layout designs, collaborating with
+                  designers and stakeholders to translate ideas into
+                  production-ready code.
                 </li>
               </ul>
               <BadgeList badges="HTML, CSS, JavaScript, Cross-browser Compatibility, UI/UX Design, Prototyping" />
@@ -585,34 +825,74 @@ export default async function ResumePage() {
             </div>
             <div className="space-y-4">
               <ul className="space-y-4 text-zinc-600 dark:text-zinc-400">
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Developed and maintained the public-facing Defaqto website,
-                    ensuring performance, responsiveness, and accessibility.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Developed and maintained the public-facing Defaqto website,
+                  ensuring performance, responsiveness, and accessibility.
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Created and customized Drupal modules to implement new
-                    functionality tailored to business needs.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Created and customized Drupal modules to implement new
+                  functionality tailored to business needs.
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Designed and prototyped new layouts and UI components,
-                    collaborating with stakeholders to align with brand and user
-                    experience goals.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Designed and prototyped new layouts and UI components,
+                  collaborating with stakeholders to align with brand and user
+                  experience goals.
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-yellow-600 dark:bg-yellow-500"></span>
-                  <span className="leading-relaxed">
-                    Supported the entire deployment lifecycle, including
-                    development, testing, and production rollout.
-                  </span>
+                <li className="flex items-center">
+                  <svg
+                    className="w-3.5 h-3.5 me-2 text-yellow-600 dark:text-yellow-500 shrink-0"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M6.22 4.22a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06l-3.25 3.25a.75.75 0 0 1-1.06-1.06L8.94 8 6.22 5.28a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Supported the entire deployment lifecycle, including
+                  development, testing, and production rollout.
                 </li>
               </ul>
               <BadgeList badges="Drupal 5, PHP, HTML, CSS, JavaScript, Responsive Design, Performance Optimization" />
