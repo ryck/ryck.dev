@@ -12,6 +12,9 @@ type Metric = {
 
 let redis: ReturnType<typeof createClient> | null = null
 async function getRedis() {
+  if (!process.env.REDIS_URL) {
+    throw new Error('Redis URL not configured')
+  }
   if (!redis) {
     redis = createClient({ url: process.env.REDIS_URL })
     await redis.connect()
@@ -58,31 +61,41 @@ export async function POST(req: NextRequest) {
 
   // Store the cleaned data in Redis
   const metrics = body?.data?.metrics as Metric[]
-  const redisClient = await getRedis()
-  for (const metric of metrics) {
-    const metricName = metric.name
-    for (const entry of metric.data) {
-      if (!entry.date) continue
-      // Extract date and hour (YYYY-MM-DD HH)
-      const dateObj = new Date(String(entry.date))
-      const y = dateObj.getFullYear()
-      const m = String(dateObj.getMonth() + 1).padStart(2, '0')
-      const d = String(dateObj.getDate()).padStart(2, '0')
-      const dateHourStr = `${y}${m}${d}` // e.g., 20250705
-      const score = parseInt(dateHourStr, 10)
-      // Remove all existing entries with this score (date) before adding the new one
-      const existing = await redisClient.zRangeByScore(
-        `${metricName}`,
-        score,
-        score,
-      )
-      if (Array.isArray(existing) && existing.length > 0) {
-        await redisClient.zRem(`${metricName}`, existing)
+  
+  try {
+    const redisClient = await getRedis()
+    for (const metric of metrics) {
+      const metricName = metric.name
+      for (const entry of metric.data) {
+        if (!entry.date) continue
+        // Extract date and hour (YYYY-MM-DD HH)
+        const dateObj = new Date(String(entry.date))
+        const y = dateObj.getFullYear()
+        const m = String(dateObj.getMonth() + 1).padStart(2, '0')
+        const d = String(dateObj.getDate()).padStart(2, '0')
+        const dateHourStr = `${y}${m}${d}` // e.g., 20250705
+        const score = parseInt(dateHourStr, 10)
+        // Remove all existing entries with this score (date) before adding the new one
+        const existing = await redisClient.zRangeByScore(
+          `${metricName}`,
+          score,
+          score,
+        )
+        if (Array.isArray(existing) && existing.length > 0) {
+          await redisClient.zRem(`${metricName}`, existing)
+        }
+        await redisClient.zAdd(`${metricName}`, [
+          { score, value: JSON.stringify(entry) },
+        ])
       }
-      await redisClient.zAdd(`${metricName}`, [
-        { score, value: JSON.stringify(entry) },
-      ])
     }
+  } catch (error) {
+    console.error('Redis error:', error)
+    return NextResponse.json({ 
+      status: 'error', 
+      message: 'Redis not available, data not stored',
+      received: body 
+    }, { status: 500 })
   }
 
   return NextResponse.json({ status: 'ok', received: body })
