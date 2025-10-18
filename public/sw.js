@@ -5,19 +5,30 @@ const STATIC_CACHE_URLS = [
   '/resume',
   '/stats',
   '/use',
-  '/projects',
-  '/manifest.json'
+  '/projects'
 ]
 
 // Install event - cache static resources
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then((cache) => {
+      .then(async (cache) => {
         console.log('📦 Caching static resources')
-        return cache.addAll(STATIC_CACHE_URLS)
+        // Cache resources individually to handle failures gracefully
+        const cachePromises = STATIC_CACHE_URLS.map(async (url) => {
+          try {
+            await cache.add(url)
+            console.log('✅ Cached:', url)
+          } catch (error) {
+            console.warn('⚠️ Failed to cache:', url, error)
+          }
+        })
+        await Promise.all(cachePromises)
       })
       .then(() => self.skipWaiting())
+      .catch((error) => {
+        console.error('Service worker install failed:', error)
+      })
   )
 })
 
