@@ -3,7 +3,9 @@ import { ThemeProvider } from 'next-themes'
 import { Inter } from 'next/font/google'
 
 import { Breadcrumbs } from '@/components/breadcrumbs'
+import { PerformanceMonitor } from '@/components/performance-monitor'
 import { Providers } from '@/components/providers'
+import { ServiceWorkerRegistration } from '@/components/service-worker-registration'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 
@@ -68,6 +70,9 @@ export const metadata: Metadata = {
 const inter = Inter({
   variable: '--font-inter',
   subsets: ['latin'],
+  display: 'swap', // Improves font loading performance
+  preload: true,
+  fallback: ['system-ui', 'arial'],
 })
 
 export default function RootLayout({
@@ -87,6 +92,8 @@ export default function RootLayout({
           defaultTheme="system"
         >
           <Providers>
+            <PerformanceMonitor />
+            <ServiceWorkerRegistration />
             <div className="flex min-h-screen w-screen flex-col font-[family-name:var(--font-inter)]">
               <div className="relative mx-auto w-full max-w-screen-lg flex-1 px-4 pt-20">
                 <Header />

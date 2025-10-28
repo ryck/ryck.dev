@@ -15,7 +15,8 @@
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf .next",
-    "prebuild": "npm run clean"
+    "prebuild": "npm run clean",
+    "analyze": "ANALYZE=true npm run build"
   },
   "dependencies": {
     "@eslint/js": "^9.38.0",

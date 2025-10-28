@@ -9,10 +9,10 @@ import {
   BookOpen,
   Calendar,
   Droplets,
-  Eclipse,
   Footprints,
   GitBranch,
   GitCommitVertical,
+  Globe,
   Heart,
   HeartPulse,
   Orbit,
@@ -54,6 +54,9 @@ export const metadata = {
 }
 
 async function getRedis() {
+  if (!process.env.REDIS_URL) {
+    throw new Error('Redis not configured')
+  }
   const redis = createClient({ url: process.env.REDIS_URL })
   await redis.connect()
   return redis
@@ -63,24 +66,31 @@ type MetricEntry = Record<string, string | number | undefined>
 
 type MetricsMap = Record<string, MetricEntry[]>
 
-async function getHealthMetrics(): Promise<MetricsMap> {
-  const redis = await getRedis()
-  // Get all keys matching health:*
-  const keys = await redis.keys('*')
-  const metrics: MetricsMap = {}
-  for (const key of keys) {
-    // Get only the latest entry (highest score)
-    const values = await redis.zRange(key, -1, -1)
-    metrics[key] = values.map((v) => {
-      try {
-        return JSON.parse(v) as MetricEntry
-      } catch {
-        return { value: v } as MetricEntry
-      }
-    })
+async function getHealthMetrics(): Promise<MetricsMap | null> {
+  try {
+    const redis = await getRedis()
+    if (!redis) return null
+    // Get all keys matching health:*
+    const keys = await redis.keys('*')
+    const metrics: MetricsMap = {}
+    for (const key of keys) {
+      // Get only the latest entry (highest score)
+      const values = await redis.zRange(key, -1, -1)
+      metrics[key] = values.map((v) => {
+        try {
+          return JSON.parse(v) as MetricEntry
+        } catch {
+          return { value: v } as MetricEntry
+        }
+      })
+    }
+    await redis.disconnect()
+    return metrics
+  } catch (error) {
+    console.log('Failed to fetch health metrics:', error)
+    // Return null when Redis is not available to hide the health section
+    return null
   }
-  await redis.quit()
-  return metrics
 }
 
 const displayDate = (date: string | number | undefined) => {
@@ -178,10 +188,10 @@ function StatsPageClient({
   healthMetrics,
   githubStats,
 }: {
-  healthMetrics: MetricsMap
+  healthMetrics: MetricsMap | null
   githubStats: GitHubStats
 }) {
-  const bday = new Date(1979, 10, 15)
+  const bday = new Date(1979, 10, 15, 7, 30)
   const now = new Date()
 
   return (
@@ -221,7 +231,10 @@ function StatsPageClient({
         {/* Add more metrics here as needed */}
       </div>
 
-      <h2 className="text-2xl font-bold mb-6 mt-9">Health </h2>
+      {/* HEALTH SECTION - Only show if healthMetrics is available */}
+      {healthMetrics && (
+        <>
+          <h2 className="text-2xl font-bold mb-6 mt-9">Health </h2>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
           <Footprints className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
@@ -328,6 +341,9 @@ function StatsPageClient({
         </div>
         {/* Add more metrics here as needed */}
       </div>
+        </>
+      )}
+
       {/* GITHUB SECTION */}
       <h2 className="text-2xl font-bold mb-6 mt-9">GitHub</h2>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mt-2">
@@ -403,8 +419,8 @@ function StatsPageClient({
           <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
             Moon Orbits
           </h2>
-          <p className="text-6xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
-            {Math.round(differenceInDays(now, bday) / 27.3)}
+          <p className="text-4xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
+            {Math.round(differenceInDays(now, bday) / 29.5)}
           </p>
         </div>
 
@@ -413,21 +429,24 @@ function StatsPageClient({
           <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
             Moon Distance
           </h2>
-          <p className="text-6xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
+          <p className="text-4xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
             {Math.round(differenceInYears(now, bday) * 3.8)}
           </p>
           <p className="text-xs text-gray-500 mt-2 text-right z-10">
-            cm further away since I was born
+            cm further away since birth
           </p>
         </div>
 
         <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
-          <Eclipse className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
+          <Globe className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
           <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
-            Solar Eclipses
+            Distance Traveled
           </h2>
-          <p className="text-6xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
-            68
+          <p className="text-4xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
+            {Math.round(differenceInDays(now, bday) * 40075).toLocaleString()}
+          </p>
+          <p className="text-xs text-gray-500 mt-2 text-right z-10">
+            km traveled on Earth since birth
           </p>
         </div>
 
@@ -439,7 +458,7 @@ function StatsPageClient({
 
 // Server component for data fetching
 export default async function StatsPage() {
-  let healthMetrics: MetricsMap = {}
+  let healthMetrics: MetricsMap | null = null
   let githubStats: GitHubStats = {
     public_repos: 0,
     followers: 0,
