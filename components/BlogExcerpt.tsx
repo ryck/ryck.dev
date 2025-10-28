@@ -10,7 +10,7 @@ export function BlogExcerpt({ post }: { post: Post }) {
       data-id={post.slug}
     >
       <div className="flex items-start">
-        <div className="flex w-12 flex-shrink-0 flex-col text-center leading-none">
+        <div className="flex w-12 shrink-0 flex-col text-center leading-none">
           <span className="mb-2 bg-zinc-200 text-xs dark:text-zinc-800">
             {new Date(post.publishedAt).toLocaleString('default', {
               year: 'numeric',
@@ -27,7 +27,7 @@ export function BlogExcerpt({ post }: { post: Post }) {
             })}
           </span>
         </div>
-        <div className="flex flex-grow flex-col space-y-1 pl-6">
+        <div className="flex grow flex-col space-y-1 pl-6">
           <h4 className="text-xl font-normal dark:text-zinc-100">
             <Link key={post.slug} href={`/blog/${post.slug}`}>
               {post.title}

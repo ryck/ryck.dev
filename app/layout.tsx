@@ -94,8 +94,8 @@ export default function RootLayout({
           <Providers>
             <PerformanceMonitor />
             <ServiceWorkerRegistration />
-            <div className="flex min-h-screen w-screen flex-col font-[family-name:var(--font-inter)]">
-              <div className="relative mx-auto w-full max-w-screen-lg flex-1 px-4 pt-20">
+            <div className="flex min-h-screen w-screen flex-col font-(family-name:--font-inter)">
+              <div className="relative mx-auto w-full max-w-5xl flex-1 px-4 pt-20">
                 <Header />
                 <Breadcrumbs />
                 {children}
