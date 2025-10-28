@@ -138,34 +138,61 @@ export default async function Home() {
           <div className="rounded-lg border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
             <h4 className="mb-1 text-base font-semibold text-zinc-900 dark:text-zinc-100">
               <a
-                href="https://github.com/ryck/yaak-plugin-uuid"
+                href="https://github.com/ryck/react-vite-modern-tooling-template"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:underline"
               >
-                Yaak UUID Plugin
+                React Vite Modern Tooling Template
               </a>
             </h4>
             <p className="text-sm text-zinc-600 dark:text-zinc-400">
-              A{' '}
+              A modern{' '}
               <a
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-yellow-500 hover:underline"
-                href="http://yaak.app"
+                href="https://react.dev"
               >
-                Yaak
+                React
               </a>{' '}
-              template tag plugin to generate UUIDs using the{' '}
+              +{' '}
               <a
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-yellow-500 hover:underline"
-                href="https://github.com/uuidjs/uuid"
+                href="https://vitejs.dev"
               >
-                UUID package
+                Vite
+              </a>{' '}
+              template with{' '}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-yellow-500 hover:underline"
+                href="https://www.typescriptlang.org"
+              >
+                TypeScript
               </a>
-              .
+              ,{' '}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-yellow-500 hover:underline"
+                href="https://vitest.dev"
+              >
+                Vitest
+              </a>
+              ,{' '}
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-yellow-500 hover:underline"
+                href="https://testing-library.com/docs/react-testing-library/intro"
+              >
+                React Testing Library
+              </a>{' '}
+              and more...
             </p>
           </div>
         </div>

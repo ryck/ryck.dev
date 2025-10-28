@@ -73,38 +73,67 @@ export default function ProjectsPage() {
           {/* Example project card */}
           <div className="flex items-start gap-6 rounded-lg border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
             <Image
-              src="https://yaak.app/static/logo.svg"
-              alt="Yaak UUID Plugin"
+              src="https://vitejs.dev/logo.svg"
+              alt="React Vite Modern Tooling Template"
               width={160}
               height={112}
               className="hidden h-28 w-40 flex-shrink-0 rounded-md object-contain sm:block"
               unoptimized
             />
             <div className="flex-1">
-              <h2 className="mb-2 text-xl font-semibold">Yaak UUID Plugin</h2>
+              <h2 className="mb-2 text-xl font-semibold">
+                React Vite Modern Tooling Template
+              </h2>
               <p className="mb-2 text-zinc-600 dark:text-zinc-400">
-                A{' '}
+                A modern{' '}
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-yellow-500 hover:underline"
-                  href="http://yaak.app"
+                  href="https://react.dev"
                 >
-                  Yaak
+                  React
                 </a>{' '}
-                template tag plugin to generate UUIDs using the{' '}
+                +{' '}
                 <a
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-yellow-500 hover:underline"
-                  href="https://github.com/uuidjs/uuid"
+                  href="https://vitejs.dev"
                 >
-                  UUID package
+                  Vite
+                </a>{' '}
+                template with{' '}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-yellow-500 hover:underline"
+                  href="https://www.typescriptlang.org"
+                >
+                  TypeScript
                 </a>
-                .
+                ,{' '}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-yellow-500 hover:underline"
+                  href="https://vitest.dev"
+                >
+                  Vitest
+                </a>
+                ,{' '}
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-yellow-500 hover:underline"
+                  href="https://testing-library.com/docs/react-testing-library/intro"
+                >
+                  React Testing Library
+                </a>{' '}
+                and more...
               </p>
               <a
-                href="https://github.com/ryck/yaak-plugin-uuid"
+                href="https://github.com/ryck/react-vite-modern-tooling-template"
                 className="text-yellow-500 underline dark:text-yellow-600"
               >
                 GitHub
