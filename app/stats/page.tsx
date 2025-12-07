@@ -27,7 +27,7 @@ import { createClient } from 'redis'
 
 const url = process.env.WEBSITE_URL ?? 'https://ryck.dev'
 const ogTitle = 'Ricardo Gonzalez'
-const ogDescription = 'Software Engineer / Manager'
+const ogDescription = 'Senior Software Engineer / Manager'
 const ogPublishedTime = 'Stats'
 
 export const metadata = {

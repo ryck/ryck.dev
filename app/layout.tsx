@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: '%s | Ricardo Gonzalez',
     absolute: 'Ricardo Gonzalez',
   },
-  description: `Software Engineer / Manager living in London, UK. I have a passion for building high-quality web applications and exploring new technologies.`,
+  description: `Senior Software Engineer / Manager living in London, UK. I have a passion for building high-quality web applications and exploring new technologies.`,
   openGraph: {
     title: 'Ricardo Gonzalez',
     url: `${url}`,
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: `${url}/og?title=${encodeURIComponent('Ricardo Gonzalez')}&description=${encodeURIComponent('Software Engineer / Manager')}&publishedTime=${encodeURIComponent('https://ryck.dev')}`,
+        url: `${url}/og?title=${encodeURIComponent('Ricardo Gonzalez')}&description=${encodeURIComponent('Senior Software Engineer / Manager')}&publishedTime=${encodeURIComponent('https://ryck.dev')}`,
         width: 1200,
         height: 630,
         alt: "Ricardo Gonzalez's website",

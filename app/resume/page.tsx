@@ -7,12 +7,12 @@ import { Badges } from '@/components/Badges'
 
 const url = process.env.WEBSITE_URL ?? 'https://ryck.dev'
 const ogTitle = 'Ricardo Gonzalez'
-const ogDescription = 'Software Engineer / Manager'
+const ogDescription = 'Senior Software Engineer / Manager'
 const ogPublishedTime = 'Resume'
 
 export const metadata: Metadata = {
   title: 'Resume',
-  description: 'Ricardo Gonzalez - Software Engineer / Manager - CV',
+  description: 'Ricardo Gonzalez - Senior Software Engineer / Manager - CV',
   openGraph: {
     title: 'Resume',
     url: 'https://ryck.dev/resume',
@@ -41,7 +41,7 @@ export default async function ResumePage() {
         <h2 className="mb-4 text-2xl font-bold text-yellow-600">About</h2>
         <div className="hidden">
           <span className="p-name">Ricardo Gonzalez</span>
-          <span className="p-job-title">Software Engineer / Manager</span>
+          <span className="p-job-title">Senior Software Engineer / Manager</span>
           <a className="u-url" href="https://ryck.dev">
             https://ryck.dev
           </a>
@@ -50,11 +50,13 @@ export default async function ResumePage() {
           </a>
         </div>
         <p className="text-zinc-600 dark:text-zinc-400 p-summary">
-          I am a Software Engineer with a strong focus on Front-End development,
+          I am a Senior Software Engineer with a strong focus on Front-End development,
           specializing in React and CSS. I&apos;m passionate about crafting
           responsive, user-friendly interfaces with smooth animations and clean
           design. Beyond the front end, I bring a solid foundation in React
           Native,PHP, NodeJs and full-stack development.
+          <hr />
+          I also have experience as a Team Lead and Engineer Manager, having led teams to deliver high-quality software solutions.
         </p>
         <p className="mt-4 text-zinc-600 dark:text-zinc-400">
           Over the years, I&apos;ve worked on high-traffic websites and complex
