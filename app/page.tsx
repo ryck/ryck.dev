@@ -44,6 +44,7 @@ export default async function Home() {
           </p>
         </div>
 
+        {false && (
         <aside className="mt-6 mb-6 flex items-center gap-2">
           <span className="relative inline-flex h-3 w-3 animate-pulse rounded-full bg-green-500 ring-1 ring-green-300"></span>
           <TextScramble
@@ -53,7 +54,7 @@ export default async function Home() {
           >
             Available to hire
           </TextScramble>
-        </aside>
+        </aside>)}
       </section>
 
       <section>
