@@ -89,7 +89,7 @@ export function Footer() {
           <div className="sm:flex sm:items-center sm:justify-between">
             <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
               {new Date().toLocaleString('default', { year: 'numeric' })}{' '}
-              Ricardo Gonzalez
+              Made with 💛 by Ricardo Gonzalez in London 🇬🇧
             </span>
             <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
               <button
