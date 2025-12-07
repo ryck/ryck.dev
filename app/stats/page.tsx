@@ -468,12 +468,13 @@ export default async function StatsPage() {
     topRepo: null,
   }
 
-  try {
-    healthMetrics = await getHealthMetrics()
-  } catch (error) {
-    console.error('Failed to fetch health metrics:', error)
-    // Continue with empty health metrics instead of failing
-  }
+  // Temporarily disabled
+  // try {
+  //   healthMetrics = await getHealthMetrics()
+  // } catch (error) {
+  //   console.error('Failed to fetch health metrics:', error)
+  //   // Continue with empty health metrics instead of failing
+  // }
 
   try {
     githubStats = await getGitHubStats()

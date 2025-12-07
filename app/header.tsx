@@ -66,6 +66,18 @@ export function Header() {
               resume
             </Link>
           </li>
+          <li>
+            <Link
+              href="/stats"
+              className={
+                pathname === '/stats'
+                  ? 'font-bold overline decoration-yellow-600'
+                  : 'text-black dark:text-white'
+              }
+            >
+              stats
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
