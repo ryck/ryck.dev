@@ -1,7 +1,9 @@
 'use client'
 
+import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react'
 import { MonitorIcon, MoonIcon, SunIcon } from 'lucide-react'
 import { useTheme } from 'next-themes'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
@@ -72,10 +74,12 @@ function ThemeSwitch() {
 }
 
 export function Footer() {
+  const [isQRModalOpen, setIsQRModalOpen] = useState(false)
+
   return (
     <>
       <footer className="mt-24 mb-10 border-t border-zinc-100 px-0 py-4 dark:border-zinc-800">
-        <div className="mx-auto max-w-screen-xl">
+        <div className="mx-auto max-w-7xl">
           <div className="md:flex md:justify-end">
             <div className="mb-6 text-right md:mb-0">
               <ThemeSwitch />
@@ -88,6 +92,31 @@ export function Footer() {
               Ricardo Gonzalez
             </span>
             <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
+              <button
+                onClick={() => setIsQRModalOpen(true)}
+                className="flex items-center space-x-2 hover:text-zinc-400"
+                aria-label="View vCard QR Code"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="h-6 w-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3.75 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0 1 3.75 9.375v-4.5ZM3.75 14.625c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5a1.125 1.125 0 0 1-1.125-1.125v-4.5ZM13.5 4.875c0-.621.504-1.125 1.125-1.125h4.5c.621 0 1.125.504 1.125 1.125v4.5c0 .621-.504 1.125-1.125 1.125h-4.5A1.125 1.125 0 0 1 13.5 9.375v-4.5Z"
+                  />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M6.75 6.75h.75v.75h-.75v-.75ZM6.75 16.5h.75v.75h-.75v-.75ZM16.5 6.75h.75v.75h-.75v-.75ZM13.5 13.5h.75v.75h-.75v-.75ZM13.5 19.5h.75v.75h-.75v-.75ZM19.5 13.5h.75v.75h-.75v-.75ZM19.5 19.5h.75v.75h-.75v-.75ZM16.5 16.5h.75v.75h-.75v-.75Z"
+                  />
+                </svg>
+              </button>
               <Link
                 target="_blank"
                 rel="noopener noreferrer"
@@ -108,7 +137,7 @@ export function Footer() {
               <Link
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://bsky.app/profile/ryck.me"
+                href="https://bsky.app/profile/ryck.dev"
                 className="flex items-center space-x-2"
               >
                 <svg
@@ -210,6 +239,50 @@ export function Footer() {
           </div>
         </div>
       </footer>
+
+      <Dialog
+        open={isQRModalOpen}
+        onClose={() => setIsQRModalOpen(false)}
+        className="relative z-50"
+      >
+        <DialogBackdrop className="fixed inset-0 bg-black/30 backdrop-blur-sm" />
+        <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+          <DialogPanel className="relative max-w-lg space-y-4 rounded-lg bg-white p-6 shadow-xl dark:bg-zinc-900">
+            <button
+              onClick={() => setIsQRModalOpen(false)}
+              className="absolute top-2 right-2 rounded-full p-1 bg-zinc-100 dark:bg-zinc-800 hover:text-yellow-600 hover:dark:text-amber-400"
+              aria-label="Close modal"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="size-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <div className="flex justify-center">
+              <Image
+                src="/QR-vCard.svg"
+                alt="vCard QR Code"
+                width={400}
+                height={400}
+                className="rounded border border-zinc-700"
+              />
+            </div>
+            <p className="text-center text-sm text-zinc-600 dark:text-zinc-400">
+              Scan this QR code to save my contact information
+            </p>
+          </DialogPanel>
+        </div>
+      </Dialog>
     </>
   )
 }
