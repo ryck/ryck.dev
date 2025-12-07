@@ -40,16 +40,17 @@ export default function SpotifyNowPlaying() {
       <Image
         src={album.images[2]?.url || album.images[0]?.url}
         alt={album.name}
-        width={32}
-        height={32}
-        className="h-8 w-8 rounded shadow"
+        width={48}
+        height={48}
+        className="h-12 w-12 rounded shadow"
         unoptimized
       />
-      <span className="truncate">
-        <span className="font-semibold">{name}</span> by{' '}
-        {artists.map((a) => a.name).join(', ')}
-      </span>
-      <span className="ml-2 animate-pulse text-green-500">●</span>
+      <div className="flex flex-col gap-2">
+        <span className="truncate">
+          <span className="font-semibold">{name}</span> by{' '}
+          {artists.map((a) => a.name).join(', ')}
+        </span>
+      </div>
     </a>
   )
 }

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import { BlogExcerpt } from '@/components/BlogExcerpt'
+import PlexNowPlaying from '@/components/PlexNowPlaying'
 import SpotifyNowPlaying from '@/components/SpotifyNowPlaying'
 import { AnimatedBackground } from '@/components/ui/animated-background'
 import { TextScramble } from '@/components/ui/text-scramble'
@@ -219,8 +220,9 @@ export default async function Home() {
         </Link>
       </section>
 
-      <section>
+      <section className="grid md:grid-cols-2 gap-4">
         <SpotifyNowPlaying />
+        {/* <PlexNowPlaying /> */}
       </section>
     </main>
   )
