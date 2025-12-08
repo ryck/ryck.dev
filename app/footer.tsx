@@ -2,6 +2,7 @@
 
 import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react'
 import { MonitorIcon, MoonIcon, SunIcon } from 'lucide-react'
+import { motion, AnimatePresence } from 'motion/react'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -75,6 +76,12 @@ function ThemeSwitch() {
 
 export function Footer() {
   const [isQRModalOpen, setIsQRModalOpen] = useState(false)
+
+  // Preload QR code image
+  useEffect(() => {
+    const img = new window.Image()
+    img.src = '/QR-vCard.svg'
+  }, [])
 
   return (
     <>
@@ -240,14 +247,29 @@ export function Footer() {
         </div>
       </footer>
 
-      <Dialog
-        open={isQRModalOpen}
-        onClose={() => setIsQRModalOpen(false)}
-        className="relative z-50"
-      >
-        <DialogBackdrop className="fixed inset-0 bg-black/30 backdrop-blur-sm" />
-        <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
-          <DialogPanel className="relative max-w-lg space-y-4 rounded-lg bg-white p-6 shadow-xl dark:bg-zinc-900">
+      <AnimatePresence>
+        {isQRModalOpen && (
+          <Dialog
+            static
+            open={isQRModalOpen}
+            onClose={() => setIsQRModalOpen(false)}
+            className="relative z-50"
+          >
+            <DialogBackdrop
+              as={motion.div}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/30 backdrop-blur-xs"
+            />
+            <div className="fixed inset-0 flex w-screen items-center justify-center p-4">
+              <DialogPanel
+                as={motion.div}
+                initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                className="relative max-w-lg space-y-4 rounded-lg bg-white p-6 shadow-xl dark:bg-zinc-900"
+              >
             <button
               onClick={() => setIsQRModalOpen(false)}
               className="absolute top-2 right-2 rounded-full p-1 bg-zinc-100 dark:bg-zinc-800 hover:text-yellow-600 hover:dark:text-amber-400"
@@ -280,9 +302,11 @@ export function Footer() {
             <p className="text-center text-sm text-zinc-600 dark:text-zinc-400">
               Scan this QR code to save my contact information
             </p>
-          </DialogPanel>
-        </div>
-      </Dialog>
+              </DialogPanel>
+            </div>
+          </Dialog>
+        )}
+      </AnimatePresence>
     </>
   )
 }
