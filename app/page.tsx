@@ -34,7 +34,7 @@ export default async function Home() {
             <span className="animate-wiggle ml-2 inline-block">👋🏻</span>
           </h1>
           <p className="mb-2 text-zinc-600 dark:text-zinc-400">
-            I am a Software Engineer / Manager living in London, UK. I have a
+            I am a Senior Software Engineer / Manager living in London, UK. I have a
             passion for building high-quality web applications and exploring new
             technologies.
           </p>
