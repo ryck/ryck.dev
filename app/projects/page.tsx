@@ -36,7 +36,7 @@ export default function ProjectsPage() {
               alt="Scribblex"
               width={160}
               height={112}
-              className="hidden h-28 w-40 flex-shrink-0 rounded-md object-contain sm:block"
+              className="hidden h-28 w-40 shrink-0 rounded-md object-contain sm:block"
               unoptimized
             />
             <div className="flex-1">
@@ -77,7 +77,7 @@ export default function ProjectsPage() {
               alt="React Vite Modern Tooling Template"
               width={160}
               height={112}
-              className="hidden h-28 w-40 flex-shrink-0 rounded-md object-contain sm:block"
+              className="hidden h-28 w-40 shrink-0 rounded-md object-contain sm:block"
               unoptimized
             />
             <div className="flex-1">
