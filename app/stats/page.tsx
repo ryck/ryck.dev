@@ -198,7 +198,7 @@ function StatsPageClient({
     <main className="p-8">
       <h2 className="text-2xl font-bold mb-6">Age </h2>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+        <div className="relative corner-squircle rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
           <Calendar className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
           <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
             Years
@@ -208,7 +208,7 @@ function StatsPageClient({
           </p>
         </div>
 
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+        <div className="relative corner-squircle rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
           <Calendar className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
           <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
             Months
@@ -218,7 +218,7 @@ function StatsPageClient({
           </p>
         </div>
 
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+        <div className="relative corner-squircle rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
           <Calendar className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
           <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
             Days
@@ -235,119 +235,121 @@ function StatsPageClient({
       {healthMetrics && (
         <>
           <h2 className="text-2xl font-bold mb-6 mt-9">Health </h2>
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
-          <Footprints className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
-          <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
-            Steps
-          </h2>
-          <p className="text-4xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
-            {healthMetrics['step_count']?.[0]?.qty ?? '--'}
-          </p>
-          <p className="text-xs text-gray-500 mt-2 text-right z-10">
-            {displayDate(healthMetrics['step_count']?.[0]?.date)}
-          </p>
-        </div>
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <div className="relative corner-squircle rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+              <Footprints className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
+              <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
+                Steps
+              </h2>
+              <p className="text-4xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
+                {healthMetrics['step_count']?.[0]?.qty ?? '--'}
+              </p>
+              <p className="text-xs text-gray-500 mt-2 text-right z-10">
+                {displayDate(healthMetrics['step_count']?.[0]?.date)}
+              </p>
+            </div>
 
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
-          <HeartPulse className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
-          <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
-            Heart rate
-          </h2>
-          <div className="flex flex-row gap-6 items-end z-10">
-            <div className="flex flex-col items-center">
-              <span className="text-xs text-zinc-400 dark:text-zinc-500 uppercase tracking-wide">
-                Max
-              </span>
-              <span className="text-3xl font-bold text-zinc-500 dark:text-zinc-200">
-                {healthMetrics['heart_rate']?.[0]?.Max ?? '--'}
-              </span>
+            <div className="relative corner-squircle rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+              <HeartPulse className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
+              <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
+                Heart rate
+              </h2>
+              <div className="flex flex-row gap-6 items-end z-10">
+                <div className="flex flex-col items-center">
+                  <span className="text-xs text-zinc-400 dark:text-zinc-500 uppercase tracking-wide">
+                    Max
+                  </span>
+                  <span className="text-3xl font-bold text-zinc-500 dark:text-zinc-200">
+                    {healthMetrics['heart_rate']?.[0]?.Max ?? '--'}
+                  </span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <span className="text-xs text-zinc-400 dark:text-zinc-500 uppercase tracking-wide">
+                    Min
+                  </span>
+                  <span className="text-3xl font-bold text-zinc-500 dark:text-zinc-200">
+                    {healthMetrics['heart_rate']?.[0]?.Min ?? '--'}
+                  </span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <span className="text-xs text-zinc-400 dark:text-zinc-500 uppercase tracking-wide">
+                    Avg
+                  </span>
+                  <span className="text-3xl font-bold text-zinc-500 dark:text-zinc-200">
+                    {healthMetrics['heart_rate']?.[0]?.Avg ?? '--'}
+                  </span>
+                </div>
+              </div>
+              <p className="text-xs text-gray-500 mt-2 text-right z-10">
+                {displayDate(healthMetrics['heart_rate']?.[0]?.date)}
+              </p>
             </div>
-            <div className="flex flex-col items-center">
-              <span className="text-xs text-zinc-400 dark:text-zinc-500 uppercase tracking-wide">
-                Min
-              </span>
-              <span className="text-3xl font-bold text-zinc-500 dark:text-zinc-200">
-                {healthMetrics['heart_rate']?.[0]?.Min ?? '--'}
-              </span>
+
+            <div className="relative corner-squircle rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+              <Heart className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
+              <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
+                Resting Heart Rate
+              </h2>
+              <p className="text-4xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
+                {healthMetrics['resting_heart_rate']?.[0]?.qty ?? '--'}
+              </p>
+              <p className="text-xs text-gray-500 mt-2 text-right z-10">
+                {displayDate(healthMetrics['resting_heart_rate']?.[0]?.date)}
+              </p>
             </div>
-            <div className="flex flex-col items-center">
-              <span className="text-xs text-zinc-400 dark:text-zinc-500 uppercase tracking-wide">
-                Avg
-              </span>
-              <span className="text-3xl font-bold text-zinc-500 dark:text-zinc-200">
-                {healthMetrics['heart_rate']?.[0]?.Avg ?? '--'}
-              </span>
+
+            <div className="relative corner-squircle rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+              <TrendingUp className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
+              <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
+                Flights Climbed
+              </h2>
+              <p className="text-4xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
+                {healthMetrics['flights_climbed']?.[0]?.qty ?? '--'}
+              </p>
+              <p className="text-xs text-gray-500 mt-2 text-right z-10">
+                {displayDate(healthMetrics['flights_climbed']?.[0]?.date)}
+              </p>
             </div>
+
+            <div className="relative corner-squircle rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+              <Droplets className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
+              <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
+                Blood Oxygen Saturation
+              </h2>
+              <p className="text-4xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
+                {healthMetrics['blood_oxygen_saturation']?.[0]?.qty ?? '--'}
+              </p>
+              <p className="text-xs text-gray-500 mt-2 text-right z-10">
+                {displayDate(
+                  healthMetrics['blood_oxygen_saturation']?.[0]?.date,
+                )}
+              </p>
+            </div>
+
+            <div className="relative corner-squircle rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+              <Thermometer className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
+              <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
+                Sleeping Wrist Temp
+              </h2>
+              <p className="text-4xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
+                {healthMetrics['apple_sleeping_wrist_temperature']?.[0]?.qty ??
+                  '--'}
+              </p>
+              <p className="text-xs text-gray-500 mt-2 text-right z-10">
+                {displayDate(
+                  healthMetrics['apple_sleeping_wrist_temperature']?.[0]?.date,
+                )}
+              </p>
+            </div>
+            {/* Add more metrics here as needed */}
           </div>
-          <p className="text-xs text-gray-500 mt-2 text-right z-10">
-            {displayDate(healthMetrics['heart_rate']?.[0]?.date)}
-          </p>
-        </div>
-
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
-          <Heart className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
-          <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
-            Resting Heart Rate
-          </h2>
-          <p className="text-4xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
-            {healthMetrics['resting_heart_rate']?.[0]?.qty ?? '--'}
-          </p>
-          <p className="text-xs text-gray-500 mt-2 text-right z-10">
-            {displayDate(healthMetrics['resting_heart_rate']?.[0]?.date)}
-          </p>
-        </div>
-
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
-          <TrendingUp className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
-          <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
-            Flights Climbed
-          </h2>
-          <p className="text-4xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
-            {healthMetrics['flights_climbed']?.[0]?.qty ?? '--'}
-          </p>
-          <p className="text-xs text-gray-500 mt-2 text-right z-10">
-            {displayDate(healthMetrics['flights_climbed']?.[0]?.date)}
-          </p>
-        </div>
-
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
-          <Droplets className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
-          <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
-            Blood Oxygen Saturation
-          </h2>
-          <p className="text-4xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
-            {healthMetrics['blood_oxygen_saturation']?.[0]?.qty ?? '--'}
-          </p>
-          <p className="text-xs text-gray-500 mt-2 text-right z-10">
-            {displayDate(healthMetrics['blood_oxygen_saturation']?.[0]?.date)}
-          </p>
-        </div>
-
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
-          <Thermometer className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
-          <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
-            Sleeping Wrist Temp
-          </h2>
-          <p className="text-4xl font-bold text-zinc-500 dark:text-zinc-200 z-10">
-            {healthMetrics['apple_sleeping_wrist_temperature']?.[0]?.qty ??
-              '--'}
-          </p>
-          <p className="text-xs text-gray-500 mt-2 text-right z-10">
-            {displayDate(
-              healthMetrics['apple_sleeping_wrist_temperature']?.[0]?.date,
-            )}
-          </p>
-        </div>
-        {/* Add more metrics here as needed */}
-      </div>
         </>
       )}
 
       {/* GITHUB SECTION */}
       <h2 className="text-2xl font-bold mb-6 mt-9">GitHub</h2>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mt-2">
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+        <div className="relative corner-squircle rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
           <BookOpen className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-10 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
           <h2 className="text-xl font-semibold mb-2 capitalize z-10 text-yellow-600">
             Public Repos
@@ -356,7 +358,7 @@ function StatsPageClient({
             {githubStats.public_repos}
           </p>
         </div>
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+        <div className="relative corner-squircle rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
           <Star className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-10 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
           <h2 className="text-xl font-semibold mb-2 capitalize z-10 text-yellow-600">
             Total Stars
@@ -365,7 +367,7 @@ function StatsPageClient({
             {githubStats.totalStars}
           </p>
         </div>
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+        <div className="relative corner-squircle rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
           <Users className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-10 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
           <h2 className="text-xl font-semibold mb-2 capitalize z-10 text-yellow-600">
             Followers
@@ -374,7 +376,7 @@ function StatsPageClient({
             {githubStats.followers}
           </p>
         </div>
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+        <div className="relative corner-squircle rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
           <GitBranch className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-10 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
           <h2 className="text-xl font-semibold mb-2 capitalize z-10 text-yellow-600">
             Total Forks
@@ -383,7 +385,7 @@ function StatsPageClient({
             {githubStats.totalForks}
           </p>
         </div>
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+        <div className="relative corner-squircle rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
           <GitCommitVertical className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-10 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
           <h2 className="text-xl font-semibold mb-2 capitalize z-10 text-yellow-600">
             Total Commits
@@ -393,7 +395,7 @@ function StatsPageClient({
           </p>
         </div>
         {githubStats.topRepo && (
-          <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+          <div className="relative corner-squircle rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
             <Star className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-10 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
             <h2 className="text-xl font-semibold mb-2 capitalize z-10 text-yellow-600">
               Top Repo
@@ -414,7 +416,7 @@ function StatsPageClient({
       </div>
       <h2 className="text-2xl font-bold mb-6 mt-9">Space </h2>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+        <div className="relative corner-squircle rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
           <Orbit className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
           <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
             Moon Orbits
@@ -424,7 +426,7 @@ function StatsPageClient({
           </p>
         </div>
 
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+        <div className="relative corner-squircle rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
           <RulerDimensionLine className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
           <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
             Moon Distance
@@ -437,7 +439,7 @@ function StatsPageClient({
           </p>
         </div>
 
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+        <div className="relative corner-squircle rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
           <Globe className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-12 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
           <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
             Distance Traveled

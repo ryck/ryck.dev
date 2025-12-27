@@ -17,7 +17,7 @@ export function Header() {
             viewBox="0 0 128 128"
             strokeWidth={3}
             stroke="currentColor"
-            className="h-10 w-10 transform-gpu rounded-sm text-slate-900 transition-transform duration-400 group-hover:rotate-360 dark:text-neutral-100"
+            className="h-10 w-10 transform-gpu corner-squircle rounded-sm text-slate-900 transition-transform duration-400 group-hover:rotate-360 dark:text-neutral-100"
           >
             <path
               strokeLinecap="round"

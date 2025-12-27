@@ -1,172 +1,172 @@
-import { Metadata } from "next";
-import Link from "next/link";
-import { notFound } from "next/navigation";
+import { Metadata } from 'next'
+import Link from 'next/link'
+import { notFound } from 'next/navigation'
 
-import { ScrollProgress } from "@/components/ui/scroll-progress";
-import { type Post, getBlogPosts } from "@/lib/blog";
-import { CustomMDX } from "@/lib/mdx";
+import { ScrollProgress } from '@/components/ui/scroll-progress'
+import { type Post, getBlogPosts } from '@/lib/blog'
+import { CustomMDX } from '@/lib/mdx'
 
-const url = process.env.WEBSITE_URL ?? "https://ryck.dev";
+const url = process.env.WEBSITE_URL ?? 'https://ryck.dev'
 
 interface PageProps {
-	params: Promise<{
-		slug: string;
-	}>;
+  params: Promise<{
+    slug: string
+  }>
 }
 
 export async function generateMetadata({
-	params,
+  params,
 }: PageProps): Promise<Metadata> {
-	const { slug } = await params;
+  const { slug } = await params
 
-	const allPosts = await getBlogPosts();
-	const post = allPosts.find((post) => post.slug === slug);
+  const allPosts = await getBlogPosts()
+  const post = allPosts.find((post) => post.slug === slug)
 
-	if (!post) {
-		notFound();
-	}
+  if (!post) {
+    notFound()
+  }
 
-	const {
-		title,
-		publishedAt: publishedTime,
-		summary: description,
-		categories,
-	} = post;
+  const {
+    title,
+    publishedAt: publishedTime,
+    summary: description,
+    categories,
+  } = post
 
-	// Build ogImage URL only with present params
-	const ogParams = [];
-	if (title) ogParams.push(`title=${encodeURIComponent(title)}`);
-	if (description)
-		ogParams.push(`description=${encodeURIComponent(description)}`);
-	if (publishedTime)
-		ogParams.push(`publishedTime=${encodeURIComponent(publishedTime)}`);
-	if (categories && categories.length > 0)
-		ogParams.push(`categories=${encodeURIComponent(categories.join(","))}`);
-	const ogImage = `${url}/og${ogParams.length ? "?" + ogParams.join("&") : ""}`;
+  // Build ogImage URL only with present params
+  const ogParams = []
+  if (title) ogParams.push(`title=${encodeURIComponent(title)}`)
+  if (description)
+    ogParams.push(`description=${encodeURIComponent(description)}`)
+  if (publishedTime)
+    ogParams.push(`publishedTime=${encodeURIComponent(publishedTime)}`)
+  if (categories && categories.length > 0)
+    ogParams.push(`categories=${encodeURIComponent(categories.join(','))}`)
+  const ogImage = `${url}/og${ogParams.length ? '?' + ogParams.join('&') : ''}`
 
-	return {
-		title,
-		description,
-		openGraph: {
-			title,
-			description,
-			type: "article",
-			publishedTime,
-			url: `${url}/blog/${post.slug}`,
-			images: [
-				{
-					url: ogImage,
-				},
-			],
-		},
-		twitter: {
-			card: "summary_large_image",
-			title,
-			description,
-			images: [ogImage],
-		},
-	};
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: 'article',
+      publishedTime,
+      url: `${url}/blog/${post.slug}`,
+      images: [
+        {
+          url: ogImage,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImage],
+    },
+  }
 }
 
 export async function generateStaticParams() {
-	const posts = await getBlogPosts();
-	return posts.map((post) => ({
-		slug: post.slug,
-	}));
+  const posts = await getBlogPosts()
+  return posts.map((post) => ({
+    slug: post.slug,
+  }))
 }
 
-export const revalidate = 86400;
+export const revalidate = 86400
 
 export default async function Post({ params }: PageProps) {
-	const { slug } = await params;
+  const { slug } = await params
 
-	const allPosts = await getBlogPosts();
-	const posts = allPosts.sort(
-		(a, b) =>
-			new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-	);
+  const allPosts = await getBlogPosts()
+  const posts = allPosts.sort(
+    (a, b) =>
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+  )
 
-	const currentIndex = posts.findIndex((post) => post.slug === slug);
+  const currentIndex = posts.findIndex((post) => post.slug === slug)
 
-	if (currentIndex === -1) {
-		notFound();
-	}
+  if (currentIndex === -1) {
+    notFound()
+  }
 
-	const post = posts[currentIndex];
-	const prevPost = posts[currentIndex + 1] || null;
-	const nextPost = posts[currentIndex - 1] || null;
+  const post = posts[currentIndex]
+  const prevPost = posts[currentIndex + 1] || null
+  const nextPost = posts[currentIndex - 1] || null
 
-	return (
-		<>
-			<div className="pointer-events-none fixed top-0 left-0 z-10 h-12 w-full bg-gray-100 to-transparent backdrop-blur-xl [-webkit-mask-image:linear-gradient(to_bottom,black,transparent)] dark:bg-zinc-950" />
-			<ScrollProgress
-				className="fixed top-0 z-20 h-0.5 bg-gray-300 dark:bg-zinc-600"
-				springOptions={{
-					bounce: 0,
-				}}
-			/>
-			<main>
-				<h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
-					{post.title}
-				</h1>
-				<div className="flex items-center space-x-2 text-sm font-normal dark:text-zinc-100">
-					<time dateTime={post.publishedAt}>
-						{new Date(post.publishedAt).toLocaleDateString("en-GB", {
-							year: "numeric",
-							month: "short",
-							day: "numeric",
-						})}
-					</time>
-					<span>·</span>
-					<span>{post.readingTime} min read</span>
-				</div>
-				{post.categories && (
-					<p className="mt-2 flex space-x-2 text-xs text-zinc-700 dark:text-zinc-600">
-						{post.categories.map((category: string) => (
-							<Link
-								key={category}
-								href={`/blog/categories/${encodeURIComponent(category)}`}
-								className="hover:text-zinc-900 dark:hover:text-zinc-300"
-							>
-								<span className="inline-flex items-center rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-700 ring-1 ring-inset ring-zinc-600/20 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:ring-zinc-400/20 dark:hover:bg-zinc-700">
-									{category.toLowerCase()}
-								</span>
-							</Link>
-						))}
-					</p>
-				)}
+  return (
+    <>
+      <div className="pointer-events-none fixed top-0 left-0 z-10 h-12 w-full bg-gray-100 to-transparent backdrop-blur-xl [-webkit-mask-image:linear-gradient(to_bottom,black,transparent)] dark:bg-zinc-950" />
+      <ScrollProgress
+        className="fixed top-0 z-20 h-0.5 bg-gray-300 dark:bg-zinc-600"
+        springOptions={{
+          bounce: 0,
+        }}
+      />
+      <main>
+        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
+          {post.title}
+        </h1>
+        <div className="flex items-center space-x-2 text-sm font-normal dark:text-zinc-100">
+          <time dateTime={post.publishedAt}>
+            {new Date(post.publishedAt).toLocaleDateString('en-GB', {
+              year: 'numeric',
+              month: 'short',
+              day: 'numeric',
+            })}
+          </time>
+          <span>·</span>
+          <span>{post.readingTime} min read</span>
+        </div>
+        {post.categories && (
+          <p className="mt-2 flex space-x-2 text-xs text-zinc-700 dark:text-zinc-600">
+            {post.categories.map((category: string) => (
+              <Link
+                key={category}
+                href={`/blog/categories/${encodeURIComponent(category)}`}
+                className="hover:text-zinc-900 dark:hover:text-zinc-300"
+              >
+                <span className="inline-flex items-center corner-squircle rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-700 ring-1 ring-inset ring-zinc-600/20 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:ring-zinc-400/20 dark:hover:bg-zinc-700">
+                  {category.toLowerCase()}
+                </span>
+              </Link>
+            ))}
+          </p>
+        )}
 
-				<article className="prose lg:prose-xl prose-gray prose-h4:prose-base dark:prose-invert prose-h1:text-xl prose-h1:font-medium prose-h2:mt-12 prose-h2:scroll-m-20 prose-h2:text-lg prose-h2:font-medium prose-h3:text-base prose-h3:font-medium prose-h4:font-medium prose-h5:text-base prose-h5:font-medium prose-h6:text-base prose-h6:font-medium prose-strong:font-medium mt-10 max-w-none pb-10">
-					<CustomMDX source={post.content} />
-				</article>
+        <article className="prose lg:prose-xl prose-gray prose-h4:prose-base dark:prose-invert prose-h1:text-xl prose-h1:font-medium prose-h2:mt-12 prose-h2:scroll-m-20 prose-h2:text-lg prose-h2:font-medium prose-h3:text-base prose-h3:font-medium prose-h4:font-medium prose-h5:text-base prose-h5:font-medium prose-h6:text-base prose-h6:font-medium prose-strong:font-medium mt-10 max-w-none pb-10">
+          <CustomMDX source={post.content} />
+        </article>
 
-				<nav className="flex justify-between">
-					{prevPost ? (
-						<Link href={`/blog/${prevPost.slug}`} className="flex flex-col">
-							<span className="text-sm text-zinc-500">Previous</span>
-							<span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-								{prevPost.title}
-							</span>
-						</Link>
-					) : (
-						<div />
-					)}
+        <nav className="flex justify-between">
+          {prevPost ? (
+            <Link href={`/blog/${prevPost.slug}`} className="flex flex-col">
+              <span className="text-sm text-zinc-500">Previous</span>
+              <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                {prevPost.title}
+              </span>
+            </Link>
+          ) : (
+            <div />
+          )}
 
-					{nextPost ? (
-						<Link
-							href={`/blog/${nextPost.slug}`}
-							className="flex flex-col text-right"
-						>
-							<span className="text-sm text-zinc-500">Next</span>
-							<span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
-								{nextPost.title}
-							</span>
-						</Link>
-					) : (
-						<div />
-					)}
-				</nav>
-			</main>
-		</>
-	);
+          {nextPost ? (
+            <Link
+              href={`/blog/${nextPost.slug}`}
+              className="flex flex-col text-right"
+            >
+              <span className="text-sm text-zinc-500">Next</span>
+              <span className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                {nextPost.title}
+              </span>
+            </Link>
+          ) : (
+            <div />
+          )}
+        </nav>
+      </main>
+    </>
+  )
 }

@@ -1,4 +1,4 @@
-import { Search, BookOpen, Calendar, TrendingUp, Clock } from 'lucide-react'
+import { BookOpen, Calendar, Clock, Search, TrendingUp } from 'lucide-react'
 
 import { BlogExcerpt } from '@/components/BlogExcerpt'
 import { AnimatedBackground } from '@/components/ui/animated-background'
@@ -58,13 +58,22 @@ export default async function Blog({ searchParams }) {
 
   // Calculate stats (always based on all posts, not filtered)
   const allPostsByYear = groupPostsByYear(allPosts)
-  const allYears = Object.keys(allPostsByYear).sort((a, b) => b.localeCompare(a))
+  const allYears = Object.keys(allPostsByYear).sort((a, b) =>
+    b.localeCompare(a),
+  )
   const totalPosts = allPosts.length
   const filteredPostsCount = filteredPosts.length
   const yearsOfBlogging = allYears.length
-  const averagePostsPerYear = yearsOfBlogging > 0 ? Math.round(totalPosts / yearsOfBlogging) : 0
-  const oldestYear = allYears.length > 0 ? Math.min(...allYears.map(Number)) : new Date().getFullYear()
-  const newestYear = allYears.length > 0 ? Math.max(...allYears.map(Number)) : new Date().getFullYear()
+  const averagePostsPerYear =
+    yearsOfBlogging > 0 ? Math.round(totalPosts / yearsOfBlogging) : 0
+  const oldestYear =
+    allYears.length > 0
+      ? Math.min(...allYears.map(Number))
+      : new Date().getFullYear()
+  const newestYear =
+    allYears.length > 0
+      ? Math.max(...allYears.map(Number))
+      : new Date().getFullYear()
 
   return (
     <main className="space-y-12 py-6">
@@ -80,10 +89,10 @@ export default async function Blog({ searchParams }) {
         I been blogging, mostly in Spanish, about pretty much everything since
         2004. This is an archive of my digital presence, feel free to explore!
       </p>
-      
+
       {/* Stats Section */}
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 mb-8">
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+        <div className="relative corner-squircle rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
           <BookOpen className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-10 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
           <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
             {search ? 'Found' : 'Total'} Posts
@@ -92,7 +101,7 @@ export default async function Blog({ searchParams }) {
             {search ? filteredPostsCount : totalPosts}
           </p>
         </div>
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+        <div className="relative corner-squircle rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
           <Calendar className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-10 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
           <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
             Years Blogging
@@ -101,7 +110,7 @@ export default async function Blog({ searchParams }) {
             {yearsOfBlogging}
           </p>
         </div>
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+        <div className="relative corner-squircle rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
           <TrendingUp className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-10 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
           <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
             Avg Posts/Year
@@ -110,7 +119,7 @@ export default async function Blog({ searchParams }) {
             {averagePostsPerYear}
           </p>
         </div>
-        <div className="relative rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
+        <div className="relative corner-squircle rounded-xl border bg-white/80 dark:bg-zinc-900/80 shadow p-6 flex flex-col gap-4 items-center overflow-hidden">
           <Clock className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 opacity-10 dark:opacity-5 text-zinc-400 dark:text-zinc-600 pointer-events-none select-none" />
           <h2 className="text-xl font-semibold mb-2 capitalize text-yellow-600 z-10">
             Active Period
@@ -145,7 +154,7 @@ export default async function Blog({ searchParams }) {
           <div className="flex flex-col space-y-0">
             <AnimatedBackground
               enableHover
-              className="h-full w-full rounded-lg bg-zinc-100 dark:bg-zinc-900/80"
+              className="h-full w-full corner-squircle rounded-lg bg-zinc-100 dark:bg-zinc-900/80"
               transition={{
                 type: 'spring',
                 bounce: 0,

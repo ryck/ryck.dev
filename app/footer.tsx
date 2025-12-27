@@ -1,12 +1,13 @@
 'use client'
 
-import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react'
 import { MonitorIcon, MoonIcon, SunIcon } from 'lucide-react'
-import { motion, AnimatePresence } from 'motion/react'
+import { AnimatePresence, motion } from 'motion/react'
 import { useTheme } from 'next-themes'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+
+import { Dialog, DialogBackdrop, DialogPanel } from '@headlessui/react'
 
 const THEMES_OPTIONS = [
   {
@@ -95,8 +96,8 @@ export function Footer() {
           <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8 dark:border-gray-700" />
           <div className="sm:flex sm:items-center sm:justify-between">
             <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
-              {new Date().toLocaleString('default', { year: 'numeric' })}{' '}
-              Made with 💛 by Ricardo Gonzalez in London 🇬🇧
+              {new Date().toLocaleString('default', { year: 'numeric' })} Made
+              with 💛 by Ricardo Gonzalez in London 🇬🇧
             </span>
             <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
               <button
@@ -268,40 +269,40 @@ export function Footer() {
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 20 }}
-                className="relative max-w-lg space-y-4 rounded-lg bg-white p-6 shadow-xl dark:bg-zinc-900"
+                className="relative max-w-lg space-y-4 corner-squircle rounded-lg bg-white p-6 shadow-xl dark:bg-zinc-900"
               >
-            <button
-              onClick={() => setIsQRModalOpen(false)}
-              className="absolute top-2 right-2 rounded-full p-1 bg-zinc-100 dark:bg-zinc-800 hover:text-yellow-600 hover:dark:text-amber-400"
-              aria-label="Close modal"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-6"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-            <div className="flex justify-center">
-              <Image
-                src="/QR-vCard.svg"
-                alt="vCard QR Code"
-                width={400}
-                height={400}
-                className="rounded border border-zinc-700"
-              />
-            </div>
-            <p className="text-center text-sm text-zinc-600 dark:text-zinc-400">
-              Scan this QR code to save my contact information
-            </p>
+                <button
+                  onClick={() => setIsQRModalOpen(false)}
+                  className="absolute top-2 right-2 corner-squircle rounded-full p-1 bg-zinc-100 dark:bg-zinc-800 hover:text-yellow-600 hover:dark:text-amber-400"
+                  aria-label="Close modal"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth={1.5}
+                    stroke="currentColor"
+                    className="size-6"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                </button>
+                <div className="flex justify-center">
+                  <Image
+                    src="/QR-vCard.svg"
+                    alt="vCard QR Code"
+                    width={400}
+                    height={400}
+                    className="rounded border border-zinc-700"
+                  />
+                </div>
+                <p className="text-center text-sm text-zinc-600 dark:text-zinc-400">
+                  Scan this QR code to save my contact information
+                </p>
               </DialogPanel>
             </div>
           </Dialog>

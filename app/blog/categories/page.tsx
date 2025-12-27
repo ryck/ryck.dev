@@ -43,7 +43,7 @@ export default async function CategoriesPage() {
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
         <AnimatedBackground
           enableHover
-          className="h-full w-full rounded-lg bg-zinc-100 dark:bg-zinc-900/80"
+          className="h-full w-full corner-squircle rounded-lg bg-zinc-100 dark:bg-zinc-900/80"
           transition={{
             type: 'spring',
             bounce: 0,
@@ -54,7 +54,7 @@ export default async function CategoriesPage() {
             <Link
               key={category}
               href={`/blog/categories/${encodeURIComponent(category)}`}
-              className="group rounded-lg border border-zinc-200 p-4 hover:border-zinc-300 dark:border-zinc-800 dark:hover:border-zinc-700"
+              className="group corner-squircle rounded-lg border border-zinc-200 p-4 hover:border-zinc-300 dark:border-zinc-800 dark:hover:border-zinc-700"
               data-id={category}
             >
               <h2 className="text-lg font-medium text-zinc-900 group-hover:text-zinc-700 dark:text-zinc-100 dark:group-hover:text-zinc-300">

@@ -34,9 +34,9 @@ export default async function Home() {
             <span className="animate-wiggle ml-2 inline-block">👋🏻</span>
           </h1>
           <p className="mb-2 text-zinc-600 dark:text-zinc-400">
-            I am a Senior Software Engineer / Manager living in London, UK. I have a
-            passion for building high-quality web applications and exploring new
-            technologies.
+            I am a Senior Software Engineer / Manager living in London, UK. I
+            have a passion for building high-quality web applications and
+            exploring new technologies.
           </p>
           <p className="text-zinc-600 dark:text-zinc-400">
             Welcome to my personal website! Here, you can find my latest blog
@@ -45,16 +45,17 @@ export default async function Home() {
         </div>
 
         {false && (
-        <aside className="mt-6 mb-6 flex items-center gap-2">
-          <span className="relative inline-flex h-3 w-3 animate-pulse rounded-full bg-green-500 ring-1 ring-green-300"></span>
-          <TextScramble
-            className="font-mono text-xs text-green-700 uppercase dark:text-green-400"
-            as={'span'}
-            duration={2}
-          >
-            Available to hire
-          </TextScramble>
-        </aside>)}
+          <aside className="mt-6 mb-6 flex items-center gap-2">
+            <span className="relative inline-flex h-3 w-3 animate-pulse corner-squircle rounded-full bg-green-500 ring-1 ring-green-300"></span>
+            <TextScramble
+              className="font-mono text-xs text-green-700 uppercase dark:text-green-400"
+              as={'span'}
+              duration={2}
+            >
+              Available to hire
+            </TextScramble>
+          </aside>
+        )}
       </section>
 
       <section>
@@ -64,7 +65,7 @@ export default async function Home() {
         <div className="flex flex-col space-y-0">
           <AnimatedBackground
             enableHover
-            className="h-full w-full rounded-lg bg-zinc-100 dark:bg-zinc-900/80"
+            className="h-full w-full corner-squircle rounded-lg bg-zinc-100 dark:bg-zinc-900/80"
             transition={{
               type: 'spring',
               bounce: 0,
@@ -104,7 +105,7 @@ export default async function Home() {
           Latest projects
         </h3>
         <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-lg border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          <div className="corner-squircle rounded-lg border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
             <h4 className="mb-1 text-base font-semibold text-zinc-900 dark:text-zinc-100">
               <a
                 href="https://github.com/ryck/scrobblex"
@@ -137,7 +138,7 @@ export default async function Home() {
               via webhooks
             </p>
           </div>
-          <div className="rounded-lg border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          <div className="corner-squircle rounded-lg border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
             <h4 className="mb-1 text-base font-semibold text-zinc-900 dark:text-zinc-100">
               <a
                 href="https://github.com/ryck/react-vite-modern-tooling-template"

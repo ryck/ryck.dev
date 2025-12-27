@@ -5,7 +5,7 @@ import { Post } from '@/lib/blog'
 export function BlogExcerpt({ post }: { post: Post }) {
   return (
     <article
-      className="-mx-3 rounded-xl px-3 py-3"
+      className="-mx-3 corner-squircle rounded-xl px-3 py-3"
       key={post.slug}
       data-id={post.slug}
     >
@@ -41,13 +41,13 @@ export function BlogExcerpt({ post }: { post: Post }) {
                   key={category}
                   href={`/blog/categories/${encodeURIComponent(category.toLowerCase())}`}
                 >
-                  <span className="inline-flex items-center rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-700 ring-1 ring-inset ring-zinc-600/20 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:ring-zinc-400/20 dark:hover:bg-zinc-700">
+                  <span className="inline-flex items-center corner-squircle corner-squircle rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-700 ring-1 ring-inset ring-zinc-600/20 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:ring-zinc-400/20 dark:hover:bg-zinc-700">
                     {category.toLowerCase()}
                   </span>
                 </Link>
               ))}
             {post.lang && (
-              <span className="inline-flex items-center rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-700 ring-1 ring-inset ring-zinc-600/20 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:ring-zinc-400/20 dark:hover:bg-zinc-700">
+              <span className="inline-flex items-center corner-squircle corner-squircle rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-zinc-700 ring-1 ring-inset ring-zinc-600/20 transition-colors hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:ring-zinc-400/20 dark:hover:bg-zinc-700">
                 {post.lang === 'es'
                   ? '🇪🇸'
                   : post.lang === 'en'

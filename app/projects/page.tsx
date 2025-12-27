@@ -30,13 +30,13 @@ export default function ProjectsPage() {
         {/* Add your project cards or list here */}
         <div className="grid gap-8 lg:grid-cols-2">
           {/* Example project card */}
-          <div className="flex items-start gap-6 rounded-lg border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          <div className="flex items-start gap-6 corner-squircle rounded-lg border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
             <Image
               src="https://github.com/ryck/scrobblex/blob/main/static/images/apple-touch-icon-152x152.png?raw=true"
               alt="Scribblex"
               width={160}
               height={112}
-              className="hidden h-28 w-40 shrink-0 rounded-md object-contain sm:block"
+              className="hidden h-28 w-40 shrink-0 corner-squircle rounded-md object-contain sm:block"
               unoptimized
             />
             <div className="flex-1">
@@ -71,13 +71,13 @@ export default function ProjectsPage() {
             </div>
           </div>
           {/* Example project card */}
-          <div className="flex items-start gap-6 rounded-lg border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          <div className="flex items-start gap-6 corner-squircle rounded-lg border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
             <Image
               src="https://vitejs.dev/logo.svg"
               alt="React Vite Modern Tooling Template"
               width={160}
               height={112}
-              className="hidden h-28 w-40 shrink-0 rounded-md object-contain sm:block"
+              className="hidden h-28 w-40 shrink-0 corner-squircle rounded-md object-contain sm:block"
               unoptimized
             />
             <div className="flex-1">
@@ -142,7 +142,7 @@ export default function ProjectsPage() {
           </div>
 
           {/* Example project card */}
-          <div className="flex items-start gap-6 rounded-lg border border-zinc-200 bg-white p-6 shadow-sm lg:col-span-2 dark:border-zinc-800 dark:bg-zinc-900">
+          <div className="flex items-start gap-6 corner-squircle rounded-lg border border-zinc-200 bg-white p-6 shadow-sm lg:col-span-2 dark:border-zinc-800 dark:bg-zinc-900">
             <div className="flex-1">
               <h2 className="mb-2 text-xl font-semibold">MagicMirror²</h2>
               <p className="mb-2 text-zinc-600 dark:text-zinc-400">

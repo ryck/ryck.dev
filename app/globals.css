@@ -2,6 +2,7 @@
 /* This file uses Tailwind CSS v4 syntax - VS Code CSS validation doesn't recognize these directives */
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+@plugin "@toolwind/corner-shape";
 @custom-variant dark (&:where(.dark, .dark *));
 
 /*

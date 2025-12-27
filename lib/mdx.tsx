@@ -65,7 +65,7 @@ function RoundedImage(props: {
   width?: number
   height?: number
 }) {
-  return <Image className="rounded-lg" {...props} />
+  return <Image className="corner-squircle rounded-lg" {...props} />
 }
 /* eslint-enable jsx-a11y/alt-text */
 
